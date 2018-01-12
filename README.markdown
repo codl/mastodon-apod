@@ -10,20 +10,20 @@ it uses [ananas][]
 
 * (optional) create a venv to isolate dependencies from the system
 
-    $ python -m venv venv
-    $ source venv/bin/activate
+      $ python -m venv venv
+      $ source venv/bin/activate
 
 * install dependencies
 
-    $ pip install -r requirements.txt
+      $ pip install -r requirements.txt
 
 * fill in config file
 
-    $ cp ananas.cfg.example ananas.cfg
-    $ $EDITOR ananas.cfg
+      $ cp ananas.cfg.example ananas.cfg
+      $ $EDITOR ananas.cfg
 
 * run
 
-    $ ananas ananas.cfg
+      $ ananas ananas.cfg
 
 * enjoy
