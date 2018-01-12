@@ -1,0 +1,11 @@
+[Unit]
+Description=Mastodon APoD bot
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/codl/mastodon-apod
+Environment="PYTHONUNBUFFERED=yes please"
+ExecStart=/home/codl/mastodon-apod/venv/bin/ananas ananas.cfg
