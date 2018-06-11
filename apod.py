@@ -100,7 +100,7 @@ class ApodBot(ananas.PineappleBot):
             mimetype = mimetypes.guess_type(image_url)[0]
             image_content = self.fetch_and_fit_image(image_url)
             media = self.mastodon.media_post(
-                    image_content, mime_type=mimetype, description=contents[0])
+                    image_content, mime_type=mimetype)
             medias = (media['id'],)
         elif iframe:
             contents.insert(0, iframe_url)
