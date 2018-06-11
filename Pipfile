@@ -7,6 +7,6 @@ name = "pypi"
 "beautifulsoup4" = "*"
 ananas = "*"
 requests = "*"
+pillow = "*"
 
 [dev-packages]
-

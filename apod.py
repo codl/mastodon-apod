@@ -5,6 +5,8 @@ from datetime import date, timedelta
 import re
 from urllib.parse import urljoin, urlparse
 import mimetypes
+from io import BytesIO
+from PIL import Image
 
 import socket
 import requests.packages.urllib3.util.connection as urllib3_cn
@@ -90,11 +92,9 @@ class ApodBot(ananas.PineappleBot):
 
         if image:
             mimetype = mimetypes.guess_type(image_url)[0]
-
-            image_resp = self.session.get(image_url)
-            image_resp.raise_for_status()
-
-            media = self.mastodon.media_post(image_resp.content, mime_type=mimetype, description=contents[0])
+            image_content = self.fetch_and_fit_image(image_url)
+            media = self.mastodon.media_post(
+                    image_content, mime_type=mimetype, description=contents[0])
             medias = (media['id'],)
         elif iframe:
             contents.insert(0, iframe_url)
@@ -103,3 +103,17 @@ class ApodBot(ananas.PineappleBot):
 
         self.config.state = next_page
         self.config.save()
+
+    def fetch_and_fit_image(self, image_url):
+        """returns a BytesIO"""
+        image_resp = self.session.get(image_url)
+        image_resp.raise_for_status()
+
+        imageio = BytesIO(image_resp.content)
+        outio = BytesIO()
+
+        image = Image.open(imageio)
+        image.thumbnail((1080, 1080))
+        image.save(outio, image.format)
+        outio.seek(0)
+        return outio
