@@ -13,14 +13,20 @@ import requests.packages.urllib3.util.connection as urllib3_cn
 
 urllib3_cn.allowed_gai_family = lambda: socket.AF_INET
 
+
 class ApodBot(ananas.PineappleBot):
 
     def __init__(self, *args, **kwargs):
         ananas.PineappleBot.__init__(self, *args, **kwargs)
         self.session = requests.Session()
-        self.session.headers.update({'user-agent': 'mastodon-apod +https://github.com/codl/mastodon-apod'})
+        self.session.headers.update({
+            'user-agent':
+                'mastodon-apod +https://github.com/codl/mastodon-apod'})
 
-    @ananas.hourly(46)
+    @ananas.daily(3, 19)
+    @ananas.daily(9, 19)
+    @ananas.daily(15, 19)
+    @ananas.daily(21, 19)
     def check_apod(self):
         state = self.config.get('state', None)
         if not state:
