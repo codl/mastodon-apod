@@ -61,9 +61,10 @@ class ApodBot(ananas.PineappleBot):
             main = image
             a = image.parent
 
-            image_url = urljoin(next_page, a['href'])
-            if urlparse(image_url).hostname != 'apod.nasa.gov':
-                image_url = urljoin(next_page, image['src'])
+            image_urls = [urljoin(next_page, image['src'])]
+            linked = urljoin(next_page, a['href'])
+            if urlparse(linked).hostname == 'apod.nasa.gov':
+                image_urls.insert(0, linked)
         elif iframe:
             main = iframe
             iframe_url = iframe['src']
@@ -97,11 +98,15 @@ class ApodBot(ananas.PineappleBot):
             descriptions))
 
         if image:
-            mimetype = mimetypes.guess_type(image_url)[0]
-            image_content = self.fetch_and_fit_image(image_url)
-            media = self.mastodon.media_post(
-                    image_content, mime_type=mimetype)
-            medias = (media['id'],)
+            for image_url in image_urls:
+                try:
+                    mimetype = mimetypes.guess_type(image_url)[0]
+                    image_content = self.fetch_and_fit_image(image_url)
+                    media = self.mastodon.media_post(
+                            image_content, mime_type=mimetype)
+                    medias = (media['id'],)
+                except Exception:
+                    continue
         elif iframe:
             contents.insert(0, iframe_url)
 
