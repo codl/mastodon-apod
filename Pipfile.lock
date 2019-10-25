@@ -23,12 +23,19 @@
         },
         "beautifulsoup4": {
             "hashes": [
-                "sha256:034740f6cb549b4e932ae1ab975581e6103ac8f942200a0e9759065984391858",
-                "sha256:945065979fb8529dd2f37dbb58f00b661bdbcbebf954f93b32fdf5263ef35348",
-                "sha256:ba6d5c59906a85ac23dadfe5c88deaf3e179ef565f4898671253e50a78680718"
+                "sha256:5279c36b4b2ec2cb4298d723791467e3000e5384a43ea0cdf5d45207c7e97169",
+                "sha256:6135db2ba678168c07950f9a16c4031822c6f4aec75a65e0a97bc5ca09789931",
+                "sha256:dcdef580e18a76d54002088602eba453eec38ebbcafafeaabd8cab12b6155d57"
             ],
             "index": "pypi",
-            "version": "==4.7.1"
+            "version": "==4.8.1"
+        },
+        "blurhash": {
+            "hashes": [
+                "sha256:7611c1bc41383d2349b6129208587b5d61e8792ce953893cb49c38beeb400d1d",
+                "sha256:da56b163e5a816e4ad07172f5639287698e09d7f3dc38d18d9726d9c1dbc4cee"
+            ],
+            "version": "==1.1.4"
         },
         "certifi": {
             "hashes": [
@@ -66,10 +73,10 @@
         },
         "mastodon.py": {
             "hashes": [
-                "sha256:2b01559487165406d72fded986fd86e16997de2a9d2f3dec68a9c1bcb1dd71c3",
-                "sha256:35ecbadf1c7ed9b498940953125820b63c57a0d61e38b61e5bf18f0d2bd02c7d"
+                "sha256:80701e37ca27586266fce4a1e23e1b910b883fe2c28ce9c43a16de30cb77d757",
+                "sha256:a0f1d475cbed4e7ba94d47b2e82d533d7f6544c36d859bb1813e15606d1174ff"
             ],
-            "version": "==1.4.6"
+            "version": "==1.5.0"
         },
         "more-itertools": {
             "hashes": [
@@ -126,10 +133,10 @@
         },
         "pytz": {
             "hashes": [
-                "sha256:26c0b32e437e54a18161324a2fca3c4b9846b74a8dccddd843113109e1116b32",
-                "sha256:c894d57500a4cd2d5c71114aaab77dbab5eabd9022308ce5ac9bb93a60a6f0c7"
+                "sha256:1c557d7d0e871de1f5ccd5833f60fb2550652da6be2693c1e02300743d21500d",
+                "sha256:b02c06db6cf09c12dd25137e563b31700d3b80fcc4ad23abb7a315f2789819be"
             ],
-            "version": "==2019.2"
+            "version": "==2019.3"
         },
         "requests": {
             "hashes": [
