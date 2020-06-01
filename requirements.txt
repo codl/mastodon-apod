@@ -1,6 +1,6 @@
 -i https://pypi.python.org/simple/
 ananas==1.0.0b12
-beautifulsoup4==4.8.2
+beautifulsoup4==4.9.1
 blurhash==1.1.4
 certifi==2020.4.5.1
 chardet==3.0.4
