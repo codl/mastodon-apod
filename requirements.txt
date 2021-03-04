@@ -8,12 +8,12 @@ configobj==5.0.6
 decorator==4.4.2
 idna==2.10
 mastodon.py==1.5.1
-more-itertools==8.6.0
-pillow==8.1.0
+more-itertools==8.7.0
+pillow==8.1.1
 python-dateutil==2.8.1
-python-magic==0.4.18
-pytz==2020.5
+python-magic==0.4.22
+pytz==2021.1
 requests==2.25.0
 six==1.15.0
-soupsieve==2.1 ; python_version >= '3.0'
-urllib3==1.26.2
+soupsieve==2.2 ; python_version >= '3.0'
+urllib3==1.26.3
