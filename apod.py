@@ -23,10 +23,10 @@ class ApodBot(ananas.PineappleBot):
             'user-agent':
                 'mastodon-apod +https://github.com/codl/mastodon-apod'})
 
-    @ananas.daily(3, 19)
-    @ananas.daily(9, 19)
-    @ananas.daily(15, 19)
-    @ananas.daily(21, 19)
+    @ananas.daily(1, 28)
+    @ananas.daily(7, 28)
+    @ananas.daily(13, 28)
+    @ananas.daily(19, 28)
     def check_apod(self):
         state = self.config.get('state', None)
         if not state:
@@ -128,3 +128,10 @@ class ApodBot(ananas.PineappleBot):
         image.save(outio, image.format)
         outio.seek(0)
         return outio
+
+    @ananas.reply
+    def force_check(self, _, user):
+        if user.acct != self.config.admin:
+            return
+        self.log("force_check", "Poked by {}, doing a forced check".format(user.acct))
+        self.check_apod()
