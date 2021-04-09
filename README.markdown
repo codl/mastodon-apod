@@ -4,8 +4,6 @@ it's a mastodon bot that posts the most recent image from NASA's Astronomy Pictu
 
 it uses [ananas][]
 
-it requires python 3.5 because ananas doesn't support higher versions
-
 [ananas]: https://github.com/chr-1x/ananas
 
 ## how to use

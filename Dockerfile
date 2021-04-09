@@ -1,4 +1,4 @@
-ARG python_version=3.5
+ARG python_version=3.9
 FROM python:$python_version
 
 WORKDIR /app
