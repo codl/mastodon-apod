@@ -59,12 +59,13 @@ class ApodBot(ananas.PineappleBot):
         iframe = soup.iframe
         if image:
             main = image
-            a = image.parent
-
             image_urls = [urljoin(next_page, image['src'])]
-            linked = urljoin(next_page, a['href'])
-            if urlparse(linked).hostname == 'apod.nasa.gov':
-                image_urls.insert(0, linked)
+
+            a = image.parent
+            if a and 'href' in a.attrs:
+                linked = urljoin(next_page, a['href'])
+                if urlparse(linked).hostname == 'apod.nasa.gov':
+                    image_urls.insert(0, linked)
         elif iframe:
             main = iframe
             iframe_url = iframe['src']
