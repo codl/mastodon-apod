@@ -19,11 +19,11 @@ it uses [ananas][]
 
 * fill in config file
 
-      $ cp ananas.cfg.example ananas.cfg
-      $ $EDITOR ananas.cfg
+      $ cp config/ananas.cfg.example config/ananas.cfg
+      $ $EDITOR config/ananas.cfg
 
 * run
 
-      $ ananas ananas.cfg
+      $ ananas config/ananas.cfg
 
 * enjoy

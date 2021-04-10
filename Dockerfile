@@ -6,7 +6,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY apod.py ./
+COPY apod.py .
 RUN python -m py_compile apod.py
 
-CMD ["ananas", "ananas.cfg"]
+CMD ["ananas", "config/ananas.cfg"]
