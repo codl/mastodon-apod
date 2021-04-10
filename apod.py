@@ -1,7 +1,7 @@
 import ananas
 import requests
 from bs4 import BeautifulSoup
-from datetime import date, timedelta
+from datetime import datetime, date, timedelta, timezone
 import re
 from urllib.parse import urljoin, urlparse
 import mimetypes
@@ -22,6 +22,18 @@ class ApodBot(ananas.PineappleBot):
         self.session.headers.update({
             'user-agent':
                 'mastodon-apod +https://github.com/codl/mastodon-apod'})
+
+    class ConfigNotWriteable(Exception):
+        pass
+
+    def start(self):
+        self.config['canary'] = datetime.now(tz=timezone.utc)
+        succ = self.config.save()
+        if not succ:
+            self.log("config", "Config could not be written to, this seems bad, shutting down.")
+            raise ConfigNotWriteable()
+        del self.config['canary']
+        self.config.save()
 
     @ananas.daily(1, 28)
     @ananas.daily(7, 28)
