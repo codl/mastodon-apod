@@ -8,4 +8,4 @@ WantedBy=multi-user.target
 Type=simple
 WorkingDirectory=/home/codl/mastodon-apod
 Environment="PYTHONUNBUFFERED=yes please"
-ExecStart=/home/codl/mastodon-apod/venv/bin/ananas ananas.cfg
+ExecStart=/home/codl/mastodon-apod/venv/bin/ananas config/ananas.cfg
