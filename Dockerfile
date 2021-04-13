@@ -3,6 +3,10 @@ FROM python:$python_version
 
 WORKDIR /app
 
+# Ensure running user can write to log file
+RUN touch apod.log
+RUN chmod 666 apod.log
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
