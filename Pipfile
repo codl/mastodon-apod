@@ -5,8 +5,10 @@ name = "pypi"
 
 [packages]
 "beautifulsoup4" = "*"
-ananas = "~= 1.0.0b18"
+ananas = { git="https://github.com/codl/ananas.git", ref = "1.0.0b18+codl1" }
 requests = "*"
 pillow = "*"
 
 [dev-packages]
+pytest = "*"
+pytest-recording = "*"

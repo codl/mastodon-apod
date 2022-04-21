@@ -7,11 +7,101 @@ from urllib.parse import urljoin, urlparse
 import mimetypes
 from io import BytesIO
 from PIL import Image
-
 import socket
 import requests.packages.urllib3.util.connection as urllib3_cn
+from dataclasses import dataclass, field
+from typing import Optional
 
 urllib3_cn.allowed_gai_family = lambda: socket.AF_INET
+
+class ConfigNotWriteable(Exception):
+    pass
+
+class ScrapeError(Exception):
+    pass
+
+@dataclass
+class ApodPage():
+    url: str
+    next_url: str
+    prev_url: str
+    text: str
+    title: str
+    credit: str
+    media_url: Optional[str] = None
+    media_mime: Optional[str] = None
+    video_url: Optional[str] = None
+
+    @classmethod
+    def from_html(cls, url:str, html:bytes|str):
+        soup = BeautifulSoup(html, 'html.parser')
+
+        image_el = soup.img
+        iframe_el = soup.iframe
+        media_url = None
+        media_mime = None
+        video_url = None
+
+        if image_el and 'src' in image_el.attrs:
+            main_el = image_el
+            media_url = urljoin(url,image_el['src'])
+            media_mime = mimetypes.guess_type(media_url)[0]
+        elif iframe_el and 'src' in iframe_el.attrs:
+            main_el = iframe_el
+            up = urlparse(iframe_el['src'])
+            if up.hostname in ('www.youtube.com', 'youtube.com', 'youtu.be'):
+                videoid = up.path.split('/')[-1]
+                video_url = 'https://www.youtube.com/watch?v={}'.format(videoid)
+            else:
+                raise ScrapeError("Unsupported iframe {}".format(iframe_el["src"]))
+        else:
+            raise ScrapeError("Couldn't find main element")
+
+        text_container = None
+        for parent in main_el.parents:
+            if parent.name == 'center':
+                for sibling in parent.next_siblings:
+                    if sibling.name == 'center':
+                        text_container = sibling
+                        break
+                break
+        if not text_container:
+            raise ScrapeError("Couldn't find text container")
+        text_lines:list[str] = []
+        line = ""
+        for el in text_container.descendants:
+            if isinstance(el, str):
+                line += el
+            elif el.name == "br":
+                if line.strip() != "":
+                    text_lines.append(line)
+                line = ""
+        if line:
+            text_lines.append(line)
+
+        text_lines = [re.sub('[\n ]+', ' ', l).strip() for l in text_lines]
+
+        prev_el = soup.find("a", string="<")
+        next_el = soup.find("a", string=">")
+        if not prev_el or not next_el:
+            raise ScrapeError("Couldn't find previous and next links")
+        prev_url = urljoin(url, prev_el['href'])
+        next_url = urljoin(url, next_el['href'])
+
+
+        return cls(
+                url=url,
+                media_url=media_url,
+                media_mime=media_mime,
+                video_url=video_url,
+                text = "\n".join(text_lines),
+                title = text_lines[0],
+                credit = " ".join(text_lines[1:]),
+                next_url = next_url,
+                prev_url = prev_url,
+        )
+
+
 
 
 class ApodBot(ananas.PineappleBot):
@@ -23,8 +113,6 @@ class ApodBot(ananas.PineappleBot):
             'user-agent':
                 'mastodon-apod +https://github.com/codl/mastodon-apod'})
 
-    class ConfigNotWriteable(Exception):
-        pass
 
     def start(self):
         self.config['canary'] = datetime.now(tz=timezone.utc)
@@ -40,92 +128,54 @@ class ApodBot(ananas.PineappleBot):
     @ananas.daily(13, 28)
     @ananas.daily(19, 28)
     def check_apod(self):
-        state = self.config.get('state', None)
-        if not state:
-            ARCHIVE = 'https://apod.nasa.gov/apod/archivepix.html'
-            resp = self.session.get(ARCHIVE)
-            resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, 'html.parser')
-            next_page = urljoin(ARCHIVE, soup.b.a['href'])
-        else:
-            match = re.match('https://apod.nasa.gov/apod/ap(?P<year>[0-9]{2})(?P<month>[0-9]{2})(?P<day>[0-9]{2}).html', state)
-            if not match:
-                raise Exception('you fucked up idiot')
+        next_page_url = self.config.get('next_page_url', None)
+        if not next_page_url:
 
-            year = int(match.group('year')) + 2000
-            month = int(match.group('month'))
-            day = int(match.group('day'))
+            state = self.config.get('state', None)
+            if state:
+                # former state tracking mechanism, deprecated 2022-04-21. remove 2023-04-21
+                match = re.match('https://apod.nasa.gov/apod/ap(?P<year>[0-9]{2})(?P<month>[0-9]{2})(?P<day>[0-9]{2}).html', state)
+                if not match:
+                    raise Exception("Couldn't parse 'state' url into a date")
 
-            latest_date = date(year=year, month=month, day=day)
-            next_date = latest_date + timedelta(days=1)
+                year = int(match.group('year')) + 2000
+                month = int(match.group('month'))
+                day = int(match.group('day'))
 
-            next_page = next_date.strftime('https://apod.nasa.gov/apod/ap%y%m%d.html')
+                latest_date = date(year=year, month=month, day=day)
+                next_date = latest_date + timedelta(days=1)
+
+                next_page_url = next_date.strftime('https://apod.nasa.gov/apod/ap%y%m%d.html')
+
+            else:
+                ARCHIVE = 'https://apod.nasa.gov/apod/archivepix.html'
+                resp = self.session.get(ARCHIVE)
+                resp.raise_for_status()
+                soup = BeautifulSoup(resp.text, 'html.parser')
+                next_page_url = urljoin(ARCHIVE, soup.b.a['href'])
 
         resp = self.session.get(next_page)
         if resp.status_code == 404:
             return
-        resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, 'html.parser')
 
-        image = soup.img
-        iframe = soup.iframe
-        if image:
-            main = image
-            image_urls = [urljoin(next_page, image['src'])]
+        page = ApodPage.from_html(next_page_url, resp.text)
 
-            a = image.parent
-            if a and 'href' in a.attrs:
-                linked = urljoin(next_page, a['href'])
-                if urlparse(linked).hostname == 'apod.nasa.gov':
-                    image_urls.insert(0, linked)
-        elif iframe:
-            main = iframe
-            iframe_url = iframe['src']
-            up = urlparse(iframe_url)
-            if up.hostname in ('www.youtube.com', 'youtube.com', 'youtu.be'):
-                videoid = up.path.split('/')[-1]
-                iframe_url = 'https://youtube.com/watch?v={}'.format(videoid)
+        post_text = "{page.title}\n\n{page.credits}\n\n{page.url} #APoD".format(page=page)
 
-        for parent in main.parents:
-            if parent.name == 'center':
-                break
-        for sibling in parent.next_siblings:
-            if sibling.name == 'center':
-                break
-        medias = tuple()
-        descriptions = list()
-        description = str()
-        for descendant in sibling.descendants:
-            if isinstance(descendant, str):
-                description += descendant
-            elif descendant.name == 'br':
-                descriptions.append(description)
-                description = str()
-        if description:
-            descriptions.append(description)
 
-        descriptions.append("{} #APoD".format(next_page))
+        medias = None
+        if page.media_url:
+            if page.media_mime.startswith("image/"):
+                image_content = self.fetch_and_fit_image(page.media_url)
+                media = self.mastodon.media_post(image_content, mime_type=page.media_mime)
+                medias = [media['id'],]
+        elif page.video_url:
+            post_text = "{}\n\n{}".format(page.video_url, post_text)
 
-        contents = list(map(
-            lambda d: re.sub('[\n ]+', ' ', d).strip(),
-            descriptions))
+        self.mastodon.status_post(post_text, media_ids=medias)
 
-        if image:
-            for image_url in image_urls:
-                try:
-                    mimetype = mimetypes.guess_type(image_url)[0]
-                    image_content = self.fetch_and_fit_image(image_url)
-                    media = self.mastodon.media_post(
-                            image_content, mime_type=mimetype)
-                    medias = (media['id'],)
-                except Exception:
-                    continue
-        elif iframe:
-            contents.insert(0, iframe_url)
-
-        self.mastodon.status_post('\n\n'.join(contents), media_ids=medias)
-
-        self.config.state = next_page
+        self.config.next_page_url = page.next_url
+        del self.config.state
         self.config.save()
 
     def fetch_and_fit_image(self, image_url):

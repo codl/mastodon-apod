@@ -1,0 +1,108 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/ap220330.html
+  response:
+    body:
+      string: "\uFEFF<!doctype html>\n<html>\n<head>\n<title> APOD: 2022 March 30
+        - Animation: Odd Radio Circles     \n</title> \n<!-- gsfc meta tags -->\n<meta
+        name=\"orgcode\" content=\"661\">\n<meta name=\"rno\" content=\"phillip.a.newman\">\n<meta
+        name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta name=\"webmaster\"
+        content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\" content=\"A
+        different astronomy and space science\nrelated image is featured each day,
+        along with a brief explanation.\">\n<!-- -->\n<meta name=viewport content=\"width=device-width,
+        initial-scale=1\">\n<meta name=\"keywords\" content=\"circles, radio waves,
+        MeerKAT\">\n<!-- -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n</head>\n\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#7F0F9F\"\nalink=\"#FF0000\">\n\n<center>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is\nfeatured, along with a brief explanation written by a professional
+        astronomer.\n<p>\n\n2022 March 30 \n<br> \n<iframe width=\"960\" height=\"540\"
+        src=\"https://www.youtube.com/embed/m8qvOpcDt1o?rel=0\" title=\"YouTube video
+        player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write;
+        encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n</center>\n\n<center>\n<b>
+        Animation: Odd Radio Circles </b> <br> \n<b> Credits: </b> \nIllustration:
+        <a href=\"https://sammoorfield.com/\">Sam Moorfield</a>;\nData: <a href=\"https://www.csiro.au/\">CSIRO</a>,
+        \n<a href=\"https://hubblesite.org/\">HST</a> \n(<a href=\"https://esahubble.org/images/heic0611b/\">HUDF</a>),
+        \n<a href=\"https://www.esa.int/\">ESA</a>, \n<a href=\"https://www.nasa.gov/\">NASA</a>;
+        <br>\nImage: <a href=\"https://jayannecosmoscanvas.wordpress.com/\">J. English</a>
+        \n(<a href=\"https://sci.umanitoba.ca/physics-astronomy/\">U. Manitoba</a>),\n<a
+        href=\"http://emu-survey.org/\">EMU</a>, \n<a href=\"https://www.sarao.ac.za/science/meerkat/about-meerkat/\">MeerKAT</a>,\n<a
+        href=\"https://www.darkenergysurvey.org/collaboration-and-sponsors/\">DES</a>
+        \n(<a href=\"https://noirlab.edu/public/programs/ctio/\">CTIO</a>);  \nText:
+        <a href=\"http://www2.physics.umanitoba.ca/u/english/\">Jayanne English</a>
+        \  \n</center> <p> \n\n<b> Explanation: </b> \nWhat do you call a cosmic puzzle
+        that no one expected to see? \n\nIn this case, \n<a href=\"https://en.wikipedia.org/wiki/Odd_radio_circle\">Odd
+        Radio Circle</a>s, aka ORCs.  \n\nORC-1 typifies the enigmatic five objects,
+        only visible at \n<a href=\"https://science.nasa.gov/ems/05_radiowaves\">radio
+        frequencies</a>, \nthat were \n<a href=\"https://ui.adsabs.harvard.edu/abs/2021PASA...38....3N/abstract\"\n>serendipitously
+        discovered</a> in 2019 using the new \n<a href=\"https://en.wikipedia.org/wiki/Australia\">Australia</a>n
+        \n<a href=\"https://en.wikipedia.org/wiki/Australian_Square_Kilometre_Array_Pathfinder\"\n>SKA
+        Pathfinder</a> radio array. \n\nThe final image in the featured video uses
+        2021 data from the \n<a href=\"https://en.wikipedia.org/wiki/South_Africa\">South
+        Africa</a>n \n<a href=\"https://www.sarao.ac.za/science/meerkat/\">MeerKAT</a>
+        \narray to reveal more detail. \n\nThe radio data, assigned turquoise colors,
+        are combined with a \n<a href=\"https://www.darkenergysurvey.org/the-des-project/overview/\"\n>Dark
+        Energy Survey</a> optical/<a \nhref=\"https://science.nasa.gov/ems/07_infraredwaves\">IR</a>
+        map. \n\nThe animated artist\u2019s illustration explores just one idea about
+        the \n<a href=\"https://www.syfy.com/syfy-wire/not-aliens-but-orcs-what-are-these-mysterious-giant-radio-rings-in-the-sky\"\n>ORC</a>s\u2019
+        origins. \n\nIf two supermassive \n<a href=\"ap190414.html\">black holes merge</a>
+        in the center of a galaxy, \nthe associated \n<a href=\"ap110925.html\">shockwave</a>s
+        could generate rings of radio radiation. \n\n<a href=\"https://theconversation.com/odd-radio-circles-that-baffled-astronomers-are-likely-explosions-from-distant-galaxies-178290\"\n>These</a>
+        grow to fill the video frame. \n\nThe video \n<a href=\"https://www.rover.com/blog/wp-content/uploads/2019/07/51nbKlz5ssL.jpg\"\n>zooms</a>
+        out so the expansion the \n<a href=\"https://youtu.be/fTT3VE61jN8\">ORC</a>
+        can be tracked \nuntil it is about a million \n<a href=\"https://spaceplace.nasa.gov/light-year/en/\">light-year</a>s
+        across. \n\nFortunately, the up-coming \n<a href=\"https://www.skatelescope.org/history-of-the-skaproject/\"\n>Square
+        Kilometer Array</a> can help test this and other promising scenarios.\n\n\n<p>
+        <center> \n<b> Tomorrow's picture: </b><a href=\"ap220331.html\">peculiar
+        galaxies</a> \n\n<p> <hr>\n<a href=\"ap220329.html\">&lt;</a>\n| <a href=\"archivepix.html\">Archive</a>\n|
+        <a href=\"lib/apsubmit2015.html\">Submissions</a> \n| <a href=\"lib/aptree.html\">Index</a>\n|
+        <a href=\"https://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</a>\n|
+        <a href=\"calendar/allyears.html\">Calendar</a>\n| <a href=\"/apod.rss\">RSS</a>\n|
+        <a href=\"lib/edlinks.html\">Education</a>\n| <a href=\"lib/about_apod.html\">About
+        APOD</a>\n| <a href=\n\"http://asterisk.apod.com/discuss_apod.php?date=220330\">Discuss</a>\n|
+        <a href=\"ap220331.html\">&gt;</a>\n\n<hr><p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://www.phy.mtu.edu/faculty/Nemiroff.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\"\n>Jerry
+        Bonnell</a> (<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA
+        Official: </b> Phillip Newman\n<a href=\"lib/about_apod.html#srapply\">Specific
+        rights apply</a>.<br>\n<a href=\"https://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA
+        Web\nPrivacy Policy and Important Notices</a><br>\n<b>A service of:</b>\n<a
+        href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n<a href=\"https://www.nasa.gov/\">NASA</a>
+        /\n<a href=\"https://www.nasa.gov/centers/goddard/\">GSFC</a>\n<br><b>&</b>
+        <a href=\"http://www.mtu.edu/\">Michigan Tech. U.</a><br>\n</center>\n</body>\n</html>\n\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Thu, 21 Apr 2022 14:57:07 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1
