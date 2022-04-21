@@ -23,13 +23,13 @@ class ScrapeError(Exception):
 @dataclass
 class ApodPage():
     url: str
-    next_url: str
-    prev_url: str
     title: str
     credit: str
     media_url: Optional[str] = None
     media_mime: Optional[str] = None
     video_url: Optional[str] = None
+    next_url: Optional[str] = None
+    prev_url: Optional[str] = None
 
     @classmethod
     def from_html(cls, url:str, html:bytes|str):
@@ -70,36 +70,24 @@ class ApodPage():
         else:
             raise ScrapeError("Couldn't find main element")
 
-        text_container = None
-        for parent in main_el.parents:
-            if parent.name == 'center':
-                for sibling in parent.next_siblings:
-                    if sibling.name == 'center':
-                        text_container = sibling
-                        break
-                break
-        if not text_container:
-            raise ScrapeError("Couldn't find text container")
         text_lines:list[str] = []
         line = ""
-        for el in text_container.descendants:
+        for el in main_el.next_elements:
             if isinstance(el, str):
                 line += el
-            elif el.name == "br":
+                if line.strip().startswith("Explanation:"):
+                    break
+            elif not el or el.name in ("br", "p"):
                 if line.strip() != "":
                     text_lines.append(line)
                 line = ""
-        if line:
-            text_lines.append(line)
 
         text_lines = [re.sub('[\n ]+', ' ', l).strip() for l in text_lines]
 
         prev_el = soup.find("a", string="<")
         next_el = soup.find("a", string=">")
-        if not prev_el or not next_el:
-            raise ScrapeError("Couldn't find previous and next links")
-        prev_url = urljoin(url, prev_el['href'])
-        next_url = urljoin(url, next_el['href'])
+        prev_url = urljoin(url, prev_el['href']) if prev_el else None
+        next_url = urljoin(url, next_el['href']) if next_el else None
 
 
         return cls(

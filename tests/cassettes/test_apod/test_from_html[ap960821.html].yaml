@@ -1,0 +1,83 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/ap960821.html
+  response:
+    body:
+      string: "<head>\n<title> APOD: August 21, 1996 - A Close-Up of the Lagoon's
+        Hourglass\n</title>\n</head>\n<body bgcolor=\"#F4F4FF\" text=\"#000000\"  link=\"#0000FF\"\n
+        \                      vlink=\"#7F0F9F\" alink=\"#FF0000\">\n\n<center>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is\nfeatured, along with a brief explanation written by a professional\nastronomer.
+        <p>\n\nAugust 21, 1996\n<br>\n<a href=\"image/hourglass_hst_big.jpg\">\n<IMG
+        SRC=\"image/hourglass_hst.gif\"\nalt=\"See Explanation.  Clicking on the picture
+        will download \n the highest resolution version available.\"></a>\n\n<br>\n\n<b>
+        A Close-Up of the Lagoon's Hourglass </b> <br>\n<b> Credit:</b>\nJ. Trauger
+        \n(<a href=\"http://www.jpl.nasa.gov/\">JPL</a>\n/<a href=\"http://astro.caltech.edu/\">Caltech</a>),
+        \n<a href=\"http://www.stsci.edu/public.html\">HST, STSci</a>, \n<a href=\"http://www.nasa.gov/\">NASA</a>\n</center>\n<p>\n\n<b>
+        Explanation: </b> \nIn the central part of the \n<a href=\"ap960807.html\">Lagoon
+        Nebula</a> lies the above pictured\n<a href=\"http://seds.lpl.arizona.edu/messier/more/m008_det.html\">Hourglass
+        \nNebula</a>.\nIn this region of recent star formation, obscuring\n<a href=\n\"http://adsabs.harvard.edu/cgi-bin/nph-article_query?bibcode=1979AJ%2E%2E%2E%2E%2E84%2E1328T&page=1&plate_select=NO&type=GIF\"\n>dark
+        lanes of dust</a> permeate the red-glowing hydrogen gas.  Blocking\nsome of
+        the gas cloud from our view, they chance\nto create a glowing shape that appears
+        from our vantage point like an \n<a href=\"http://www.skab.se/~riccard/BIGhourglass.html\">hourglass</a>.\nIn
+        the upper right of\n<a href=\"http://scivax.stsci.edu/~hamilton/nuggets/HST_NUGGETS.HTML\">this
+        \npicture</a> from the \n<a href=\"http://www.stsci.edu/pubinfo/HSToverview.html\">Hubble
+        Space \nTelescope</a> \nis a bright young blue star from the \n<a href=\"ap960127.html\">open
+        cluster NGC 6530</a> - \nvisible below center in \n<a href=\"ap960820.html\">yesterday's
+        \nAPOD</a>.  A <a href=\n\"http://adsabs.harvard.edu/cgi-bin/nph-article_query?bibcode=1990ApJ%2E%2E%2E357%2E%2E502M&page=1&plate_select=NO&type=GIF\"\n>recent
+        study of the Lagoon Nebula</a> \n(<a href=\"lib/glossary.html#messier\">M</a>8),
+        has shown that this \n<a href=\"lib/emission.html\">emission nebula</a> \nhouses
+        large <a href=\n\"http://polaris.phys.ualberta.ca/users/greeniaus/Phys238B1/MagneticField/MagneticFieldTopic1.html\"\n>magnetic
+        fields</a> and unusually large \n<a href=\"lib/glossary.html#dust\">dust particles</a>.\n\n<p>
+        <center> \n<b> Tomorrow's picture: </b>Arp 230: Two Spirals in One?\n<p> <hr>
+        \n\n| <a href=\"archivepix.html\">Archive</a> \n| <a href=\"lib/aptree.html\">Index</a>\n|
+        <a href=\"/cgi-bin/cossc/apod_search\">Search</a>\n| <a href=\"lib/glossary.html\">Glossary</a>
+        \n| <a href=\"lib/edlinks.html\">Education</a> \n| <a href=\"lib/about_apod.html\">About
+        APOD</a> | \n\n<hr>\n<!a \nhref=\"http://xp3.dejanews.com/getdoc.xp?recnum=4949249&server=dnserver.db96q1&CONTEXT=834947392.21423&hitnum=3\">\n<!IMG
+        SRC=\"image/coolyear.gif\"></a>\n\n<!a href=\"http://magellan.mckinley.com/rr_bd.cgi?52013\">
+        \n<!IMG SRC=\"image/star4_mag.gif\"></a>\n\n<!a href=\"http://www.pointcom.com/gifs/reviews/zzsts001.htm\">
+        \n<!IMG SRC=\"image/top5percent.gif\"></a>\n\n<!a href=\"http://webcrawler.com/select/sci.astro.html\">\n<!IMG
+        SRC=\"image/WCSelect.gif\"></a>\n<!hr>\n\n<p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://antwrp.gsfc.nasa.gov/htmltest/rjn.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a \nhref=\"http://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\">Jerry\nBonnell</a>
+        (<a href=\"http://www.usra.edu/\">USRA</a>).<br>\n<b>NASA Technical Rep.:
+        </b>\n<a href=\"http://heasarc.gsfc.nasa.gov/docs/bios/sherri.html\">Sherri
+        \nCalvo</a>.\nSpecific rights apply.<br>\n<b>A service of:</b>\n<a href=\"http://lheawww.gsfc.nasa.gov/docs/lhea/homepg_lhea.html\">LHEA</a>\nat\n<a
+        href=\"http://www.gsfc.nasa.gov/NASA_homepage.html\">NASA</a>/\n<a href=\"http://www.gsfc.nasa.gov/GSFC_homepage.html\">GSFC</a><br>\n</center>\n</body>\n\n\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '3987'
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Thu, 21 Apr 2022 20:15:47 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1

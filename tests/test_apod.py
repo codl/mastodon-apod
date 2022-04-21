@@ -24,6 +24,22 @@ test_cases = (
         # has embedded youtube video
         video_url="https://www.youtube.com/watch?v=m8qvOpcDt1o",
     ),
+    ApodPage(
+        # old page format
+        url="https://apod.nasa.gov/apod/ap960821.html",
+        title="A Close-Up of the Lagoon's Hourglass",
+        credit="Credit: J. Trauger (JPL /Caltech), HST, STSci, NASA",
+        media_url="https://apod.nasa.gov/apod/image/hourglass_hst_big.jpg",
+        media_mime="image/jpeg",
+    ),
+    ApodPage(
+        # older page format
+        url="https://apod.nasa.gov/apod/ap950622.html",
+        title="The Earth from Apollo 17",
+        credit="Picture Credit: NASA, Apollo 17, NSSDC",
+        media_url="https://apod.nasa.gov/apod/image/earth_a17.gif",
+        media_mime="image/gif",
+    ),
 )
 
 
