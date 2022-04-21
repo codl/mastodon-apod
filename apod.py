@@ -30,6 +30,7 @@ class ApodPage():
     video_url: Optional[str] = None
     next_url: Optional[str] = None
     prev_url: Optional[str] = None
+    alt: Optional[str] = None
 
     @classmethod
     def from_html(cls, url:str, html:bytes|str):
@@ -41,8 +42,11 @@ class ApodPage():
         media_mime = None
         video_url = None
         main_el = None
+        alt = None
 
         if image_el and 'src' in image_el.attrs:
+            if 'alt' in image_el.attrs:
+                alt = image_el['alt']
             for parent in image_el.parents:
                 if parent.name == 'a':
                     mime = mimetypes.guess_type(parent['href'])[0]
@@ -99,6 +103,7 @@ class ApodPage():
                 credit = " ".join(text_lines[1:]),
                 next_url = next_url,
                 prev_url = prev_url,
+                alt = alt,
         )
 
 
