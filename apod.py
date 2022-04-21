@@ -154,7 +154,7 @@ class ApodBot(ananas.PineappleBot):
                 soup = BeautifulSoup(resp.text, 'html.parser')
                 next_page_url = urljoin(ARCHIVE, soup.b.a['href'])
 
-        resp = self.session.get(next_page)
+        resp = self.session.get(next_page_url)
         if resp.status_code == 404:
             return
 
