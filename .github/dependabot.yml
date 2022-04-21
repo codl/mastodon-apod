@@ -1,6 +1,7 @@
 version: 2
 updates:
 - package-ecosystem: pip
+  allow: direct
   directory: "/"
   schedule:
     interval: weekly
