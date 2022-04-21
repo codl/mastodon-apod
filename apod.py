@@ -25,7 +25,6 @@ class ApodPage():
     url: str
     next_url: str
     prev_url: str
-    text: str
     title: str
     credit: str
     media_url: Optional[str] = None
@@ -94,7 +93,6 @@ class ApodPage():
                 media_url=media_url,
                 media_mime=media_mime,
                 video_url=video_url,
-                text = "\n".join(text_lines),
                 title = text_lines[0],
                 credit = " ".join(text_lines[1:]),
                 next_url = next_url,

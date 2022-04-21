@@ -1,0 +1,97 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/ap200609.html
+  response:
+    body:
+      string: "\uFEFF<!doctype html>\n<html>\n<head>\n<title> APOD: 2020 June 9 -
+        Orion over Argentine Mountains \n</title> \n<!-- gsfc meta tags -->\n<meta
+        name=\"orgcode\" content=\"661\">\n<meta name=\"rno\" content=\"phillip.a.newman\">\n<meta
+        name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta name=\"webmaster\"
+        content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\" content=\"A
+        different astronomy and space science\nrelated image is featured each day,
+        along with a brief explanation.\">\n<!-- -->\n<meta name=\"keywords\" content=\"M42,
+        Orion's Belt, Argentina\">\n<!-- -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n</head>\n\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#7F0F9F\"\nalink=\"#FF0000\">\n\n<center>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is\nfeatured, along with a brief explanation written by a professional
+        astronomer.\n<p>\n\n2020 June 9 \n<br> \n<a href=\"image/2006/OrionMountains_Tabbush_2048.jpg\"\nonMouseOver=\"if
+        (document.images)\ndocument.imagename1.src='image/2006/OrionMountains_Tabbush_960_annotated.jpg';\"\nonMouseOut=\"if
+        (document.images)\ndocument.imagename1.src='image/2006/OrionMountains_Tabbush_960.jpg';\">\n<IMG
+        SRC=\"image/2006/OrionMountains_Tabbush_960.jpg\" name=imagename1 \nalt=\"See
+        Explanation.\nMoving the cursor over the image will bring up an annotated
+        version.\nClicking on the image will bring up the highest resolution version\navailable.\"></a>\n\n</center>\n\n<center>\n<b>
+        Orion over Argentine Mountains </b> <br> \n<b> Image Credit & Copyright: </b>
+        \n<a href=\"https://www.instagram.com/nick.astrophotography/\">Nicolas Tabbush</a>\n</center>
+        <p> \n\n<b> Explanation: </b> \nDo you recognize the constellation of Orion?
+        \n\nIt may be harder than usual in today's \n<a href=\"https://www.instagram.com/p/CAycTM3JCbL/\"\n>featured
+        image</a>  \nbecause the camera has zoomed in on the center, \nand the exposure
+        is long enough to enhance \n<a href=\"ap200329.html\">nebulas beyond</a> what
+        the unaided \n<a href=\"https://ophysics.com/l16.html\">human eye</a> can
+        see. \n\nStill, once you become oriented, you can see \n<a href=\"https://en.wikipedia.org/wiki/Orion%27s_Belt\">Orion's
+        three belt stars</a> \nlined up vertically near the image center, and even
+        locate the \n<a href=\"ap190930.html\">familiar Orion Nebula</a> on the upper
+        left. \n\nFamous faint features that are also visible include the dark \n<a
+        href=\"ap200412.html\">Horsehead Nebula</a> indentation near the image center,
+        \nand the dusty \n<a href=\"ap141209.html\">Flame Nebula</a> just to its right.\n\nPart
+        of the \n<a href=\"https://www.nasa.gov/audience/forstudents/5-8/features/nasa-knows/what-is-orion-58.html\"\n>Orion</a>-encircling
+        \n<a href=\"ap190821.html\">Barnard's Loop</a> can also be found on the far
+        right. \n\nThe image combines multiple \n<a href=\"https://photographingspace.com/deep-sky-astrophotography-without-telescope/\"\n>sky-tracking</a>
+        shots of the background in different colors \nwith a single static foreground
+        exposure taken at twilight -- all \n<a href=\"https://c8.alamy.com/comp/2AFGFHT/scottish-fold-cat-lying-on-lap-happily-cute-cat-sleeping-on-the-lap-of-the-girl-and-happy-cat-on-her-lap-and-in-the-embrace-of-women-2AFGFHT.jpg\">captured</a>
+        \nwith the same camera and from the same location. \n\nThe picturesque scene
+        was captured early last year from mountains in \n<a href=\"https://en.wikipedia.org/wiki/San_Juan_Province,_Argentina\">San
+        Juan</a>, \n<a href=\"https://en.wikipedia.org/wiki/Argentina\">Argentina</a>.
+        \n\n\n<p> <center> \n<b> Next picture: </b><a href=\"ap200611.html\">June
+        11</a>\n\n<p> <hr>\n<a href=\"ap200608.html\">&lt;</a>\n| <a href=\"archivepix.html\">Archive</a>\n|
+        <a href=\"lib/apsubmit2015.html\">Submissions</a> \n| <a href=\"lib/aptree.html\">Index</a>\n|
+        <a href=\"https://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</a>\n|
+        <a href=\"calendar/allyears.html\">Calendar</a>\n| <a href=\"/apod.rss\">RSS</a>\n|
+        <a href=\"lib/edlinks.html\">Education</a>\n| <a href=\"lib/about_apod.html\">About
+        APOD</a>\n| <a href=\n\"http://asterisk.apod.com/discuss_apod.php?date=200609\">Discuss</a>\n|
+        <a href=\"ap200611.html\">&gt;</a>\n\n<hr><p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://www.phy.mtu.edu/faculty/Nemiroff.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\"\n>Jerry
+        Bonnell</a> (<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA
+        Official: </b> Phillip Newman\n<a href=\"lib/about_apod.html#srapply\">Specific
+        rights apply</a>.<br>\n<a href=\"https://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA
+        Web\nPrivacy Policy and Important Notices</a><br>\n<b>A service of:</b>\n<a
+        href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n<a href=\"https://www.nasa.gov/\">NASA</a>
+        /\n<a href=\"https://www.nasa.gov/centers/goddard/\">GSFC</a>\n<br><b>&</b>
+        <a href=\"http://www.mtu.edu/\">Michigan Tech. U.</a><br>\n</center>\n</body>\n</html>\n\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Thu, 21 Apr 2022 19:27:09 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1
