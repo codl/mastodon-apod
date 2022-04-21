@@ -158,7 +158,10 @@ class ApodBot(ananas.PineappleBot):
 
         # if it's been more than 24 hours since the last post and we still can't
         # find a new page, check if the url changed
-        if resp.status_code == 404 and datetime.now(tz=timezone.utc) - self.config.get('last_post_datetime', datetime.min) > timedelta(hours=24):
+        if resp.status_code == 404 and (
+            datetime.now(tz=timezone.utc)
+            - self.config.get('last_post_datetime', datetime.min.replace(tzinfo=timezone.utc))
+            > timedelta(hours=24)):
             prev_url = self.config.get('prev_url')
             if prev_url:
                 prev_resp = self.session.get(prev_url)
