@@ -53,6 +53,15 @@ test_cases = (
         next_url="https://apod.nasa.gov/apod/ap220425.html",
         prev_url="https://apod.nasa.gov/apod/ap220423.html",
         ),
+    ApodPage(
+        url="https://apod.nasa.gov/apod/ap211010.html",
+        title="Full Moon Silhouettes",
+        credit="Video Credit & Copyright: Mark Gee; Music: Tenderness (Dan Phillipson)",
+        # has vimeo video
+        video_url="https://vimeo.com/58385453",
+        prev_url="https://apod.nasa.gov/apod/ap211009.html",
+        next_url="https://apod.nasa.gov/apod/ap211011.html",
+    ),
 )
 
 

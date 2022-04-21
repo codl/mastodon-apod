@@ -1,0 +1,99 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/ap211010.html
+  response:
+    body:
+      string: "\uFEFF<!doctype html>\n<html>\n<head>\n<title> APOD: 2021 October 10
+        - Full Moon Silhouettes    \n</title> \n<!-- gsfc meta tags -->\n<meta name=\"orgcode\"
+        content=\"661\">\n<meta name=\"rno\" content=\"phillip.a.newman\">\n<meta
+        name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta name=\"webmaster\"
+        content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\" content=\"A
+        different astronomy and space science\nrelated image is featured each day,
+        along with a brief explanation.\">\n<!-- -->\n<meta name=viewport content=\"width=device-width,
+        initial-scale=1\">\n<meta name=\"keywords\" content=\"Moon, moonrise, full
+        moon\">\n<!-- -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n</head>\n\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#7F0F9F\"\nalink=\"#FF0000\">\n\n<center>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is\nfeatured, along with a brief explanation written by a professional
+        astronomer.\n<p>\n\n2021 October 10 \n<br> \n<iframe src=\"https://player.vimeo.com/video/58385453?h=2f48504431&portrait=0&badge=0\"
+        width=\"960\" height=\"540\" frameborder=\"0\" allow=\"autoplay; fullscreen;
+        picture-in-picture\" allowfullscreen></iframe>\n</center>\n\n<center>\n<b>
+        Full Moon Silhouettes </b> <br> \n<b> Video Credit & Copyright: </b> \n<a
+        href=\"http://markg.com.au/about/\">Mark Gee</a>;\n<b> Music: </b> Tenderness
+        (Dan Phillipson)\n</center> <p> \n\n<b> Explanation: </b> \nHave you ever
+        watched the Moon rise?\n\nThe slow rise of a nearly full moon over a clear
+        horizon can be an impressive sight.\n\nOne impressive moonrise was imaged
+        in early 2013 over \n<a href=\"https://youtu.be/sLksVCI5wBs\">Mount Victoria</a>\n<a
+        href=\"https://youtu.be/5ycPoVPVtsA\">Lookout</a> in \n<a href=\"https://en.wikipedia.org/wiki/Wellington\">Wellington</a>,
+        \n<a href=\"https://en.wikipedia.org/wiki/New_Zealand\">New Zealand</a>.\n\nWith
+        <a href=\"https://markg.com.au/2013/01/full-moon-silhouettes/\"\n>detailed
+        planning</a>, an \n<a href=\" https://markg.com.au/about/\">industrious astrophotographer</a>
+        \nplaced a camera about two kilometers away and pointed it across the lookout
+        to where \n<a href=\"https://solarsystem.nasa.gov/moons/earths-moon/overview/\">the
+        Moon</a> \nwould surely soon be making its nightly debut.\n\nThe \n<a href=\"https://vimeo.com/markg/fullmoonsilhouettes\"\n>featured
+        single shot sequence</a> is unedited and \nshown in real time -- it is <i>not</i>
+        a time lapse.\n\nPeople on \n<a href=\"https://www.youtube.com/watch?v=v8zlUhcmlsc\">Mount
+        Victoria Lookout</a> \ncan be seen in <a href=\"ap160501.html\">silhouette</a>
+        \nthemselves admiring the dawn of Earth's largest satellite.\n\nSeeing a <a
+        href=\"ap190310.html\">moonrise</a> yourself is not difficult: \nit happens
+        every day, although only half the time at night.\n\nEach day the \n<a href=\"ap090223.html\">Moon
+        rises</a> about \n<a href=\"http://www.astronomycafe.net/FAQs/q1038x.html\"\n>fifty
+        minutes later</a> \nthan the previous day, with a full moon \n<a href=\"ap180624.html\">always
+        rising</a> at sunset. \n\nThis Saturday, October 16, is \n<a href=\"https://moon.nasa.gov/observe-the-moon-night/about/overview/\"\n>International
+        Observe the Moon Night</a>, \nwhere you observe a \n<a href=\"https://moon.nasa.gov/moon-in-motion/moon-phases/\"\n>first-quarter
+        Moon</a> along with \n<a href=\"https://moon.nasa.gov/observe-the-moon-night/\"\n>other
+        lunar enthusiasts</a>.\n\n\n<p> <center> \n<b> Tomorrow's picture: </b><a
+        href=\"ap211011.html\">Zoom past Jupiter's largest moon</a> \n\n<p> <hr>\n<a
+        href=\"ap211009.html\">&lt;</a>\n| <a href=\"archivepix.html\">Archive</a>\n|
+        <a href=\"lib/apsubmit2015.html\">Submissions</a> \n| <a href=\"lib/aptree.html\">Index</a>\n|
+        <a href=\"https://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</a>\n|
+        <a href=\"calendar/allyears.html\">Calendar</a>\n| <a href=\"/apod.rss\">RSS</a>\n|
+        <a href=\"lib/edlinks.html\">Education</a>\n| <a href=\"lib/about_apod.html\">About
+        APOD</a>\n| <a href=\n\"http://asterisk.apod.com/discuss_apod.php?date=211010\">Discuss</a>\n|
+        <a href=\"ap211011.html\">&gt;</a>\n\n<hr><p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://www.phy.mtu.edu/faculty/Nemiroff.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\"\n>Jerry
+        Bonnell</a> (<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA
+        Official: </b> Phillip Newman\n<a href=\"lib/about_apod.html#srapply\">Specific
+        rights apply</a>.<br>\n<a href=\"https://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA
+        Web\nPrivacy Policy and Important Notices</a><br>\n<b>A service of:</b>\n<a
+        href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n<a href=\"https://www.nasa.gov/\">NASA</a>
+        /\n<a href=\"https://www.nasa.gov/centers/goddard/\">GSFC</a>\n<br><b>&</b>
+        <a href=\"http://www.mtu.edu/\">Michigan Tech. U.</a><br>\n</center>\n</body>\n</html>\n\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Thu, 21 Apr 2022 22:36:46 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1
