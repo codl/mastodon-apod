@@ -128,8 +128,8 @@ class ApodBot(ananas.PineappleBot):
     @ananas.daily(13, 28)
     @ananas.daily(19, 28)
     def check_apod(self):
-        next_page_url = self.config.get('next_page_url', None)
-        if not next_page_url:
+        next_url = self.config.get('next_url', None)
+        if not next_url:
 
             state = self.config.get('state', None)
             if state:
@@ -145,20 +145,34 @@ class ApodBot(ananas.PineappleBot):
                 latest_date = date(year=year, month=month, day=day)
                 next_date = latest_date + timedelta(days=1)
 
-                next_page_url = next_date.strftime('https://apod.nasa.gov/apod/ap%y%m%d.html')
+                next_url = next_date.strftime('https://apod.nasa.gov/apod/ap%y%m%d.html')
 
             else:
                 ARCHIVE = 'https://apod.nasa.gov/apod/archivepix.html'
                 resp = self.session.get(ARCHIVE)
                 resp.raise_for_status()
                 soup = BeautifulSoup(resp.text, 'html.parser')
-                next_page_url = urljoin(ARCHIVE, soup.b.a['href'])
+                next_url = urljoin(ARCHIVE, soup.b.a['href'])
 
-        resp = self.session.get(next_page_url)
+        resp = self.session.get(next_url)
+
+        # if it's been more than 24 hours since the last post and we still can't
+        # find a new page, check if the url changed
+        if resp.status_code == 404 and datetime.now(tz=timezone.utc) - self.config.get('last_post_datetime', datetime.min) > timedelta(hours=24):
+            prev_url = self.config.get('prev_url')
+            if prev_url:
+                prev_resp = self.session.get(prev_url)
+                prev_resp.raise_for_status()
+                prev_page = ApodPage.from_html(prev_url, prev_resp.text)
+                if prev_page.next_url != next_url:
+                    next_url = prev_page.next_url
+                    resp = self.session.get(next_url)
+
         if resp.status_code == 404:
             return
+        resp.raise_for_status()
 
-        page = ApodPage.from_html(next_page_url, resp.text)
+        page = ApodPage.from_html(next_url, resp.text)
 
         post_text = "{page.title}\n\n{page.credits}\n\n{page.url} #APoD".format(page=page)
 
@@ -174,7 +188,9 @@ class ApodBot(ananas.PineappleBot):
 
         self.mastodon.status_post(post_text, media_ids=medias)
 
-        self.config.next_page_url = page.next_url
+        self.config.next_url = page.next_url
+        self.config.prev_url = page.url
+        self.config.last_post_datetime = datetime.now(tz=timezone.utc)
         del self.config.state
         self.config.save()
 
