@@ -11,7 +11,7 @@ test_cases = (
         title="Orion over Argentine Mountains",
         credit="Image Credit & Copyright: Nicolas Tabbush",
         # has image
-        media_url="https://apod.nasa.gov/apod/image/2006/OrionMountains_Tabbush_960.jpg",
+        media_url="https://apod.nasa.gov/apod/image/2006/OrionMountains_Tabbush_2048.jpg",
         media_mime="image/jpeg",
     ),
     ApodPage(

@@ -40,11 +40,25 @@ class ApodPage():
         media_url = None
         media_mime = None
         video_url = None
+        main_el = None
 
         if image_el and 'src' in image_el.attrs:
-            main_el = image_el
-            media_url = urljoin(url,image_el['src'])
-            media_mime = mimetypes.guess_type(media_url)[0]
+            for parent in image_el.parents:
+                if parent.name == 'a':
+                    mime = mimetypes.guess_type(parent['href'])[0]
+                    if mime.startswith('image/'):
+                        media_mime = mime
+                        media_url = urljoin(url, parent['href'])
+                        main_el = parent
+                    else:
+                        raise ScrapeError("Unsupported mimetype {}".format(mime))
+                    break
+
+            if not media_url:
+                media_url = urljoin(url, image_el['src'])
+                media_mime = mimetypes.guess_type(media_url)[0]
+                main_el = image_el
+
         elif iframe_el and 'src' in iframe_el.attrs:
             main_el = iframe_el
             up = urlparse(iframe_el['src'])
