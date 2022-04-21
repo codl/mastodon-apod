@@ -8,14 +8,11 @@ it uses [ananas][]
 
 ## how to use
 
-* (optional) create a venv to isolate dependencies from the system
-
-      $ python -m venv venv
-      $ source venv/bin/activate
+this requires pipenv and is only tested on python 3.10
 
 * install dependencies
 
-      $ pip install -r requirements.txt
+      $ pipenv sync
 
 * fill in config file
 
@@ -24,7 +21,7 @@ it uses [ananas][]
 
 * run
 
-      $ ananas config/ananas.cfg
+      $ pipenv run ananas config/ananas.cfg
 
 * enjoy
 
@@ -34,25 +31,25 @@ it uses [ananas][]
 
       $ cp config/ananas.cfg.example config/ananas.cfg
       $ $EDITOR config/ananas.cfg
-      
+
 * build
 
       $ docker build -t mastodon-apod .
       $ # or, shortened:
       $ make docker
-      
+
 * stop and remove potential existing container
-      
+
       $ docker rm -f mastodon-apod
       $ # or, shortened:
       $ make docker-rm
-      
+
 * and run
-      
+
       $ docker run -n mastodon-apod -d --restart unless-stopped -v $(pwd)/config:/app/config --user $(id -u) mastodon-apod
       $ # or, shortened:
       $ make docker-run
-      
+
 these last three steps can be run at once with
 
-    $ make up
+      $ make up
