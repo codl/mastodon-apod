@@ -1,7 +1,8 @@
 version: 2
 updates:
 - package-ecosystem: pip
-  allow: direct
+  allow: 
+    - dependency-type: direct
   directory: "/"
   schedule:
     interval: weekly
