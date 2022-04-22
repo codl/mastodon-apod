@@ -193,7 +193,8 @@ class ApodBot(ananas.PineappleBot):
         self.config.next_url = page.next_url
         self.config.prev_url = page.url
         self.config.last_post_datetime = datetime.now(tz=timezone.utc)
-        del self.config.state
+        if "state" in self.config:
+            del self.config['state']
         self.config.save()
 
     def fetch_and_fit_image(self, image_url):
