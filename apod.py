@@ -20,7 +20,7 @@ class ConfigNotWriteable(Exception):
 class ScrapeError(Exception):
     pass
 
-def cleanup_alt_text(raw_alt:str) -> Optional[str]:
+def cleanup_alt_text(alt:str) -> Optional[str]:
     return alt
 
 @dataclass

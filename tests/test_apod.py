@@ -94,8 +94,8 @@ the explanation.""",
         (
             # https://apod.nasa.gov/apod/ap220109.html
             """The featured image shows Jupiter full face including the 
-Great Red Spot as captured by Hubble in 2016."""
-            "The featured image shows Jupiter full face including the Great Red Spot as captured by Hubble in 2016."
+Great Red Spot as captured by Hubble in 2016.""",
+            "The featured image shows Jupiter full face including the Great Red Spot as captured by Hubble in 2016.",
         ),
         (
             # https://apod.nasa.gov/apod/ap210331.html
