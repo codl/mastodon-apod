@@ -177,8 +177,7 @@ class ApodBot(ananas.PineappleBot):
 
         page = ApodPage.from_html(next_url, resp.text)
 
-        post_text = "{page.title}\n\n{page.credits}\n\n{page.url} #APoD".format(page=page)
-
+        post_text = "{page.title}\n\n{page.credit}\n\n{page.url} #APoD".format(page=page)
 
         medias = None
         if page.media_url:
