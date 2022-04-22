@@ -21,6 +21,21 @@ class ScrapeError(Exception):
     pass
 
 def cleanup_alt_text(alt:str) -> Optional[str]:
+    sentences = list()
+    for sentence in alt.split(". "):
+        sentence = re.sub(r"[\n ]+", " ", sentence)
+        if re.search(r"[Ss]ee ([Tt]he )?[Ee]xplanation", sentence):
+            break
+        if sentence:
+            sentences.append(sentence)
+
+    alt = ". ".join(sentences)
+    if not alt:
+        return None
+
+    if alt[-1] not in "?!.":
+        alt += "."
+
     return alt
 
 @dataclass
@@ -106,7 +121,7 @@ class ApodPage():
                 credit = " ".join(text_lines[1:]),
                 next_url = next_url,
                 prev_url = prev_url,
-                alt = alt,
+                alt = cleanup_alt_text(alt) if alt else None,
         )
 
 
