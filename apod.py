@@ -207,7 +207,10 @@ class ApodBot(ananas.PineappleBot):
         if page.media_url:
             if page.media_mime.startswith("image/"):
                 image_content = self.fetch_and_fit_image(page.media_url)
-                media = self.mastodon.media_post(image_content, mime_type=page.media_mime)
+                media = self.mastodon.media_post(
+                        image_content,
+                        mime_type=page.media_mime,
+                        description=page.alt)
                 medias = [media['id'],]
         elif page.video_url:
             post_text = "{}\n\n{}".format(page.video_url, post_text)
