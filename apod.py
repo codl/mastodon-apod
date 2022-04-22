@@ -160,7 +160,7 @@ class ApodBot(ananas.PineappleBot):
         # find a new page, check if the url changed
         if resp.status_code == 404 and (
             datetime.now(tz=timezone.utc)
-            - self.config.get('last_post_datetime', datetime.min.replace(tzinfo=timezone.utc))
+            - datetime.fromisoformat(self.config.get('last_post_datetime', '1994-01-01T00:00:00+00:00'))
             > timedelta(hours=24)):
             prev_url = self.config.get('prev_url')
             if prev_url:
@@ -192,7 +192,7 @@ class ApodBot(ananas.PineappleBot):
 
         self.config.next_url = page.next_url
         self.config.prev_url = page.url
-        self.config.last_post_datetime = datetime.now(tz=timezone.utc)
+        self.config.last_post_datetime = datetime.now(tz=timezone.utc).isoformat()
         if "state" in self.config:
             del self.config['state']
         self.config.save()
