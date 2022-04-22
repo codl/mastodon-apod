@@ -1,0 +1,101 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/ap220420.html
+  response:
+    body:
+      string: "\uFEFF<!doctype html>\n<html>\n<head>\n<title> APOD: 2022 April 20
+        - Planet Line over New York Bridge \n</title> \n<!-- gsfc meta tags -->\n<meta
+        name=\"orgcode\" content=\"661\">\n<meta name=\"rno\" content=\"phillip.a.newman\">\n<meta
+        name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta name=\"webmaster\"
+        content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\" content=\"A
+        different astronomy and space science\nrelated image is featured each day,
+        along with a brief explanation.\">\n<!-- -->\n<meta name=viewport content=\"width=device-width,
+        initial-scale=1\">\n<meta name=\"keywords\" content=\"planets, New York, Triborough
+        bridge\">\n<!-- -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n</head>\n\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#7F0F9F\"\nalink=\"#FF0000\">\n\n<center>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is\nfeatured, along with a brief explanation written by a professional
+        astronomer.\n<p>\n\n2022 April 20 \n<br> \n<a href=\"image/2204/PlanetBridge_Honda_3000.jpg\"\nonMouseOver=\"if
+        (document.images)\ndocument.imagename1.src='image/2204/PlanetBridge_Honda_960_unann.jpg';\"\nonMouseOut=\"if
+        (document.images)\ndocument.imagename1.src='image/2204/PlanetBridge_Honda_960.jpg';\">\n<IMG
+        SRC=\"image/2204/PlanetBridge_Honda_960.jpg\" name=imagename1 \nalt=\"The
+        featured image shows four planets lined up behind the\nRFK Triboro bridge
+        in New York City. The image was taken \njust before sunrise two days ago.
+        \nPlease see the explanation for more detailed information.\"\nstyle=\"max-width:100%\"></a>\n</center>\n\n<center>\n<b>
+        Planet Line over New York Bridge </b> <br> \n<b> Image Credit &\n<a href=\"lib/about_apod.html#srapply\">Copyright</a>:
+        </b>\n<a href=\"http://www.stanhonda.com/\">Stan Honda</a>\n</center> <p>
+        \n\n<b> Explanation: </b> \nThere's an interesting sky to see if you wake
+        up before the Sun.\n\n<a href=\"https://youtu.be/ZgsUS-3mzRk\">Lined up</a>
+        \non toward the eastern horizon are four planets in a row.\n\nThe planets
+        are so bright they can even be seen from the \n<a href=\"ap200408.html\">bright
+        sky</a> inside a city.\n\nIn fact, the featured image was taken from New York
+        City, USA,\n with the foreground highlighted by the \n<a href=\"https://en.wikipedia.org/wiki/Robert_F._Kennedy_Bridge\">RFK</a>
+        \n(<a href=\"https://youtu.be/v9IFPppQJJI\">Triborough</a>) \n<a href=\"https://en.wikipedia.org/wiki/Robert_F._Kennedy_Bridge\">Bridge</a>.\n\nPictured,
+        the planets are, left to right, \n<a href=\"ap220109.html\">Jupiter</a>, \n<a
+        href=\"https://solarsystem.nasa.gov/planets/venus/overview/\">Venus</a>, \n<a
+        href=\"https://mars.nasa.gov/\">Mars</a>, and \n<a href=\"ap210919.html\">Saturn</a>.
+        \n\nThe <a href=\"https://earthsky.org/astronomy-essentials/visible-planets-tonight-mars-jupiter-venus-saturn-mercury/\">planets</a>
+        all appear \n<a href=\"https://p0.piqsels.com/preview/126/30/480/animals-cats-cute-feline-thumbnail.jpg\"\n>in
+        a row</a> because they all orbit the \n<a href=\"ap220411.html\">Sun</a> in
+        the same \n<a href=\"https://www.mathsisfun.com/geometry/plane.html\">plane</a>.\n\nThis
+        plane, called the \n<a href=\"https://en.wikipedia.org/wiki/Ecliptic#/media/File:Ecliptic_plane_side_view.gif\"\n>ecliptic
+        plane</a>, was created in the early days of our \n<a href=\"https://solarsystem.nasa.gov/solar-system/our-solar-system/overview/\"\n>Solar
+        System</a> and includes all planets, including \n<a href=\"ap220206.html\">Earth</a>.
+        \n\nThe morning \n<a href=\"https://www.skyatnightmagazine.com/advice/skills/planetary-parade-spring/\"\n>planet
+        parade</a> will continue throughout April and May, \nand will even be joined
+        by \n<a href=\"ap170723.html\">Mercury</a> in June.\n\n<p> <center> \n<b>
+        APOD volunteer programming opportunity: </b> \n<a href=\"http://asterisk.apod.com/viewtopic.php?t=42311\">Discord</a>\n<br>
+        \n<b> Tomorrow's picture: </b><a href=\"ap220421.html\">open space</a> \n\n<p>
+        <hr>\n<a href=\"ap220419.html\">&lt;</a>\n| <a href=\"archivepix.html\">Archive</a>\n|
+        <a href=\"lib/apsubmit2015.html\">Submissions</a> \n| <a href=\"lib/aptree.html\">Index</a>\n|
+        <a href=\"https://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</a>\n|
+        <a href=\"calendar/allyears.html\">Calendar</a>\n| <a href=\"/apod.rss\">RSS</a>\n|
+        <a href=\"lib/edlinks.html\">Education</a>\n| <a href=\"lib/about_apod.html\">About
+        APOD</a>\n| <a href=\n\"http://asterisk.apod.com/discuss_apod.php?date=220420\">Discuss</a>\n|
+        <a href=\"ap220421.html\">&gt;</a>\n\n<hr><p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://www.phy.mtu.edu/faculty/Nemiroff.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\"\n>Jerry
+        Bonnell</a> (<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA
+        Official: </b> Phillip Newman\n<a href=\"lib/about_apod.html#srapply\">Specific
+        rights apply</a>.<br>\n<a href=\"https://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA
+        Web\nPrivacy Policy and Important Notices</a><br>\n<b>A service of:</b>\n<a
+        href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n<a href=\"https://www.nasa.gov/\">NASA</a>
+        /\n<a href=\"https://www.nasa.gov/centers/goddard/\">GSFC</a>\n<br><b>&</b>
+        <a href=\"http://www.mtu.edu/\">Michigan Tech. U.</a><br>\n</center>\n</body>\n</html>\n\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Fri, 22 Apr 2022 10:56:54 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1

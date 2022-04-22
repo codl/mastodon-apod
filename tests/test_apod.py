@@ -90,8 +90,10 @@ Please see the explanation for more detailed information.""",
 For more details, please read
 the explanation.""",
             "A picture of the Pencil Nebula Supernova Shock Wave",
-            marks=pytest.mark.skip(reason="I'm not sure how to support this "
-                "without breaking other more common cases"),
+            marks=pytest.mark.skip(
+                reason="I'm not sure how to support this "
+                "without breaking other more common cases"
+            ),
         ),
         (
             # https://apod.nasa.gov/apod/ap220109.html
@@ -108,3 +110,22 @@ Great Red Spot as captured by Hubble in 2016.""",
 )
 def test_cleanup_alt_text(raw_alt_text, expected):
     assert cleanup_alt_text(raw_alt_text) == expected
+
+
+@pytest.fixture
+def page_from_url(requests_session):
+    def page_from_url(url):
+        resp = requests_session.get(url)
+        resp.raise_for_status()
+        return ApodPage.from_html(url, resp.text)
+
+    return page_from_url
+
+
+@pytest.mark.vcr
+def test_from_html_alt(page_from_url):
+    page = page_from_url("https://apod.nasa.gov/apod/ap220420.html")
+    assert (
+        page.alt
+        == "The featured image shows four planets lined up behind the RFK Triboro bridge in New York City. The image was taken just before sunrise two days ago."
+    )
