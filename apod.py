@@ -20,6 +20,24 @@ class ConfigNotWriteable(Exception):
 class ScrapeError(Exception):
     pass
 
+def cleanup_alt_text(alt:str) -> Optional[str]:
+    sentences = list()
+    for sentence in alt.split(". "):
+        sentence = re.sub(r"[\n ]+", " ", sentence)
+        if re.search(r"[Ss]ee ([Tt]he )?[Ee]xplanation", sentence):
+            break
+        if sentence:
+            sentences.append(sentence)
+
+    alt = ". ".join(sentences)
+    if not alt:
+        return None
+
+    if alt[-1] not in "?!.":
+        alt += "."
+
+    return alt
+
 @dataclass
 class ApodPage():
     url: str
@@ -30,6 +48,7 @@ class ApodPage():
     video_url: Optional[str] = None
     next_url: Optional[str] = None
     prev_url: Optional[str] = None
+    alt: Optional[str] = None
 
     @classmethod
     def from_html(cls, url:str, html:bytes|str):
@@ -41,8 +60,11 @@ class ApodPage():
         media_mime = None
         video_url = None
         main_el = None
+        alt = None
 
         if image_el and 'src' in image_el.attrs:
+            if 'alt' in image_el.attrs:
+                alt = image_el['alt']
             for parent in image_el.parents:
                 if parent.name == 'a':
                     mime = mimetypes.guess_type(parent['href'])[0]
@@ -99,6 +121,7 @@ class ApodPage():
                 credit = " ".join(text_lines[1:]),
                 next_url = next_url,
                 prev_url = prev_url,
+                alt = cleanup_alt_text(alt) if alt else None,
         )
 
 
@@ -183,7 +206,10 @@ class ApodBot(ananas.PineappleBot):
         if page.media_url:
             if page.media_mime.startswith("image/"):
                 image_content = self.fetch_and_fit_image(page.media_url)
-                media = self.mastodon.media_post(image_content, mime_type=page.media_mime)
+                media = self.mastodon.media_post(
+                        image_content,
+                        mime_type=page.media_mime,
+                        description=page.alt)
                 medias = [media['id'],]
         elif page.video_url:
             post_text = "{}\n\n{}".format(page.video_url, post_text)

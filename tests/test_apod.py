@@ -1,4 +1,4 @@
-from apod import ApodPage
+from apod import ApodPage, cleanup_alt_text
 import requests
 import pytest
 
@@ -53,9 +53,79 @@ def requests_session():
 
 
 @pytest.mark.vcr
-@pytest.mark.parametrize("page", test_cases, ids=lambda p: p.url.split('/')[-1])
+@pytest.mark.parametrize("page", test_cases, ids=lambda p: p.url.split("/")[-1])
 def test_from_html(requests_session: requests.Session, page: ApodPage):
     resp = requests_session.get(page.url)
     resp.raise_for_status()
 
     assert ApodPage.from_html(page.url, resp.content) == page
+
+
+@pytest.mark.parametrize(
+    "raw_alt_text, expected",
+    [
+        (
+            # Standard useless alt text
+            """See Explanation.  Clicking on the picture will download
+the highest resolution version available.""",
+            None,
+        ),
+        (
+            # https://apod.nasa.gov/apod/ap220309.html
+            """The featured image shows a penny-sized rock on Mars
+discovered by the Curiosity Rover in late February 2022.
+The rock is unusual because it has several appendages that
+make it appear a bit like a flower. 
+Please see the explanation for more detailed information.""",
+            "The featured image shows a penny-sized rock on Mars discovered by the Curiosity Rover in late February 2022. The rock is unusual because it has several appendages that make it appear a bit like a flower.",
+        ),
+        (
+            # https://apod.nasa.gov/apod/ap210406.html
+            "Mars and the Pleiades star cluster set behind one-tree hill. See Explanation.",
+            "Mars and the Pleiades star cluster set behind one-tree hill.",
+        ),
+        pytest.param(
+            # https://apod.nasa.gov/apod/ap210414.html
+            """A picture of the Pencil Nebula Supernova Shock Wave 
+For more details, please read
+the explanation.""",
+            "A picture of the Pencil Nebula Supernova Shock Wave",
+            marks=pytest.mark.skip(
+                reason="I'm not sure how to support this "
+                "without breaking other more common cases"
+            ),
+        ),
+        (
+            # https://apod.nasa.gov/apod/ap220109.html
+            """The featured image shows Jupiter full face including the 
+Great Red Spot as captured by Hubble in 2016.""",
+            "The featured image shows Jupiter full face including the Great Red Spot as captured by Hubble in 2016.",
+        ),
+        (
+            # https://apod.nasa.gov/apod/ap210331.html
+            "Polarization of light emitted from the near the black hole M87 is pictured. See Explanation.",
+            "Polarization of light emitted from the near the black hole M87 is pictured.",
+        ),
+    ],
+)
+def test_cleanup_alt_text(raw_alt_text, expected):
+    assert cleanup_alt_text(raw_alt_text) == expected
+
+
+@pytest.fixture
+def page_from_url(requests_session):
+    def page_from_url(url):
+        resp = requests_session.get(url)
+        resp.raise_for_status()
+        return ApodPage.from_html(url, resp.text)
+
+    return page_from_url
+
+
+@pytest.mark.vcr
+def test_from_html_alt(page_from_url):
+    page = page_from_url("https://apod.nasa.gov/apod/ap220420.html")
+    assert (
+        page.alt
+        == "The featured image shows four planets lined up behind the RFK Triboro bridge in New York City. The image was taken just before sunrise two days ago."
+    )
