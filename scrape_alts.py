@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from apod import ApodPage
-import sys
+from apod import ApodPage, ScrapeError
 import csv
 from urllib.parse import urljoin
 import re
@@ -29,15 +28,23 @@ if __name__ == '__main__':
                 resp = None
                 while not resp or resp.status_code != 200:
                     time.sleep(delay)
-                    resp = s.get(url)
-                    if resp.status_code != 200:
+                    try:
+                        resp = s.get(url)
+                        if resp.status_code != 200:
+                            resp = None
+                            delay *= 2
+                            print("Raising delay to {}".format(url, delay))
+                    except requests.exceptions.ConnectionError:
                         resp = None
                         delay *= 2
                         print("Raising delay to {}".format(url, delay))
-                page = ApodPage.from_html(url, resp.text)
+                try:
+                    page = ApodPage.from_html(url, resp.text)
+                    csvw.writerow((page.url, page.alt))
+                    if page.alt and not page.alt.startswith("See Explanation.") and not page.alt.endswith("Please see the explanation for more detailed information."):
+                        ab_csvw.writerow((page.url, page.alt))
+                except ScrapeError as e:
+                    print(e)
 
-                csvw.writerow((page.url, page.alt))
 
-                if page.alt and not page.alt.startswith("See Explanation.") and not page.alt.endswith("Please see the explanation for more detailed information."):
-                    ab_csvw.writerow((page.url, page.alt))
 
