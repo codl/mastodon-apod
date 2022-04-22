@@ -19,7 +19,7 @@ if __name__ == '__main__':
             csvw = csv.writer(altsf, dialect="unix")
             ab_csvw = csv.writer(altsabf, dialect="unix")
 
-            delay = .1
+            delay = .3
 
             for a in soup.find_all("a", href=re.compile("ap[0-9]{6}.html")):
                 url = urljoin(ARCHIVE, a['href'])
