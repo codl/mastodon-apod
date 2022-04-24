@@ -11,6 +11,7 @@ import socket
 import requests.packages.urllib3.util.connection as urllib3_cn
 from dataclasses import dataclass, field
 from typing import Optional
+from itertools import chain
 
 urllib3_cn.allowed_gai_family = lambda: socket.AF_INET
 
@@ -94,15 +95,25 @@ class ApodPage():
 
         text_lines:list[str] = []
         line = ""
-        for el in main_el.next_elements:
-            if isinstance(el, str):
-                line += el
-                if line.strip().startswith("Explanation:"):
+        els = main_el.next_elements
+        restart = True
+        while restart:
+            restart = False
+            for el in els:
+                if el.name == 'script':
+                    print("something")
+                    # skip it and its contents by starting the search from there
+                    els = chain([el.next_sibling], el.next_sibling.next_elements)
+                    restart = True
                     break
-            elif not el or el.name in ("br", "p"):
-                if line.strip() != "":
-                    text_lines.append(line)
-                line = ""
+                if isinstance(el, str):
+                    line += el
+                    if line.strip().startswith("Explanation:"):
+                        break
+                elif not el or el.name in ("br", "p"):
+                    if line.strip() != "":
+                        text_lines.append(line)
+                    line = ""
 
         text_lines = [re.sub('[\n ]+', ' ', l).strip() for l in text_lines]
 

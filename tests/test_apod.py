@@ -40,6 +40,15 @@ test_cases = (
         media_url="https://apod.nasa.gov/apod/image/earth_a17.gif",
         media_mime="image/gif",
     ),
+    ApodPage(
+        url="https://apod.nasa.gov/apod/ap220424.html",
+        title="Split the Universe",
+        credit="Image Credit: NASA, Erwin Schrödinger's cat",
+        media_url="https://apod.nasa.gov/apod/image/1704/SatelliteSale_NASA_960_split3.jpg",
+        media_mime="image/jpeg",
+        next_url="https://apod.nasa.gov/apod/ap220425.html",
+        prev_url="https://apod.nasa.gov/apod/ap220423.html",
+        ),
 )
 
 
