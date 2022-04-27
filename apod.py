@@ -149,12 +149,10 @@ class ApodBot(ananas.PineappleBot):
 
 
     def start(self):
-        self.config['canary'] = datetime.now(tz=timezone.utc)
         succ = self.config.save()
         if not succ:
             self.log("config", "Config could not be written to, this seems bad, shutting down.")
             raise ConfigNotWriteable()
-        del self.config['canary']
         self.config.save()
 
     @ananas.daily(1, 28)
@@ -231,7 +229,8 @@ class ApodBot(ananas.PineappleBot):
         self.config.prev_url = page.url
         self.config.last_post_datetime = datetime.now(tz=timezone.utc).isoformat()
         if "state" in self.config:
-            del self.config['state']
+            # change to a del once <https://github.com/chr-1x/ananas/issues/27> is fixed
+            self.config['state'] = None
         self.config.save()
 
     def fetch_and_fit_image(self, image_url):
