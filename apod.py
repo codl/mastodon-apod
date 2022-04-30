@@ -82,6 +82,16 @@ class ApodPage():
                 media_mimes = [mimetypes.guess_type(media_urls[0])[0]]
                 main_el = image_el
 
+            # look for rollover image
+            for el in chain([image_el], image_el.parents):
+                if 'onmouseover' in el.attrs:
+                    match = re.match(r"""if \(document\.images\)
+document\.imagename1.src='([^']+)';""", el['onmouseover'])
+                    if match:
+                        media_urls.append(urljoin(url, match.group(1)))
+                        media_mimes.append(mimetypes.guess_type(media_urls[-1])[0])
+                        break
+
         elif iframe_el and 'src' in iframe_el.attrs:
             main_el = iframe_el
             up = urlparse(iframe_el['src'])
