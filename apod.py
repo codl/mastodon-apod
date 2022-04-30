@@ -11,7 +11,7 @@ import socket
 import requests.packages.urllib3.util.connection as urllib3_cn
 from dataclasses import dataclass, field
 from typing import Optional
-from itertools import chain, count
+from itertools import chain
 
 urllib3_cn.allowed_gai_family = lambda: socket.AF_INET
 
@@ -44,8 +44,8 @@ class ApodPage():
     url: str
     title: str
     credit: str
-    media_urls: list[str] = field(default_factory=list)
-    media_mimes: list[str] = field(default_factory=list)
+    media_url: Optional[str] = None
+    media_mime: Optional[str] = None
     video_url: Optional[str] = None
     next_url: Optional[str] = None
     prev_url: Optional[str] = None
@@ -57,8 +57,8 @@ class ApodPage():
 
         image_el = soup.img
         iframe_el = soup.iframe
-        media_urls= []
-        media_mimes = []
+        media_url = None
+        media_mime = None
         video_url = None
         main_el = None
         alt = None
@@ -70,16 +70,16 @@ class ApodPage():
                 if parent.name == 'a':
                     mime = mimetypes.guess_type(parent['href'])[0]
                     if mime.startswith('image/'):
-                        media_mimes = [mime]
-                        media_urls = [urljoin(url, parent['href'])]
+                        media_mime = mime
+                        media_url = urljoin(url, parent['href'])
                         main_el = parent
                     else:
                         raise ScrapeError("Unsupported mimetype {}".format(mime))
                     break
 
-            if not media_urls:
-                media_urls = [urljoin(url, image_el['src'])]
-                media_mimes = [mimetypes.guess_type(media_urls[0])[0]]
+            if not media_url:
+                media_url = urljoin(url, image_el['src'])
+                media_mime = mimetypes.guess_type(media_url)[0]
                 main_el = image_el
 
         elif iframe_el and 'src' in iframe_el.attrs:
@@ -125,8 +125,8 @@ class ApodPage():
 
         return cls(
                 url=url,
-                media_urls=media_urls,
-                media_mimes=media_mimes,
+                media_url=media_url,
+                media_mime=media_mime,
                 video_url=video_url,
                 title = text_lines[0],
                 credit = " ".join(text_lines[1:]),
@@ -211,20 +211,16 @@ class ApodBot(ananas.PineappleBot):
 
         post_text = "{page.title}\n\n{page.credit}\n\n{page.url} #APOD".format(page=page)
 
-        medias = []
-        for media_url, mime, i in zip(page.media_urls, page.media_mimes, count()):
-            if mime.startswith("image/"):
-                image_content = self.fetch_and_fit_image(media_url)
-                if i == 0:
-                    alt = page.alt
-                else:
-                    alt = None
+        medias = None
+        if page.media_url:
+            if page.media_mime.startswith("image/"):
+                image_content = self.fetch_and_fit_image(page.media_url)
                 media = self.mastodon.media_post(
                         image_content,
-                        mime_type=mime,
-                        description=alt)
-                medias.append(media['id'])
-        if page.video_url:
+                        mime_type=page.media_mime,
+                        description=page.alt)
+                medias = [media['id'],]
+        elif page.video_url:
             post_text = "{}\n\n{}".format(page.video_url, post_text)
 
         self.mastodon.status_post(post_text, media_ids=medias)
