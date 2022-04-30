@@ -10,9 +10,9 @@ test_cases = (
         prev_url="https://apod.nasa.gov/apod/ap200608.html",
         title="Orion over Argentine Mountains",
         credit="Image Credit & Copyright: Nicolas Tabbush",
-        # has image and rollover image
+        # has image and rollover image: clickthru image must be ignored
         media_urls=[
-            "https://apod.nasa.gov/apod/image/2006/OrionMountains_Tabbush_2048.jpg",
+            "https://apod.nasa.gov/apod/image/2006/OrionMountains_Tabbush_960.jpg",
             "https://apod.nasa.gov/apod/image/2006/OrionMountains_Tabbush_960_annotated.jpg",
             ],
         media_mimes=["image/jpeg", "image/jpeg"],

@@ -66,31 +66,37 @@ class ApodPage():
         if image_el and 'src' in image_el.attrs:
             if 'alt' in image_el.attrs:
                 alt = image_el['alt']
-            for parent in image_el.parents:
-                if parent.name == 'a':
-                    mime = mimetypes.guess_type(parent['href'])[0]
-                    if mime.startswith('image/'):
-                        media_mimes = [mime]
-                        media_urls = [urljoin(url, parent['href'])]
-                        main_el = parent
-                    else:
-                        raise ScrapeError("Unsupported mimetype {}".format(mime))
-                    break
-
-            if not media_urls:
-                media_urls = [urljoin(url, image_el['src'])]
-                media_mimes = [mimetypes.guess_type(media_urls[0])[0]]
-                main_el = image_el
 
             # look for rollover image
+            found_rollover = False
             for el in chain([image_el], image_el.parents):
                 if 'onmouseover' in el.attrs:
-                    match = re.match(r"""if \(document\.images\)
-document\.imagename1.src='([^']+)';""", el['onmouseover'])
+                    match = re.search(
+                        r"document\.[^.]+\.src\w*=\w*'([^']+)'",
+                        el['onmouseover'])
                     if match:
+                        found_rollover = True
                         media_urls.append(urljoin(url, match.group(1)))
                         media_mimes.append(mimetypes.guess_type(media_urls[-1])[0])
                         break
+
+            if not found_rollover: # if there is a rollover image, we ignore the link
+                for parent in image_el.parents:
+                    if parent.name == 'a':
+                        mime = mimetypes.guess_type(parent['href'])[0]
+                        if mime.startswith('image/'):
+                            media_mimes = [mime]
+                            media_urls = [urljoin(url, parent['href'])]
+                            main_el = parent
+                        else:
+                            raise ScrapeError("Unsupported mimetype {}".format(mime))
+                        break
+
+            if found_rollover or not media_urls:
+                media_urls.insert(0, urljoin(url, image_el['src']))
+                media_mimes.insert(0, mimetypes.guess_type(media_urls[0])[0])
+                main_el = image_el
+
 
         elif iframe_el and 'src' in iframe_el.attrs:
             main_el = iframe_el
