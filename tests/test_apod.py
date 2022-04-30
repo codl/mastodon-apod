@@ -41,6 +41,7 @@ test_cases = (
         media_mime="image/gif",
     ),
     ApodPage(
+        # image in button, wildcard <script> tag
         url="https://apod.nasa.gov/apod/ap220424.html",
         title="Split the Universe",
         credit="Image Credit: NASA, Erwin Schrödinger's cat",
