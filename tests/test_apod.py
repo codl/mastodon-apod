@@ -10,9 +10,12 @@ test_cases = (
         prev_url="https://apod.nasa.gov/apod/ap200608.html",
         title="Orion over Argentine Mountains",
         credit="Image Credit & Copyright: Nicolas Tabbush",
-        # has image
-        media_url="https://apod.nasa.gov/apod/image/2006/OrionMountains_Tabbush_2048.jpg",
-        media_mime="image/jpeg",
+        # has image and rollover image
+        media_urls=[
+            "https://apod.nasa.gov/apod/image/2006/OrionMountains_Tabbush_2048.jpg",
+            "https://apod.nasa.gov/apod/image/2006/OrionMountains_Tabbush_960_annotated.jpg",
+            ],
+        media_mimes=["image/jpeg", "image/jpeg"],
     ),
     ApodPage(
         url="https://apod.nasa.gov/apod/ap220330.html",
@@ -29,24 +32,24 @@ test_cases = (
         url="https://apod.nasa.gov/apod/ap960821.html",
         title="A Close-Up of the Lagoon's Hourglass",
         credit="Credit: J. Trauger (JPL /Caltech), HST, STSci, NASA",
-        media_url="https://apod.nasa.gov/apod/image/hourglass_hst_big.jpg",
-        media_mime="image/jpeg",
+        media_urls=["https://apod.nasa.gov/apod/image/hourglass_hst_big.jpg",],
+        media_mimes=["image/jpeg",],
     ),
     ApodPage(
         # older page format
         url="https://apod.nasa.gov/apod/ap950622.html",
         title="The Earth from Apollo 17",
         credit="Picture Credit: NASA, Apollo 17, NSSDC",
-        media_url="https://apod.nasa.gov/apod/image/earth_a17.gif",
-        media_mime="image/gif",
+        media_urls=["https://apod.nasa.gov/apod/image/earth_a17.gif",],
+        media_mimes=["image/gif",],
     ),
     ApodPage(
         # image in button, wildcard <script> tag
         url="https://apod.nasa.gov/apod/ap220424.html",
         title="Split the Universe",
         credit="Image Credit: NASA, Erwin Schrödinger's cat",
-        media_url="https://apod.nasa.gov/apod/image/1704/SatelliteSale_NASA_960_split3.jpg",
-        media_mime="image/jpeg",
+        media_urls=["https://apod.nasa.gov/apod/image/1704/SatelliteSale_NASA_960_split3.jpg",],
+        media_mimes=["image/jpeg",],
         next_url="https://apod.nasa.gov/apod/ap220425.html",
         prev_url="https://apod.nasa.gov/apod/ap220423.html",
         ),
