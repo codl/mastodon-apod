@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d9c8522a3f316f2024dfce013c0ad4a3b312557e564d7fb9f9f827969125af06"
+            "sha256": "46a7777571a863ccdd641707d3f92fb1b0acbd5ea8e7a56872456e31f8c470f2"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -15,8 +15,12 @@
     },
     "default": {
         "ananas": {
-            "git": "https://github.com/codl/ananas.git",
-            "ref": "ffc2c999c9157efafdb1031159883371bc10a2e0"
+            "hashes": [
+                "sha256:243148131b656dde440cf93672f25608866e002b2e29238b3438609561ecd858",
+                "sha256:af6948279b892c4c76e31d4fb6a50a3b4741f91dcddf74b2add8c65a62488c8b"
+            ],
+            "index": "pypi",
+            "version": "==1.1.0"
         },
         "beautifulsoup4": {
             "hashes": [
