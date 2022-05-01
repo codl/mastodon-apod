@@ -104,6 +104,9 @@ class ApodPage():
             if up.hostname in ('www.youtube.com', 'youtube.com', 'youtu.be'):
                 videoid = up.path.split('/')[-1]
                 video_url = 'https://www.youtube.com/watch?v={}'.format(videoid)
+            elif up.hostname in ('player.vimeo.com'):
+                videoid = up.path.split('/')[-1]
+                video_url = 'https://vimeo.com/{}'.format(videoid)
             else:
                 raise ScrapeError("Unsupported iframe {}".format(iframe_el["src"]))
         else:
