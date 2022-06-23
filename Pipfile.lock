@@ -321,11 +321,11 @@
         },
         "pytest-recording": {
             "hashes": [
-                "sha256:9039bf488f80c016055ffd039a91e33b1e89f3ee2ee0005c0bbce298fd417ee1",
-                "sha256:a94b000640fe5d05b34fa9e25dca1671dd7f21195502c5f4d2f600c31dc14f7e"
+                "sha256:0d1f36d10dea5090cab8ecd230e5dc937c97b9fed193874b330d2926ddea028f",
+                "sha256:6b5546b822b270b8d7338f70950453be45e4aa5bfd884d97583dfa47288380f9"
             ],
             "index": "pypi",
-            "version": "==0.12.0"
+            "version": "==0.12.1"
         },
         "pyyaml": {
             "hashes": [
