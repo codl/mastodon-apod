@@ -122,7 +122,6 @@ class ApodPage():
             restart = False
             for el in els:
                 if el.name == 'script':
-                    print("something")
                     # skip it and its contents by starting the search from there
                     els = chain([el.next_sibling], el.next_sibling.next_elements)
                     restart = True
