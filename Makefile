@@ -5,10 +5,10 @@ UID := $(shell id -u)
 lock: requirements.txt dev-requirements.txt
 
 requirements.txt: requirements.in
-	pip-compile $<
+	pip-compile --generate-hashes --allow-unsafe $<
 
 dev-requirements.txt: dev-requirements.in requirements.txt
-	pip-compile $<
+	pip-compile --generate-hashes --allow-unsafe $<
 
 docker:
 	docker buildx build --target bot -t $(IMAGE) .
