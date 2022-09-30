@@ -4,9 +4,7 @@ FROM python:$python_version as common
 WORKDIR /app
 
 RUN --mount=type=cache,target=/root/.cache/pip/http \
-    pip install -U pip==22.2.2
-RUN --mount=type=cache,target=/root/.cache/pip/http \
-    pip install pip-tools==6.8.0
+    pip install pip==22.2.2 pip-tools==6.8.0
 
 FROM common as test
 
