@@ -255,7 +255,7 @@ class ApodBot(ananas.PineappleBot):
 
     @cached_property
     def my_uid(self):
-        self.mastodon.account_verify_credentials()['id']
+        return self.mastodon.account_verify_credentials()['id']
 
     def get_last_url(self):
         statuses = self.mastodon.account_statuses(self.my_uid, exclude_replies=True, limit=40)
