@@ -168,8 +168,6 @@ class ApodBot(ananas.PineappleBot):
         self.session.headers.update({
             'user-agent':
                 'mastodon-apod +https://github.com/codl/mastodon-apod'})
-        self.next_url: None|str = None
-        self.last_post_datetime = datetime.min
 
 
     @ananas.daily(1, 28)
@@ -177,34 +175,30 @@ class ApodBot(ananas.PineappleBot):
     @ananas.daily(13, 28)
     @ananas.daily(19, 28)
     def check_apod(self):
-        if self.next_url == None or (
-                datetime.now(tz=timezone.utc) - self.next_url_cache_time > timedelta(hours=24)):
-            last_url = self.get_last_url()
-            if last_url:
-                resp = self.session.get(last_url)
-                resp.raise_for_status()
-                last_page = ApodPage.from_html(last_url, resp.content)
-                if not last_page.next_url:
-                    raise Exception("Last page doesn't have a next page")
-                self.next_url = last_page.next_url
 
-            else:
-                ARCHIVE = 'https://apod.nasa.gov/apod/archivepix.html'
-                resp = self.session.get(ARCHIVE)
-                resp.raise_for_status()
-                soup = BeautifulSoup(resp.text, 'html.parser')
-                self.next_url = urljoin(ARCHIVE, soup.b.a['href'])
+        last_url = self.get_last_url()
+        if last_url:
+            resp = self.session.get(last_url)
+            resp.raise_for_status()
+            last_page = ApodPage.from_html(last_url, resp.content)
+            if not last_page.next_url:
+                raise Exception("Last page doesn't have a next page")
+            next_url = last_page.next_url
 
+        else:
+            ARCHIVE = 'https://apod.nasa.gov/apod/archivepix.html'
+            resp = self.session.get(ARCHIVE)
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, 'html.parser')
+            next_url = urljoin(ARCHIVE, soup.b.a['href'])
 
-            self.next_url_cache_time = datetime.now(tz=timezone.utc)
-
-        resp = self.session.get(self.next_url)
+        resp = self.session.get(next_url)
 
         if resp.status_code == 404:
             return
         resp.raise_for_status()
 
-        page = ApodPage.from_html(self.next_url, resp.text)
+        page = ApodPage.from_html(next_url, resp.text)
 
         post_text = "{page.title}\n\n{page.credit}\n\n{page.url} #APOD".format(page=page)
 
@@ -226,10 +220,7 @@ class ApodBot(ananas.PineappleBot):
 
         self.mastodon.status_post(post_text, media_ids=medias)
 
-        self.next_url = page.next_url
-        self.next_url_cache_time = datetime.now(tz=timezone.utc)
-        self.config.last_post_datetime = datetime.now(tz=timezone.utc).isoformat()
-        for key in ("state", "prev_url", "next_url", "last_post_datetime"):
+        for key in ("state", "prev_url", "next_url", "last_post_datetime", "canary"):
             changed = False
             if key in self.config:
                 # change to a del once <https://github.com/chr-1x/ananas/issues/27> is fixed
