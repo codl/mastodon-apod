@@ -1,0 +1,4 @@
+beautifulsoup4
+ananas>=1.1.0
+requests
+pillow

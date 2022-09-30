@@ -12,7 +12,7 @@ this requires pipenv and is only tested on python 3.10
 
 * install dependencies
 
-      $ pipenv sync
+      $ pip -r requirements.txt
 
 * fill in config file
 
@@ -34,7 +34,7 @@ this requires pipenv and is only tested on python 3.10
 
 * build
 
-      $ docker build -t mastodon-apod .
+      $ docker buildx build -t mastodon-apod .
       $ # or, shortened:
       $ make docker
 
