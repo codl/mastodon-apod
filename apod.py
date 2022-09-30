@@ -1,7 +1,8 @@
+from functools import cached_property
 import ananas
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime, date, timedelta, timezone
+from datetime import datetime, timedelta, timezone
 import re
 from urllib.parse import urljoin, urlparse
 import mimetypes
@@ -10,8 +11,9 @@ from PIL import Image
 import socket
 import requests.packages.urllib3.util.connection as urllib3_cn
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Optional, Any
 from itertools import chain, count
+from mastodon import Mastodon
 
 urllib3_cn.allowed_gai_family = lambda: socket.AF_INET
 
@@ -158,6 +160,8 @@ class ApodPage():
 
 
 class ApodBot(ananas.PineappleBot):
+    APOD_URL_RE = re.compile(r'https://apod.nasa.gov/apod/ap(?P<year>[0-9]{2})(?P<month>[0-9]{2})(?P<day>[0-9]{2}).html')
+    mastodon: Mastodon
 
     def __init__(self, *args, **kwargs):
         ananas.PineappleBot.__init__(self, *args, **kwargs)
@@ -165,68 +169,43 @@ class ApodBot(ananas.PineappleBot):
         self.session.headers.update({
             'user-agent':
                 'mastodon-apod +https://github.com/codl/mastodon-apod'})
+        self.next_url: None|str = None
+        self.last_post_datetime = datetime.min
 
-
-    def start(self):
-        succ = self.config.save()
-        if not succ:
-            self.log("config", "Config could not be written to, this seems bad, shutting down.")
-            raise ConfigNotWriteable()
-        self.config.save()
 
     @ananas.daily(1, 28)
     @ananas.daily(7, 28)
     @ananas.daily(13, 28)
     @ananas.daily(19, 28)
     def check_apod(self):
-        next_url = self.config.get('next_url', None)
-        if not next_url:
-
-            state = self.config.get('state', None)
-            if state:
-                # former state tracking mechanism, deprecated 2022-04-21. remove 2023-04-21
-                match = re.match('https://apod.nasa.gov/apod/ap(?P<year>[0-9]{2})(?P<month>[0-9]{2})(?P<day>[0-9]{2}).html', state)
-                if not match:
-                    raise Exception("Couldn't parse 'state' url into a date")
-
-                year = int(match.group('year')) + 2000
-                month = int(match.group('month'))
-                day = int(match.group('day'))
-
-                latest_date = date(year=year, month=month, day=day)
-                next_date = latest_date + timedelta(days=1)
-
-                next_url = next_date.strftime('https://apod.nasa.gov/apod/ap%y%m%d.html')
+        if self.next_url == None or (
+                datetime.now(tz=timezone.utc) - self.next_url_cache_time > timedelta(hours=24)):
+            last_url = self.get_last_url()
+            if last_url:
+                resp = self.session.get(last_url)
+                resp.raise_for_status()
+                last_page = ApodPage.from_html(last_url, resp.content)
+                if not last_page.next_url:
+                    raise Exception("Last page doesn't have a next page")
+                self.next_url = last_page.next_url
 
             else:
                 ARCHIVE = 'https://apod.nasa.gov/apod/archivepix.html'
                 resp = self.session.get(ARCHIVE)
                 resp.raise_for_status()
                 soup = BeautifulSoup(resp.text, 'html.parser')
-                next_url = urljoin(ARCHIVE, soup.b.a['href'])
+                self.next_url = urljoin(ARCHIVE, soup.b.a['href'])
 
-        resp = self.session.get(next_url)
 
-        # if it's been more than 24 hours since the last post and we still can't
-        # find a new page, check if the url changed
-        if resp.status_code == 404 and (
-            datetime.now(tz=timezone.utc)
-            - datetime.fromisoformat(self.config.get('last_post_datetime', '1994-01-01T00:00:00+00:00'))
-            > timedelta(hours=24)):
-            prev_url = self.config.get('prev_url')
-            if prev_url:
-                prev_resp = self.session.get(prev_url)
-                prev_resp.raise_for_status()
-                prev_page = ApodPage.from_html(prev_url, prev_resp.text)
-                if prev_page.next_url != next_url:
-                    next_url = prev_page.next_url
-                    resp = self.session.get(next_url)
+            self.next_url_cache_time = datetime.now(tz=timezone.utc)
+
+        resp = self.session.get(self.next_url)
 
         if resp.status_code == 404:
             return
         resp.raise_for_status()
 
-        page = ApodPage.from_html(next_url, resp.text)
+        page = ApodPage.from_html(self.next_url, resp.text)
 
         post_text = "{page.title}\n\n{page.credit}\n\n{page.url} #APOD".format(page=page)
 
@@ -248,13 +227,17 @@ class ApodBot(ananas.PineappleBot):
 
         self.mastodon.status_post(post_text, media_ids=medias)
 
-        self.config.next_url = page.next_url
-        self.config.prev_url = page.url
+        self.next_url = page.next_url
+        self.next_url_cache_time = datetime.now(tz=timezone.utc)
         self.config.last_post_datetime = datetime.now(tz=timezone.utc).isoformat()
-        if "state" in self.config:
-            # change to a del once <https://github.com/chr-1x/ananas/issues/27> is fixed
-            self.config['state'] = None
-        self.config.save()
+        for key in ("state", "prev_url", "next_url", "last_post_datetime"):
+            changed = False
+            if key in self.config:
+                # change to a del once <https://github.com/chr-1x/ananas/issues/27> is fixed
+                self.config[key] = None
+                changed = True
+            if changed:
+                self.config.save()
 
     def fetch_and_fit_image(self, image_url):
         """returns a BytesIO"""
@@ -269,6 +252,37 @@ class ApodBot(ananas.PineappleBot):
         image.save(outio, image.format)
         outio.seek(0)
         return outio
+
+    @cached_property
+    def my_uid(self):
+        self.mastodon.account_verify_credentials()['id']
+
+    def get_last_url(self):
+        statuses = self.mastodon.account_statuses(self.my_uid, exclude_replies=True, limit=40)
+        for status in statuses:
+            url = self.extract_apod_url_from_status(status)
+            if url:
+                return url
+
+
+    @classmethod
+    def extract_apod_url_from_status(cls, post: dict[str, Any]) -> str | None:
+        eligible = False
+        for tag in post["tags"]:
+            name:str = tag['name']
+            if name.lower() == 'apod':
+                eligible = True
+        if not eligible:
+            return None
+        else:
+            soup = BeautifulSoup(post["content"], 'html.parser')
+            url = None
+            for a in soup.find_all("a"):
+                if re.match(cls.APOD_URL_RE, a['href']):
+                    url = a['href']
+            return url
+
+
 
     @ananas.reply
     def force_check(self, _, user):

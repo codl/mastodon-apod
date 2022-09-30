@@ -1,6 +1,7 @@
-from apod import ApodPage, cleanup_alt_text
+from apod import ApodPage, ApodBot, cleanup_alt_text
 import requests
 import pytest
+import mastodon
 
 test_cases = (
     ApodPage(
@@ -143,7 +144,6 @@ def page_from_url(requests_session):
 
     return page_from_url
 
-
 @pytest.mark.vcr
 def test_from_html_alt(page_from_url):
     page = page_from_url("https://apod.nasa.gov/apod/ap220420.html")
@@ -151,3 +151,15 @@ def test_from_html_alt(page_from_url):
         page.alt
         == "The featured image shows four planets lined up behind the RFK Triboro bridge in New York City. The image was taken just before sunrise two days ago."
     )
+
+@pytest.mark.vcr
+@pytest.mark.parametrize(('status_id', 'expected'), (
+    ("109018224046459751", "https://apod.nasa.gov/apod/ap220918.html"),
+    ("109069184629858810", "https://apod.nasa.gov/apod/ap220927.html"),
+    ("109024311093141985", None), # a reply
+    ))
+def test_extract_url(status_id, expected):
+    m = mastodon.Mastodon(api_base_url="https://botsin.space")
+    status = m.status(status_id)
+
+    assert ApodBot.extract_apod_url_from_status(status) == expected

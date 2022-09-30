@@ -1,0 +1,191 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.0
+    method: GET
+    uri: https://botsin.space/api/v1/instance/
+  response:
+    body:
+      string: !!binary |
+        H4sIALGsNmMAA7RWS4/bNhD+K6yA3GzrYdleL1AgQXtt0UN6aLuBQFEjiQlFsiRlrxPsf8+QlLXW
+        dlO0BWrYMDmcN2c+zpdkNDy5T2rlLJcbqymDZJU47gT8lWx7ZVzVgGWGa8eVRJZ35CdqnWqUJFxa
+        RyUD0ipDvCihsvELQoXgYDeoYin8vuf2WQzX35Ik7+RFSSCMSmJ5J8moiVOkBkLJaMGQHgwQFDaj
+        JBc1Bi2BuCG/4jkq7AyAl3E9kB9Ug9wt/stmZI4Ibh00BGPwpw9jlm0ZJb2B9vuHJKW1Gl06KAMP
+        STgDLtHRgfooiKYdRImUxtMN+U2NZOBd7/23ipypdN60gROH86s2HJjBXtWHjfcPPT9x9lL9g3mQ
+        /ofphIFygYlkSnD5dhjblktBa7thasDjE0YeM73d7DZbpIxG2OT+S2KdATpw2VVU+wI4W3ufpov7
+        fsILd9QFdp/jiqlRuuR+dyiKeDTaKy0/5ttst0N6o9AlOdN3ZZ6jItePQy2jr71z2htrucCbvTWZ
+        Wu6gGrVQtLHxPM2ybPrlqTK845KK1CgUW7coUuXtMd9Xb4q7/E1x3GjZYZCCym7Ea0HX/0hAJh9W
+        iYEO79iEK0OyMyOsEqq1UScqKgN/jtxAcz3g8oSe2AokrcUzmSnZ8m6MWmIWfRIgpGigjxXrqaEM
+        rw8puyxbBeIADacVdY6yfgDpE1qirpkVrft7hqbSmGS8oOS+2GLOXpFDi6PW2ITIPPABKnfRMUo+
+        YLzpRw0+/riJuYjrjre+HHgDKj1DPcybQZfzGnPAPjlUO1NU51XQseEoRk9wu5nXj+vlTsv1gvdW
+        yUmZmtt5O0R/r5vts/7oY9y0grJ5Q2/WQ0lv7N7uYlhxve20niNCNrumtvU1EVJTWf4ZKsEH7ss1
+        K+92h312PcMWN/xxPt0fDoci30+6FpJlfiy3WZldz1pD8XqwUmaO/Xy21Fp4sSzDC9dKiLmUlJ5K
+        tVy9KK1QJmqC0J0vMuw3eNT8Wpfba+XdEot9cTyU+6enUMZYU66ibOrSLwnHGk9yjw9YihJdx21E
+        E+yakFbG3Etaw60W9FJN/AGDEPYc60EI34aKffLN0yIIYvdgy85rFGUK0cm310zsjBr1vGMIUL7O
+        qbdbZPlhnZXrbPs+y+7Dd4NJ+x2tSOW89YiROkKkd0B9R3h4Dm4RhtSjI8OFeIwiU/z+3XmO6y27
+        1PhqBO4JdyelET1vAGwBXW+X6TpRR83fg91k3qaR+RtQd4TiWO/zuqTNXX23LzcfdTcbqDwAcfY/
+        2umBNvBPA4nM3zCwK7Z53RzL8sAO9a49Lgz8u0D+i50Wm0udfftMRV/i50r27+D1xcpWM6xfacXh
+        6B8V66rp1ZtqsijW2XGd5+EhVh+5R2LElZaDaMIam82MIiD0TY85ePTyPyvCzMVpp9hoDEh2wQFB
+        +Jq/VqYNr/zTapItFrKIFjgapAMXHG/1gsNPRyX/HIeS1xVsFwosPI5UkAY0ZwFr/MTBei4adGYp
+        uFsIomLadeimRHx1lxW6YqTqDNX9JQxuUbO4EAQgdJI74iEHn7Cl1vKFVuZfVq8WzjZOgVpZh3ez
+        FNu/7kyH81mwjkcGBkDzwSXOyIkrgfmFpZ7DMhuOik9oyw+RHmqt9W+uT4nCec2EKfNFOu+eFfyo
+        COKQZ4qO47BHa7+LwhqUFjgX/oJB9ji7rgJ3o85Tnj88fQUAAP//AwD1YjN9iQsAAA==
+    headers:
+      Cache-Control:
+      - max-age=180, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - 'base-uri ''none''; default-src ''none''; frame-ancestors ''none''; font-src
+        ''self'' https://botsin.space; img-src ''self'' https: data: blob: https://botsin.space;
+        style-src ''self'' https://botsin.space ''nonce-ruEbmffhemdxikegaFQi9g=='';
+        media-src ''self'' https: data: https://botsin.space; frame-src ''self'' https:;
+        manifest-src ''self'' https://botsin.space; connect-src ''self'' data: blob:
+        https://botsin.space https://files.botsin.space wss://botsin.space; script-src
+        ''self'' https://botsin.space; child-src ''self'' blob: https://botsin.space;
+        worker-src ''self'' blob: https://botsin.space'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 30 Sep 2022 08:45:58 GMT
+      ETag:
+      - W/"4ba163cbd500aa1f46dbb0e5e1c3ed04"
+      Permissions-Policy:
+      - interest-cohort=()
+      Server:
+      - Mastodon
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Accept-Encoding, Origin
+      X-Cached:
+      - HIT
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-RateLimit-Limit:
+      - '300'
+      X-RateLimit-Remaining:
+      - '299'
+      X-RateLimit-Reset:
+      - '2022-09-30T08:50:00.360894Z'
+      X-Request-Id:
+      - 78fdb5f6-1b79-4bb6-bb3d-0056a0982e4e
+      X-Runtime:
+      - '0.085687'
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.0
+    method: GET
+    uri: https://botsin.space/api/v1/statuses/109069184629858810
+  response:
+    body:
+      string: !!binary |
+        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
+        2REAAA==
+    headers:
+      Cache-Control:
+      - no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - 'base-uri ''none''; default-src ''none''; frame-ancestors ''none''; font-src
+        ''self'' https://botsin.space; img-src ''self'' https: data: blob: https://botsin.space;
+        style-src ''self'' https://botsin.space ''nonce-rxzgfssNjOcQIe2VSRDn7g=='';
+        media-src ''self'' https: data: https://botsin.space; frame-src ''self'' https:;
+        manifest-src ''self'' https://botsin.space; connect-src ''self'' data: blob:
+        https://botsin.space https://files.botsin.space wss://botsin.space; script-src
+        ''self'' https://botsin.space; child-src ''self'' blob: https://botsin.space;
+        worker-src ''self'' blob: https://botsin.space'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 30 Sep 2022 08:45:58 GMT
+      ETag:
+      - W/"20c5a1393a0a6ffc9aecc05fc7f7b175"
+      Permissions-Policy:
+      - interest-cohort=()
+      Server:
+      - Mastodon
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Accept-Encoding, Origin
+      X-Cached:
+      - MISS
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-RateLimit-Limit:
+      - '300'
+      X-RateLimit-Remaining:
+      - '299'
+      X-RateLimit-Reset:
+      - '2022-09-30T08:50:00.540939Z'
+      X-Request-Id:
+      - 9ece554a-dbd3-42df-a5e4-1ca276ab49e6
+      X-Runtime:
+      - '0.026650'
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1
