@@ -17,11 +17,11 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: "3.10"
-        cache: "pipenv"
+        cache: "pip"
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip pipenv
-        pipenv sync -d --system
+        python -m pip install -r ci-requirements.txt
+        pip-sync requirements.txt dev-requirements.txt
     - name: Test with pytest
       run: |
         python -m pytest

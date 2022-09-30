@@ -2,12 +2,15 @@ IMAGE := mastodon-apod
 CONTAINER := mastodon-apod
 UID := $(shell id -u)
 
-lock: requirements.txt dev-requirements.txt
+lock: requirements.txt dev-requirements.txt ci-requirements.txt
 
 requirements.txt: requirements.in
 	pip-compile --generate-hashes --allow-unsafe $<
 
 dev-requirements.txt: dev-requirements.in requirements.txt
+	pip-compile --generate-hashes --allow-unsafe $<
+
+ci-requirements.txt: ci-requirements.in requirements.txt
 	pip-compile --generate-hashes --allow-unsafe $<
 
 docker:

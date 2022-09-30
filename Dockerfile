@@ -3,8 +3,9 @@ FROM python:$python_version as common
 
 WORKDIR /app
 
+COPY ci-requirements.txt ./
 RUN --mount=type=cache,target=/root/.cache/pip/http \
-    pip install pip==22.2.2 pip-tools==6.8.0
+    pip install -r ci-requirements.txt
 
 FROM common as test
 
