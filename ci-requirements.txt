@@ -20,20 +20,14 @@ pep517==0.13.0 \
     --hash=sha256:4ba4446d80aed5b5eac6509ade100bff3e7943a8489de249654a5ae9b33ee35b \
     --hash=sha256:ae69927c5c172be1add9203726d4b84cf3ebad1edcd5f71fcdc746e66e829f59
     # via build
-pip-tools==6.8.0 \
-    --hash=sha256:39e8aee465446e02278d80dbebd4325d1dd8633248f43213c73a25f58e7d8a55 \
-    --hash=sha256:3e5cd4acbf383d19bdfdeab04738b6313ebf4ad22ce49bf529c729061eabfab8
+pip-tools==6.11.0 \
+    --hash=sha256:64a6b66887c270705a9006a10023eb4c893e9bf66c306bdcb4440541b367c057 \
+    --hash=sha256:90c5dc150e3856e4463b81ccc99307ccf9554e5db8393eb273705cb0b8f71c60
     # via -r ci-requirements.in
 pyparsing==3.0.9 \
     --hash=sha256:2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb \
     --hash=sha256:5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc
     # via packaging
-tomli==2.0.1 \
-    --hash=sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc \
-    --hash=sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f
-    # via
-    #   build
-    #   pep517
 wheel==0.37.1 \
     --hash=sha256:4bdcd7d840138086126cd09254dc6195fb4fc6f01c050a1d7236f2630db1d22a \
     --hash=sha256:e9a504e793efbca1b8e0e9cb979a249cf4a0a7b5b8c9e8b65a5e39d49529c1c4
