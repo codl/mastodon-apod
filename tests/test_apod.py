@@ -129,6 +129,13 @@ Great Red Spot as captured by Hubble in 2016.""",
             "Polarization of light emitted from the near the black hole M87 is pictured. See Explanation.",
             "Polarization of light emitted from the near the black hole M87 is pictured.",
         ),
+        (
+            # https://apod.nasa.gov/apod/ap221205.html
+            """The featured image shows many blue stars clustered 
+together in blue-glowing gas and dust.
+Please see the explanation for more detailed information.""",
+            "The featured image shows many blue stars clustered together in blue-glowing gas and dust.",
+        ),
     ],
 )
 def test_cleanup_alt_text(raw_alt_text, expected):
