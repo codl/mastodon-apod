@@ -25,7 +25,7 @@ class ScrapeError(Exception):
 
 def cleanup_alt_text(alt:str) -> Optional[str]:
     sentences = list()
-    for sentence in alt.split(". "):
+    for sentence in re.split(r"\.\s+", alt):
         sentence = re.sub(r"[\n ]+", " ", sentence)
         if re.search(r"[Ss]ee ([Tt]he )?[Ee]xplanation", sentence):
             break
