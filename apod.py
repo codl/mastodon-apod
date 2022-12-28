@@ -204,7 +204,7 @@ class ApodBot(ananas.PineappleBot):
 
             next_date = guess_date_from_url(next_url)
             last_date = guess_date_from_url(last_url)
-            if not next_date or not last_date or next_date <= last_date:
+            if next_date and last_date and next_date <= last_date:
                 raise Exception("Date guessed from next page url seems to be in the past")
 
         else:
