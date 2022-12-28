@@ -176,14 +176,17 @@ class ApodBot(ananas.PineappleBot):
     @ananas.daily(19, 28)
     def check_apod(self):
 
-        last_url = self.get_last_url()
-        if last_url:
+        recent_urls = self.get_recent_urls()
+        if recent_urls:
+            last_url = recent_urls[0]
             resp = self.session.get(last_url)
             resp.raise_for_status()
             last_page = ApodPage.from_html(last_url, resp.content)
             if not last_page.next_url:
                 raise Exception("Last page doesn't have a next page")
             next_url = last_page.next_url
+            if next_url in recent_urls:
+                raise Exception("Next page has been posted recently")
 
         else:
             ARCHIVE = 'https://apod.nasa.gov/apod/archivepix.html'
@@ -247,12 +250,14 @@ class ApodBot(ananas.PineappleBot):
     def my_uid(self):
         return self.mastodon.account_verify_credentials()['id']
 
-    def get_last_url(self):
+    def get_recent_urls(self) -> list[str]:
         statuses = self.mastodon.account_statuses(self.my_uid, exclude_replies=True, limit=40)
+        urls: list[str] = list()
         for status in statuses:
             url = self.extract_apod_url_from_status(status)
             if url:
-                return url
+                urls.append(url)
+        return urls
 
 
     @classmethod
