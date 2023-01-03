@@ -2,7 +2,7 @@ from functools import cached_property
 import ananas
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 import re
 from urllib.parse import urljoin, urlparse
 import mimetypes
@@ -16,6 +16,8 @@ from itertools import chain, count
 from mastodon import Mastodon
 
 urllib3_cn.allowed_gai_family = lambda: socket.AF_INET
+
+APOD_URL_RE = re.compile(r'https://apod.nasa.gov/apod/ap(?P<year>[0-9]{2})(?P<month>[0-9]{2})(?P<day>[0-9]{2}).html')
 
 class ConfigNotWriteable(Exception):
     pass
@@ -40,6 +42,18 @@ def cleanup_alt_text(alt:str) -> Optional[str]:
         alt += "."
 
     return alt
+
+
+def guess_date_from_url(url:str) -> Optional[date]:
+    match = re.match(APOD_URL_RE, url)
+    if not match:
+        return None
+    year = int(match['year'])
+    month = int(match['month'])
+    day = int(match['day'])
+    return date(year, month, day)
+
+
 
 @dataclass
 class ApodPage():
@@ -159,7 +173,6 @@ class ApodPage():
 
 
 class ApodBot(ananas.PineappleBot):
-    APOD_URL_RE = re.compile(r'https://apod.nasa.gov/apod/ap(?P<year>[0-9]{2})(?P<month>[0-9]{2})(?P<day>[0-9]{2}).html')
     mastodon: Mastodon
 
     def __init__(self, *args, **kwargs):
@@ -176,14 +189,23 @@ class ApodBot(ananas.PineappleBot):
     @ananas.daily(19, 28)
     def check_apod(self):
 
-        last_url = self.get_last_url()
-        if last_url:
+        recent_urls = self.get_recent_urls()
+        if recent_urls:
+            last_url = recent_urls[0]
             resp = self.session.get(last_url)
             resp.raise_for_status()
             last_page = ApodPage.from_html(last_url, resp.content)
             if not last_page.next_url:
                 raise Exception("Last page doesn't have a next page")
             next_url = last_page.next_url
+
+            if next_url in recent_urls:
+                raise Exception("Next page has been posted recently")
+
+            next_date = guess_date_from_url(next_url)
+            last_date = guess_date_from_url(last_url)
+            if next_date and last_date and next_date <= last_date:
+                raise Exception("Date guessed from next page url seems to be in the past")
 
         else:
             ARCHIVE = 'https://apod.nasa.gov/apod/archivepix.html'
@@ -247,12 +269,14 @@ class ApodBot(ananas.PineappleBot):
     def my_uid(self):
         return self.mastodon.account_verify_credentials()['id']
 
-    def get_last_url(self):
+    def get_recent_urls(self) -> list[str]:
         statuses = self.mastodon.account_statuses(self.my_uid, exclude_replies=True, limit=40)
+        urls: list[str] = list()
         for status in statuses:
             url = self.extract_apod_url_from_status(status)
             if url:
-                return url
+                urls.append(url)
+        return urls
 
 
     @classmethod
@@ -268,7 +292,7 @@ class ApodBot(ananas.PineappleBot):
             soup = BeautifulSoup(post["content"], 'html.parser')
             url = None
             for a in soup.find_all("a"):
-                if re.match(cls.APOD_URL_RE, a['href']):
+                if re.match(APOD_URL_RE, a['href']):
                     url = a['href']
             return url
 
