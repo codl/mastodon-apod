@@ -10,7 +10,7 @@ requirements.txt: requirements.in
 dev-requirements.txt: dev-requirements.in requirements.txt
 	pip-compile --generate-hashes --allow-unsafe $<
 
-ci-requirements.txt: ci-requirements.in requirements.txt
+ci-requirements.txt: ci-requirements.in dev-requirements.txt requirements.txt
 	pip-compile --generate-hashes --allow-unsafe $<
 
 docker:
