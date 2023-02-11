@@ -1,0 +1,100 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/lib/edlinks.html
+  response:
+    body:
+      string: "<!doctype html>\n<html>\n<head>\n<title> Astronomy Picture of the Day's
+        Educational Links </title>\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n</head>\n<body
+        bgcolor=\"#F4F4FF\" text=\"#000000\"  link=\"#0000FF\"\n                       vlink=\"#7F0F9F\"
+        alink=\"#FF0000\">\n<hr>\n<center>\n<table>\n<tr>\n<td><img src=\"../apod.gif\"
+        alt=\"logo\"></td>\n<td><h1> Astronomy Picture of the Day's <br> Educational
+        Links </h1></td>\n</tr>\n</table>\n</center>\n<hr>\nWhat follows is a list
+        of resources that excel in astronomy\neducation. Each resource is distinctly
+        different - they have been chosen to\nhighlight a wide range of interests.
+        We believe the list is topologically\ncomplete in that there are no publicly
+        advertised \nastronomy resources on the WWW that cannot be\nfound by following
+        the internal links of these resources.  The list is in\nalphabetical order,
+        and is subject to change as the WWW, and our knowledge\nof it, matures.  \n\n<p>
+        \n\n<dl>\n<dt><a href=\"http://antwrp.gsfc.nasa.gov/apod/lib/apodclass.html\"\n>APOD
+        in the Classroom</a>\n<dd> How Astronomy Picture of the Day (APOD) is being
+        used as a learning\ntool by teachers and students.  \n\n<dt><a href=\"http://asterisk.apod.com/viewforum.php?f=24\"\n>Astronomy
+        101 Online for Free</a>\n<dd>See all the video lectures and Powerpoint slides
+        for a real Introductory\nAstronomy Course taught at Michigan Technological
+        University.  The class was taught using Wikipedia and APOD instead of a textbook,
+        so that everything is really free and online.  Useful for astronomy teachers
+        as well as students!\n\n<dt><a href=\"http://www.nsta.org/publications/interactive/aws-din/aws.aspx\"\n>Astronomy
+        with a Stick</a>\n<dd>Elementary school astronomy activities that can be done
+        with\nonly a stick.  Brought to you by the \n<a href=\"http://www.nsta.org/\">National
+        Science Teachers Association</a>.\n\n<dt><a href=\"aptree.html\">Astronomy
+        Picture of the Day Subject Sorted\nArchive</a>\n<dd>This archive contains
+        Astronomy Pictures of the Day (TM)\nsorted by subject and is updated monthly.\n\n<dt><a
+        href=\"http://www.blastr.com/tags/bad-astronomy\"\n>Bad Astronomy Blog</a>\n<dd>
+        Astronomer Phil Plait's popular blog focusing on popular misconceptions and
+        hoaxes involving astronomy. \n\n<dt><a href=\"http://antwrp.gsfc.nasa.gov/htmltest/rjn_bht.html\">Black
+        holes \nand Neutron Stars</a>\n<dd>Take a virtual trip to a black hole or
+        neutron star.  Have your MPEG movie \nplayer ready.  Intended for the advanced
+        student, but fun for everyone.\n\n<dt><a href=\"https://cosmoquest.org/\">CosmoQuest</a>\n<dd>\"Where
+        professional scientists and the public come together to map other worlds,
+        learn about space, and share what we are discovering.\"\n\n<dt><a href=\"http://www.exploratorium.edu/\">The
+        Exploratorium</a>\n<dd>A fun way to explore science for a beginner. \n\n<dt><a
+        href=\"http://antwrp.gsfc.nasa.gov/debate/debate.html\">\nGreat Debates in
+        Astronomy</a>\n<dd> Do leading astronomers always agree?  Not always.  Here
+        are\ndetailed accounts of several debates in astronomy starting with\nthe
+        famous Scale of the Universe discussion in 1920 between Curtis\nand Shapley.
+        \  \n\n<dt><a href=\"http://hubblesite.org/\">HubbleSite</a>\n<dd>Detailed
+        pictures and explanations of Hubble Space Telescope results.\n\n<dt><b> Web
+        Planetarium Programs </b>\n<dd> Including <a href=\"https://www.google.com/sky/\">Google
+        Sky</a>,\n<a href=\"http://www.wikisky.org/\">WikiSky</a>, and the\n<a href=\"http://www.worldwidetelescope.org/webclient/\">World
+        Wide Telescope</a>\n\n<dt><a href=\"http://nightsky.jpl.nasa.gov/\">NASA Night
+        Sky Network</a>\n<dd>Dream of seeing the moon, stars & planets through a telescope?\nThe
+        NASA Night Sky Network connects you to astronomy clubs\nin the USA & their
+        public events.\n<a href=\"http://www.nightskynetwork.org\">www.nightskynetwork.org</a>\n\n<dt><a
+        href=\"http://spaceplace.nasa.gov/\">The Space Place</a><dd>\nNASA's award-winning
+        Web site for elementary age kids.  Games,\nanimations, projects, a cartoon
+        talk show, and amazing facts related\nto space and Earth science, technology,
+        and NASA's missions of\ndiscovery.  The Space Place is\nalso available in
+        Spanish at <a href=\"http://spaceplace.nasa.gov/\nespanol\">http://spaceplace.nasa.gov/espanol</a>.\n\n<dt><a
+        href=\"http://asterisk.apod.com/index.php\"\n>Starship Asterisk*</a>\n<dd>Become
+        an officer on a discussion board of astronomy enthusiasts that has a listing
+        of the latest astronomy news stories, discussion of the present APOD, and
+        the best and latest images submitted to APOD.\n\n<dt><a href=\"http://www.universetoday.com/\">Universe
+        Today</a>\n<dd>A news site dedicated to astronomy and space.\n\n<dt><a href=\"https://www.zooniverse.org/projects?discipline=astronomy\">Zooniverse:
+        Space</a>\n<dd>\"The world's largest and most popular platform for people-powered
+        research.\"\n\n</ul>\n\n<hr>\n\nReturn to\n<a href=\"http://antwrp.gsfc.nasa.gov/apod/astropix.html\"\n><b>Astronomy
+        Picture of the Day</b></a>.\n\n</body>\n</html>\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 11 Feb 2023 12:26:35 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1

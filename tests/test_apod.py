@@ -178,7 +178,12 @@ def test_extract_url(status_id, expected):
     (
         "https://apod.nasa.gov/apod/archivepix.html",
         "https://apod.nasa.gov/apod/lib/aptree.html",
-
+        "https://apod.nasa.gov/apod/calendar/allyears.html",
+        "https://apod.nasa.gov/apod/calendar/ca9601.html",
+        "https://apod.nasa.gov/apod/calendar/ca2301.html",
+        "https://apod.nasa.gov/apod/lib/about_apod.html",
+        "https://apod.nasa.gov/apod/ap_faq.html",
+        "https://apod.nasa.gov/apod/lib/edlinks.html",
     )
 )
 def test_from_html_throws_when_not_image_page(url:str, page_from_url):

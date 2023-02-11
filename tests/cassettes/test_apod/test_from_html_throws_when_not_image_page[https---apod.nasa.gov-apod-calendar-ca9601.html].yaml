@@ -1,0 +1,120 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/calendar/ca9601.html
+  response:
+    body:
+      string: "<HTML><HEAD><TITLE>APOD 1996 January</TITLE>\n</HEAD><BODY BGCOLOR=\"#FFFFF2\">\n<CENTER><FONT
+        SIZE=+0><A HREF=\"allyears.html\">\n             Click on a picture and discover
+        the cosmos!</a> \n             <BR><FONT SIZE=+1>\n             Astronomy
+        Picture of the Day Calendar </FONT>\n             <B><P></FONT><FONT SIZE=+0><CENTER>\n<CENTER>\n<table><tr>\n<td><A
+        HREF=\"ca9512.html\"><font size=+1>Last\nMonth</A> \n</td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td>\n<td></td><td></td>\n<td>
+        <B><FONT SIZE=+1>January 1996</B></td>\n<td></td><td></td><td></td><td></td><td></td><td></td><td></td>\n<td></td><td></td>\n<td>
+        \ <A HREF=\"ca9602.html\"><font size=+1>Next Month</A></td>\n</tr>   \n</table>\n</FONT></FONT>\n<CENTER><TABLE
+        BGCOLOR=\"#FFFFF2\" >\n<TR>\n<TD><FONT COLOR=\"#330000\"><center>Sun</TD>\n<TD><FONT
+        COLOR=\"#330000\"><center>Mon</TD>\n<TD><FONT COLOR=\"#330000\"><center>Tue</TD>\n<TD><FONT
+        COLOR=\"#330000\"><center>Wed</TD>\n<TD><FONT COLOR=\"#330000\"><center>Thu</TD>\n<TD><FONT
+        COLOR=\"#330000\"><center>Fri</TD>\n<TD><FONT COLOR=\"#330000\"><center>Sat</TD></TR>\n<TR>\n<TD></TD>\n<TD><A
+        HREF=\"../ap960101.html\">\n       <IMG SRC=\"S_960101.jpg\" alt=\"Thumbnail
+        image. Click to load APOD for this date\" BORDER=0>\n       </A></TD>\n<TD><A
+        HREF=\"../ap960102.html\">\n       <IMG SRC=\"S_960102.jpg\" alt=\"Thumbnail
+        image. Click to load APOD for this date\" BORDER=0>\n       </A></TD>\n<TD><A
+        HREF=\"../ap960103.html\">\n       <IMG SRC=\"S_960103.jpg\" alt=\"Thumbnail
+        image. Click to load APOD for this date\" BORDER=0>\n       </A></TD>\n<TD><A
+        HREF=\"../ap960104.html\">\n       <IMG SRC=\"S_960104.jpg\" alt=\"Thumbnail
+        image. Click to load APOD for this date\" BORDER=0>\n       </A></TD>\n<TD><A
+        HREF=\"../ap960105.html\">\n       <IMG SRC=\"S_960105.jpg\" alt=\"Thumbnail
+        image. Click to load APOD for this date\" BORDER=0>\n       </A></TD>\n<TD><A
+        HREF=\"../ap960106.html\">\n       <IMG SRC=\"S_960106.jpg\" alt=\"Thumbnail
+        image. Click to load APOD for this date\" BORDER=0>\n       </A></TD>\n</TR><TR
+        ALIGN=RIGHT>\n<TD><A HREF=\"../ap960107.html\">\n       <IMG SRC=\"S_960107.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0>\n       </A></TD>\n<TD><A
+        HREF=\"../ap960108.html\">\n       <IMG SRC=\"S_960108.jpg\" alt=\"Thumbnail
+        image. Click to load APOD for this date\" BORDER=0>\n       </A></TD>\n<TD><A
+        HREF=\"../ap960109.html\">\n       <IMG SRC=\"S_960109.jpg\" alt=\"Thumbnail
+        image. Click to load APOD for this date\" BORDER=0>\n       </A></TD>\n<TD><A
+        HREF=\"../ap960110.html\"><IMG SRC=\"S_960110.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap960111.html\"><IMG
+        SRC=\"S_960111.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap960112.html\"><IMG SRC=\"S_960112.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap960113.html\"><IMG SRC=\"S_960113.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n</TR><TR>\n<TD><A HREF=\"../ap960114.html\"><IMG
+        SRC=\"S_960114.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap960115.html\"><IMG SRC=\"S_960115.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap960116.html\"><IMG SRC=\"S_960116.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap960117.html\"><IMG
+        SRC=\"S_960117.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap960118.html\"><IMG SRC=\"S_960118.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap960119.html\"><IMG SRC=\"S_960119.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap960120.html\"><IMG
+        SRC=\"S_960120.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n</TR><TR>\n<TD><A HREF=\"../ap960121.html\"><IMG SRC=\"S_960121.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap960122.html\"><IMG SRC=\"S_960122.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap960123.html\"><IMG
+        SRC=\"S_960123.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap960124.html\"><IMG SRC=\"S_960124.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap960125.html\"><IMG SRC=\"S_960125.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap960126.html\"><IMG
+        SRC=\"S_960126.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap960127.html\"><IMG SRC=\"S_960127.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n</TR><TR>\n<TD><A
+        HREF=\"../ap960128.html\"><IMG SRC=\"S_960128.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap960129.html\"><IMG
+        SRC=\"S_960129.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap960130.html\"><IMG SRC=\"S_960130.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap960131.html\"><IMG SRC=\"S_960131.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD></TD></TR></TABLE><P></B>\n\n<
+        \ <A HREF=\"ca9512.html\"><font size=+1>Last Month</A>  |\n<A HREF=\"allyears.html\">\nCalendar</A>
+        \ |\n<A HREF=\"ca9602.html\">Next Month</A>  >\n<P>\n\n< </font><A HREF=\"../lib/aptree.html\">Index</A>
+        | \n<A HREF=\"http://antwrp.gsfc.nasa.gov/cgi-bin/cossc/apod_search\">Search</A>\n|
+        \n<A HREF=\"mailto:msudo@phy.mtu.edu,nemiroff@mtu.edu,\nbonnell@grossc.gsfc.nasa.gov\">Send
+        Mail to APOD</A>  |<A\nHREF=\"../astropix.html\"> Today's Picture</A>\n >\n<P>\nThis
+        calendar is generated by a robot written\nby <A HREF=\"http://www.phy.mtu.edu/apod/\">Momoko</A>.
+        \n<HR>\n<b> Authors & editors: </b>\n<a href=\"http://antwrp.gsfc.nasa.gov/htmltest/rjn.html\">Robert
+        Nemiroff</a>\n(<a href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a \nhref=\"http://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\">Jerry\nBonnell</a>
+        (<a href=\"http://www.usra.edu/\">USRA</a>)<br>\n<b>NASA Technical Rep.: </b>\n<a
+        href=\"mailto:jpn@grossc.gsfc.nasa.gov\">Jay Norris</a>.\n<a href=\"lib/about_apod.html#srapply\"\n>Specific
+        rights apply</a>.<br>\n<b>A service of:</b>\n<a href=\"http://lheawww.gsfc.nasa.gov/docs/lhea/homepg_lhea.html\">LHEA</a>\nat\n<a
+        href=\"http://www.gsfc.nasa.gov/NASA_homepage.html\">NASA</a>/\n<a href=\"http://www.gsfc.nasa.gov/GSFC_homepage.html\">GSFC</a><br>
+        <b>&:</b>\n<a href=\"http://www.mtu.edu/\">Michigan Tech. U.</a><br>\n\n</BODY>\n</HTML>\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '6629'
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 11 Feb 2023 12:26:33 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1

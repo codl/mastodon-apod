@@ -1,0 +1,262 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/lib/about_apod.html
+  response:
+    body:
+      string: "<!doctype html>\n<html>\n<head> \n<title> About APOD </title>\n</title>
+        \n<!-- gsfc meta tags -->\n<meta name=\"orgcode\" content=\"661\">\n<meta
+        name=\"rno\" content=\"phillip.a.newman\">\n<meta name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta
+        name=\"webmaster\" content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\"
+        content=\"information about astronomy picture of\nthe day\">\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n</head>\n<body
+        bgcolor=\"#F4F4FF\" text=\"#000000\"  link=\"#0000FF\"\n                       vlink=\"#7F0F9F\"
+        alink=\"#FF0000\">\n\n<hr>\n<center>\n<table>\n<tr>\n<td><img src=\"../apod.gif\"
+        alt=\"logo\"></td>\n<td><h1> About <br> Astronomy Picture of the Day </h1></td>\n</tr>\n</table>\n</center>\n<p>\n\n<hr>\n<center>\n<a
+        href=\"http://antwrp.gsfc.nasa.gov/apod/ap_faq.html\"\n>Frequently Asked Questions
+        List</a>\n</center>\n<hr>\n\n<b> Acknowledgement: </b> \nThe Astronomy Picture
+        of the Day (APOD) is based upon work supported by NASA under award No. 80NSSC17M0076.
+        \ Any opinions, findings, and conclusions or recommendations expressed in
+        this material are those of the author(s) and do not necessarily reflect the
+        views of the National Aeronautics and Space Administration.\n\n\n<h3> How
+        to Bookmark APOD </h3>\n\nLink to our main NASA site: <a href=\n\"http://apod.nasa.gov/\"\n>http://apod.nasa.gov/</a>\nwhich
+        will direct you to \n<a href=\"http://apod.nasa.gov/apod/astropix.html\"\n>http://apod.nasa.gov/apod/astropix.html</a>.
+        \ \nThis main site is the first to update and the most likely\nto be up-to-date.
+        \ \n\n<p>\n\nAlternatively, link to one of our mirror sites: \n<ul>\n\n<li>
+        Algeria (in Arabic from the \n<a href=\"http://siriusalgeria.net/\">Sirius
+        Astronomy Association)</a>:\n<a href=\"http://www.apodar.com/\">http://www.apodar.com/</a>,\nmaintained
+        by\n<a href=\"mailto: azoghbi at astro dot umd dot edu\">Abdrahman Zoghbi</a>\n\n<li>
+        Austria (in German):\n<a href=\"http://www.starobserver.org/\">http://www.starobserver.org/</a>,\nmaintained
+        by\n<a href=\"mailto:office at der-orion.com\">Maria Pflug-Hofmayr</a><br>\n\n<li>
+        Bulgaria (in Bulgarian from MediaBricks.bg):\n<a href=\"https://mediabricks.bg/apod-bulgaria\"\n>https://mediabricks.bg/apod-bulgaria</a>,\nmaintained
+        by <a href=\"mailto: gvalkan at mediabricks.bg\"\n>Valkan Goranov</a><br>\n\n<li>
+        Canada (in French):\n<a href=\"https://dpelletier.profweb.ca/index.html\"\n>https://dpelletier.profweb.ca/index.html</a>,\nmaintained
+        by <a href=\"mailto: pelletierdonald806@gmail.com\"\n>Donald Pelletier</a>
+        <br>\n\n<li> China (in Chinese from Beijing Planetarium):\n<a href=\"https://www.bjp.org.cn/APOD/today.shtml\">https://www.bjp.org.cn/APOD/today.shtml
+        </a>,\nmaintained by\n<a href=\"mailto: cc604.zj at gmail.com\">Chen chang</a><br>\n\n<li>
+        Croatia (in Croatian):\n<a href=\"http://www.apod.rs/Croatia.html\"\n>http://www.apod.rs/Croatia.html</a>,
+        maintained by\n<a href=\"http://abload.de/img/zel-prevodilaci2u5o.jpg\">Liliana
+        Gracanin</a>\n\n<li> Czech Republic (in Czech):\n<a href=\"http://www.astro.cz/apod/\"\n>http://www.astro.cz/apod/</a>,
+        maintained by\n<a href=\"mailto:apod4jch at astro.cz\">Josef Chlachula</a><br>\n\n<li>
+        France (in French from Ciel des Hommes):\n<a href=\"http://www.cidehom.com/apod.php\"\n>http://www.cidehom.com/apod.php</a>,\nmaintained
+        by <a href=\"mailto: jamet.didier at gmail.com\"\n>Didier Jamet</a><br>\n\n<li>
+        Indonesia (in Indonesian):\n<a href=\"http://apod.infoastronomy.org/\">http://apod.infoastronomy.org/</a>,\nmaintained
+        by <a href=\"mailto: riza.official at outlook.com\">Riza Miftah Muharram</a><br>\n\n<li>
+        Iran (in Farsi translated by \n<a href=\"https://www.instagram.com/sanaz_mosti/\">Sanaz
+        Mostafazadeh</a>):\n<a href=\"http://www.skypix.org/apod/\">http://www.SkyPix.org/apod/</a>,\nmaintained
+        by <a href=\"http://www.skypix.org/rahimi\">Mohammad Rahimi</a> <br>\n\n<li>
+        Italy (in English from Observatorio Astronomico di Brera):\n<a href=\"http://www.brera.mi.astro.it/apod/\"\n>http://www.brera.mi.astro.it/apod/</a>,
+        maintained by\n<a href=\"mailto: cristina.bernasconi at brera.inaf.it\">Cristina
+        Bernasconi</a><br>\n\n<li> Israel (in Hebrew, translated by Reshit Mada):\n<a
+        href=\"http://www.astronomia2009.org.il/info/apod/apod.htm\"\n>http://www.astronomia2009.org.il/info/apod/apod.htm</a>,\nmaintained
+        by \n<a href=\"mailto: yair at reshitmada.org\">Yair Grinberg</a>\n\n<li>
+        Japan (in Japanese and English):\n<a href=\"http://home.u05.itscom.net/apodjpn/apodj/apodj0.htm\"\n>http://home.u05.itscom.net/apodjpn/apodj/apodj0.htm</a>,
+        maintained by\n<a href=\"mailto:apodjpn at n08.itscom.net\">Aiichirou Niwa</a>\n\n<li>
+        Korea (in Korean and English from <a href=\"http://wouldyoulike.org/\">WouldYouLike</a>):\n<a
+        href=\"http://wouldyoulike.org/apod\"\n>http://wouldyoulike.org/apod</a>,
+        maintained by \n<a href=\"mailto: wim0705 at naver dot com\">Woongbae Zee</a>\n\n<li>
+        Montenegro (in Montenegrin): \n<a href=\"http://www.apod.rs/Montenegro.html\"\n>http://www.apod.rs/Montenegro.html</a>,
+        maintained by\n<a href=\"http://abload.de/img/pf-prevodilacqrs57.jpg\">Plavi
+        and Liliana Gracanin</a>\n\n<li> Netherlands (in Dutch):\n<a href=\"http://www.apod.nl/\">http://www.apod.nl/</a>,
+        maintained by\n<a href=\"http://www.public.asu.edu/~rjansen/\">Rolf A. Jansen</a>\n\n<li>
+        Poland (translated to Polish within a few days \nby the Polish Astronomical
+        Society): \n<a href=\"http://apod.pl/apod/\"\n>http://apod.pl/apod/</a> maintained
+        by\n<a href=\"mailto:kundera at oa.uj.edu.pl\">Tomasz Kundera</a><br>\n\n<li>
+        Russia (in Russian from Astronet.ru):\n<a href=\"http://www.astronet.ru/db/apod.html\"\n>http://www.astronet.ru/db/apod.html</a>
+        maintained by\n<a href=\"mailto: oleg at sai.msu.su\">Oleg Bartunov</a><br>\n\n<li>
+        Serbia (in Serbian):\n<a href=\"http://www.apod.rs/\"\n>http://www.apod.rs/</a>,
+        maintained by\n<a href=\"http://www.apod.rs/Prevodilac.html\">Liliana Gracanin</a><br>\n\n<li>
+        Slovenia (in Slovenian):\n<a href=\"http://apod.fmf.uni-lj.si/\"\n>http://apod.fmf.uni-lj.si/</a>,
+        maintained by\n<a href=\"mailto:herman.mikuz at fmf.uni-lj.si\">Herman Mikuz</a><br>\n\n<li>
+        Spain (in Catalan):\n<a href=\"http://www.apod.cat/\">http://www.apod.cat/</a>\nmaintained
+        by\n<a href=\"http://www.xavierberenguer.net/\">Xavier Berenguer</a>\n\n<li>
+        Spain (in Spanish):\n<a href=\"http://observatorio.info\">http://observatorio.info
+        </a>\nmaintained by\n<a href=\"mailto:info at observatorio.info\">Alex Dantart</a>\n(<a
+        href=\"http://astrored.org/\">AstroRed</a>)\n\n<li> Syria (in Arabic from
+        <a href=\"https://www.etabits.com/\">EtaBits Webs</a>):\n <a href=\"https://apod.me/\">https://apod.me/</a>,\nmaintained
+        by <a href=\"https://www.aularon.com/\"\n>Hasan Arous</a>\n\n<li> Taiwan (in
+        Chinese):\n<a href=\"http://sprite.phys.ncku.edu.tw/astrolab/mirrors/apod/apod.html\"\n>http://sprite.phys.ncku.edu.tw/astrolab/mirrors/apod/apod.html</a>,<br>\nand
+        (in English):\n<a href=\"http://sprite.phys.ncku.edu.tw/astrolab/mirrors/apod_e/apod.html\"\n>http://sprite.phys.ncku.edu.tw/astrolab/mirrors/apod_e/apod.html</a>
+        \nmaintained by <a href=\"mailto:htsu at mail.ncku.edu.tw\">Han-Tzong Su</a><br>\n\n<li>
+        Taiwan (in Taiwanese from National Central University):\n<a href=\"https://www.apod.tw/\"\n>https://www.apod.tw/</a>,\nmaintained
+        by <a href=\"mailto: altsai at astro.ncu.edu.tw\"\n>An-Li Tsai</a><br>\n\n<li>
+        Turkey (in Turkish):\n<a href=\"https://www.uzaydanhaberler.com/category/gorsel/apod/\"\n>https://www.uzaydanhaberler.com/category/gorsel/apod/</a>\nmaintained
+        by <a href=\"mailto: alpergokce at uzaydanhaberler.com\">Alper Gokce</a><br>\n\n<li>
+        Turkey (in Turkish from rasyonalist.org):\n<a href=\"https://rasyonalist.org/apod-gunun-astronomi-gorseli/\"\n>https://rasyonalist.org/apod-gunun-astronomi-gorseli/</a>\nmaintained
+        by <a href=\"mailto: astro.seda.basturk at gmail.com\"\n>Seda Ba\u015Ft\xFCrk</a><br>\n\n<li>
+        Ukraine (in Ukrainian from Odessa National Maritime University): \n<a href=\"http://astronomy.pp.ua/\">http://astronomy.pp.ua/</a>,\nmaintained
+        by\n<a href=\"mailto: bvv_2004 at ua.fm\">Vitalii Breus</a><br>\n\n<li> United
+        Kingdom (University College London):\n<a href=\"http://www.star.ucl.ac.uk/~apod/apod/astropix.html\"\n>http://www.star.ucl.ac.uk/~apod/apod/astropix.html</a>,\nmaintained
+        by <a href=\"mailto:idh at star.ucl.ac.uk\">Ian Howarth</a><br>\n\n</ul>\n\n<p>\nThese
+        addresses will bring you the most recent available\nAstronomy Picture of the
+        Day (APOD). \nSome people find it convenient to bookmark the main APOD page
+        and to\nrefresh it to see the latest APOD.\nAlternatively, to see past APODs,
+        please click on \"Archive\"\nnear the bottom of each page.\n\nTo navigate
+        to the previous day's picture,\nclick on the less than [ <b> &lt; </b> ] symbol
+        near the bottom left of each page.\n\nIf it is available, you can also navigate
+        to the next day's picture\nby clicking on the greater than [ <b> &gt; </b>
+        ] symbol near the bottom \nright of each page.\n\n<a name=\"newmedia\">\n<h3>
+        New Media APOD-Related Content </h3>\n</a>\n\nWe are aware of several \"new
+        media\" venues that carry APOD-related content.\nMost of these are done on
+        a volunteer basis and are not \nsupported directly by APOD or NASA.  In sum,
+        APOD considers these to be \nmirror sites that make classic APOD content readable
+        not in a \ndifferent language -- but with different technology.  \nSome of
+        these venues might partially support themselves by carrying \nadvertising.
+        \ This seems OK to us and we \nhave therfore given them permission to use
+        APOD content as it seems to give a \nbroader reach to APOD's educational mission.
+        \ \n<p>\n\n<li> Discussion Board:\n<a href=\"https://asterisk.apod.com/\"\n>Starship
+        Asterisk</a> maintained by\n<a href=\"mailto: nemiroff at mtu dot edu\">Robert
+        Nemiroff</a><br>\n\n<li> Email Delivery:\n<a href=\"http://apodemail.appspot.com/\">http://apodemail.appspot.com/</a>\nmaintained
+        by \n<a href=\"mailto: greg.tracy at att dot net\">Greg Tracy</a><br>\n\n<li>
+        RSS Feed:\n<a href=\"http://antwrp.gsfc.nasa.gov/apod.rss\">http://antwrp.gsfc.nasa.gov/apod.rss</a>
+        maintained by \n<a href=\"http://science.gsfc.nasa.gov/sed/index.cfm\">NASA
+        ASD</a><br>\n\n<li> Podcasts:\nvia <a href=\"https://podcasts.apple.com/us/podcast/astronomy-photo-of-the-day-2019/id428500031\">iTunes</a>
+        and \n<a href=\"https://www.youtube.com/channel/UCWksELVw1LfYg6TiLQyjByw/featured\"\n>YouTube</a>.
+        Commentary created by, and sites maintained by, \n<a href=\"mailto: rmwagner
+        at hacc dot edu\">Robert Wagner</a> (HACC)\n\n<li> Read Aloud by Artifical
+        Intelligence:\nvia <a href=\"https://www.youtube.com/channel/UCZepiiyNNbD2XL5sWnJBC_A\"\ni>YouTube</a>
+        created by <a href=\"https://videotizer.com/\">Videotizer</a> \n\n\n<h4> Social
+        Media </h4>\n\n<li> Facebook:\n<ul> \n<li> Arabic:\n<a href=\"https://www.facebook.com/APODArabic\"\n>https://www.facebook.com/APODArabic</a>\nmaintained
+        by\n<a href=\"https://apod.me/team\">APOD Arabic Team</a> </li>\n<li> English:
+        \n<a href=\"http://www.facebook.com/AstronomyPictureOfTheDay\"\n>http://www.facebook.com/AstronomyPictureOfTheDay</a>\nmaintained
+        by \n<a href=\"mailto: Paul dot Connelly at att dot net\">Paul Connelly</a>
+        </li>\n<li> Catalan: \n<a href=\"https://www.facebook.com/apod.cat\"\n>https://www.facebook.com/apod.cat</a>\nmaintained
+        by \n<a href=\"http://www.xavierberenguer.net/\">Xavier Berenguer</a> </li>\n<li>
+        Portuguese:\n<a href=\"https://www.facebook.com/apodbrasil/\"\n>https://www.facebook.com/apodbrasil/</a>\nmaintained
+        by\n<a href=\"mailto: rapha_oliveira1 at hotmail.com\">Raphael Oliveira</a>
+        &\n<a href=\"mailto: pcruz.astro at gmail.com\">Patricia Cruz</a> </li>\n<li>
+        Spanish: \n<a href=\"https://www.facebook.com/apod.es.observatorio/\"\n>https://www.facebook.com/apod.es.observatorio/</a>\nmaintained
+        by\n<a href=\"mailto:info at observatorio.info\">Alex Dantart</a>\n(<a href=\"http://astrored.org/\">AstroRed</a>)
+        </li>\n<li> Taiwanese:\n<a href=\"https://www.facebook.com/APOD.Taigi\"\n>https://www.facebook.com/APOD.Taigi</a>,\nmaintained
+        by <a href=\"mailto: altsai at astro.ncu.edu.tw\"\n>An-Li Tsai</a><br>\n</ul>\n\n<li>
+        Instagram: \n<ul>\n<li> Arabic: <a href=\"https://www.instagram.com/apod.arabic/\"\n>https://www.instagram.com/apod.arabic/</a>
+        maintained by\n<a href=\"https://apod.me/team\"\n>APOD Arabic Team</a> </li>\n<li>
+        English: <a href=\"https://instagram.com/astronomypicturesdaily\"\n>https://instagram.com/astronomypicturesdaily/</a>
+        maintained by\n<a href=\"mailto: worldwideyoungastronomers @at@ gmail .dot.
+        com\"\n>Sydney Petz</a> </li>\n<li> Indonesian: <a href=\"https://www.instagram.com/apod.id/\"\n>https://www.instagram.com/apod.id/</a>
+        maintained by \n<a href=\"mailto: achmadardani7 @at@ gmail .dot. com\"\n>Achmad
+        Ardani Prasha</a> </li> \n<li> Persian: <a href=\"https://www.instagram.com/avastarapod/\"\n>https://www.instagram.com/avastarapod/</a>
+        maintained by \n<a href=\"mailto: mag.avastarco @at@ gmail.com\">AvaStar Team</a></li>\n<li>
+        Portuguese: <a href=\"https://www.instagram.com/apodbrasil/\"\n>https://www.instagram.com/apodbrasil/</a>
+        maintained by\n<a href=\"mailto: navarete at gmail.com\">Felipe Navarete</a>
+        &\n<a href=\"mailto: joaquim.filho56 at gmail.com\">Joaquim Farias</a> </li>\n<li>
+        Taiwanese:\n<a href=\"https://www.instagram.com/apod_taigi/\"\n>https://www.instagram.com/apod_taigi/</a>,\nmaintained
+        by <a href=\"mailto: altsai at astro.ncu.edu.tw\"\n>An-Li Tsai</a><br>\n</ul>\n\n<li>
+        Twitter: \n<ul>\n<li> Arabic: <a href=\"https://twitter.com/APODArabic\"\n>https://twitter.com/APODArabic</a>
+        maintained by\n<a href=\"https://apod.me/team\">APOD Arabic Team</a></li>\n<li>
+        English: <a href=\"https://twitter.com/apod\"\n>https://twitter.com/apod/</a>
+        maintained by \n<a href=\"mailto: slowe at lcogt.net\">Stuart Lowe</a></li>\n<li>
+        Portuguese: <a href=\"https://twitter.com/apod_brasil\"\n>https://twitter.com/apod_brasil</a>
+        maintained by \n<a href=\"mailto: rap.oliveira at usp.br\">Raphael Oliveira</a>
+        &\n<a href=\"mailto: pcruz.astro at gmail.com\">Patricia Cruz</a> </li>\n<li>
+        Taiwanese:\n<a href=\"https://twitter.com/ApodTaigi\"\n>https://twitter.com/ApodTaigi</a>,\nmaintained
+        by <a href=\"mailto: altsai at astro.ncu.edu.tw\"\n>An-Li Tsai</a><br>\n</ul>\n\n<li>
+        Discord:\n<ul>\n<li>Discord Server: <a href=\"https://discord.gg/apod\"\n>https://discord.gg/apod</a>
+        maintained by APOD Developmental Strategist\n<a href=\"mailto: okayali at
+        mtu dot edu\">Ogetay Kayali</a> <br>\n</li>\n<li>\n<a href=\"https://discord.com/api/oauth2/authorize?client_id=875759903740948520&permissions=34628291664&scope=bot%20applications.commands\">Discord
+        Bot</a>: Developed and maintained by <a href=\"mailto: forsbergw82 at protonmail
+        dot com\">Will Forsberg</a>\n</li>\n<li> Special thanks to <a href=\"https://www.instagram.com/cosmocanada/\">Max
+        Melley</a> and <a href=\"sigfalt#8886\">Thomas Andaloro</a> for their support
+        during the creation of the server.\n</ul>\n\n<li> Reddit:\n<a href=\"https://www.reddit.com/r/apod\"\n>https://www.reddit.com/r/apod/</a>
+        maintained by\n<a href=\"rst97 at @hotmail.com\">Richard Stratton Townle</a>
+        <br>\n\n<li> tumblr:\n<a href=\"http://apod.tumblr.com/\"\n>http://apod.tumblr.com/</a>
+        maintained by\n<a href=\"https://twitter.com/trey/\">Trey Piepmeier</a> <br>\n\n<li>
+        mastodon:\n<a href=\"https://botsin.space/@APoD/media\"\n>https://botsin.space/@APoD/media</a>
+        maintained by\n<a href=\"mailto: codl at codl dot fr\">Corentin Delcourt</a>
+        <br>\n\n<li> Chrome browser extensions:\n<a href='https://chrome.google.com/webstore/search/\"Astronomy%20Picture%20of%20the%20Day\"?_feature=free&_category=extensions'>Current
+        list (free, user created and maintained)</a> <br>\n\n\n<h4> Mobile Platforms
+        </h4>\n\n<li> iPhone and iPad Applications:\n<a href=\"https://www.apple.com/us/search/apod?src=serp\"\n>APOD
+        listings in Apple App Store</a> <br> \n\n<li> Android Applications:\n<a href=\"https://play.google.com/store/search?q=apod&c=apps\"\n>APOD
+        listings on Google Play</a> <br>\n\n<p>\n<hr>\n\n<p>\n<b>Astronomy Picture
+        of the Day</b> (APOD) is originated, written, coordinated,\nand edited since
+        1995 by Robert Nemiroff and Jerry Bonnell.\nThe <a href=\"../archivepix.html\">APOD
+        archive</a>\ncontains the largest collection of annotated astronomical\nimages
+        on the internet.\n<p>\n\nAPOD in general and the APOD site served from NASA
+        specifically \nplaces links solely on\ninformation content and does not endorse
+        any commercial product nor guarantee \nclaims or sales made on any linked
+        pages.\nAPOD occasionally repeats images, in part to inform new readers the
+        best of the older images. \nAPOD occasionally reuses APOD text, in part to
+        avoid restating a point that has\nbeen well-stated on APOD before.\n<p>\n\nIn
+        real life, Bob and Jerry are two professional astronomers who spend most\nof
+        their time researching the universe.\nBob is a professor at \n<a href=\"http://www.phy.mtu.edu/\">Michigan
+        Technological University</a>\nin Houghton, Michigan, USA, \nwhile Jerry is
+        a scientist at NASA's Goddard Space Flight Center\nin Greenbelt, Maryland
+        USA. \nThey are two married, mild and lazy guys\nwho might appear relatively
+        normal to an unsuspecting guest.\nTogether, they have found new and unusual
+        ways of annoying people such as \n<a href=\"http://antwrp.gsfc.nasa.gov/debate/debate.html\"\n>staging
+        astronomical debates.</a>\nMost people are surprised to learn that\nthey have
+        developed the perfect\n<a href=\"http://antwrp.gsfc.nasa.gov/htmltest/rjn_dig.html\"\n>random
+        number generator.</a>\n<p>\n\n<hr>\n<a name=\"srapply\">\n<b>About image permissions:</b><p>\n</a>\n\nAll
+        the images on the APOD page are credited to the owner or\ninstitution where
+        they originated.\nSome of the images are copyrighted and to use these\npictures
+        publicly or commercially one must write to the owners for\npermission.  For
+        the copyrighted images, the copyright owner is identified\nin the APOD credit
+        line (please see the caption under the image),\nalong with a hyperlink to
+        the owner's location.\nNASA images are in the public domain,\n<a href=\"http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html\"\n>official
+        guidelines for their use can be found here</a>.\nFor images credited to other
+        owners/institutions,\nplease contact them directly for copyright and permissions
+        questions.\n<p>\n\nNeither NASA nor APOD can grant permission to use copyrighted
+        images.  For\nuse of these images, please write to the copyright owners.\n<p>\n\n\n<hr>\n\nDo
+        you enjoy APOD?  <b>Do you have a picture that would make a good APOD?</b>\nIf
+        so, we would enjoy hearing from you.\n\nImages are submitted by email to Robert
+        Nemiroff and Jerry Bonnell \nas described on the \n<a href=\"http://apod.nasa.gov/apod/lib/apsubmit2015.html\"\n>APOD
+        Submissions page</a>. \n\n\nIn addition, they can be\n<a href=\"http://asterisk.apod.com/viewtopic.php?f=29&t=22034\">posted\nto
+        this web site</a>.\n\nPlease note that by submitting your image to APOD, you
+        are consenting for\nyour image to be used on APOD in all of its forms unless
+        you explicitly \nnote otherwise. \nThese include mirror sites, \nworld language
+        mirror sites as listed above, \nnew media mirror sites as listed above, yearly
+        calendars, and  \ndirect APOD derivative products. <p>\n\nSome notable images
+        submitted to APOD may be displayed on one or all of the\nfollowing social
+        media pages to help access their popularity: <br>\n<b> Facebook: </b>\n<a
+        href=\"https://www.facebook.com/APOD.Sky\">Sky</a> <br> \n<b> Instagram: </b>
+        \n<a href=\"https://www.instagram.com/universe_view_screen/\"\n>Universe View
+        Screen</a> <br> \nSome of APOD's social media sites and some APOD derivative
+        products, such as Facebook, may post your image\nnext to commercial advertising.
+        We do recommend \nthat you include a small copyright notice in a corner of
+        your \nsubmitted images.\n\n<p>\n\nThank you for sharing the APOD experience!
+        \ We genuinely hope you have had \nan entertaining and educational few moments
+        with us.\n\n<p>\n\n<hr>\n<center>\n<a href=\"../astropix.html\"><b>Today's
+        Astronomy Picture of the Day</b></a>\n<hr>\nRobert Nemiroff's participation
+        in APOD was supported, in part, for a few years,\nby a grant from the <a href=\"http://www.nsf.gov/\">National
+        Science\nFoundation</a>.\n<p>\n<b> Authors & editors: </b>\n<a href=\"http://www.mtu.edu/physics/department/faculty/\nnemiroff/\">Robert
+        Nemiroff</a>\n(<a href=\"http://www.phy.mtu.edu/\">MTU</a>) &amp;\n<a href=\"http://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/\nbonnell.html\">Jerry
+        Bonnell</a>\n(<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<a href=\"nasawebstuff.html\">NASA
+        Web Site Statements, Warnings,\nand Disclaimers</a><br>\n<b>NASA Official:
+        </b> Phil Newman.\n<a href=\"../lib/about_apod.html#srapply\">Specific rights
+        apply</a>.<br>\n<b>A service of:</b>\n<a href=\"http://astrophysics.gsfc.nasa.gov/\">ASD</a>
+        at\n\n<a href=\"http://www.nasa.gov/\">NASA</a> /\n<a href=\"http://www.gsfc.nasa.gov/\">GSFC</a>\n<br><b>&amp;</b>
+        <a href=\"http://www.mtu.edu/\">Michigan Tech. U.</a><br>\n\n</center>\n\n</body>\n</html>\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 11 Feb 2023 12:26:34 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1

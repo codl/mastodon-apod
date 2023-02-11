@@ -1,0 +1,156 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/ap_faq.html
+  response:
+    body:
+      string: "<!doctype html>\n<html>\n<head>\n<title> APOD: Frequently Asked Questions
+        (FAQ)  \n</title>\n<!-- gsfc meta tags -->\n<meta name=\"orgcode\" content=\"661\">\n<meta
+        name=\"rno\" content=\"phillip.a.newman\">\n<meta name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta
+        name=\"webmaster\" content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\"
+        content=\"frequently asked questions about\nAstronomy Picture of the Day\">\n<!--
+        -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n</head>\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\"  link=\"#0000FF\"\n                       vlink=\"#7F0F9F\"
+        alink=\"#FF0000\">\n\n<hr>\n<center>\n<table>\n<tr>\n<td><img src=\"apod.gif\"
+        alt=\"logo\"></td>\n<td><h1> Astronomy Picture of the Day's <br> Frequently\nAsked
+        Questions (FAQ) </h1></td>\n</tr>\n</table>\n</center>\n<hr>\n<p>\n\nQ1: What
+        does APOD stand for? <br> \nA1: APOD stands for the <a href=\n\"https://apod.nasa.gov/\"\n>Astronomy
+        Picture of the Day</a>.  We abbreviate this \nas APOD instead of ApotD because
+        APOD sounds better \n(spoken: AYE-pod).  <p>\n\nQ2: How can I easily see yesterday's
+        APOD? <br>\nA2: Click the &lt; less than sign &lt; at the left of\ntoday's
+        APOD link line (near the bottom of the daily page). <p>\n\nQ3: How can I see
+        an APOD that ran long ago? <br>\nA3: All APODs are archived.  To see any past
+        APOD, access the archive\npage.  This is found by clicking \"archive\" on
+        the link line, or even by\nclicking \"Discover the Cosmos\" near the top of
+        recent APOD pages. <p>\n\nQ4: Have some APOD pictures been run more than once?
+        \ <br>\nA4: Yes. Many of our readers have been with us less than a year and
+        are\nunaware of some really spectacular or important astronomy pictures. New\ninformation
+        about old pictures is becoming available over the WWW. The\ntext and links
+        for rerun pictures will make use of this newly\navailable information. So
+        although the picture might be old, some of\nthe text and links of each APOD
+        will be new.  Also, more web surfers\nhave larger bandwidth connections, which
+        allows us to post\nhigher-resolution image files that can be transferred conveniently.\nSoftware
+        to handle more sophisticated image file formats has also\nbecome more common,
+        so the picture's size\nand/or format might be new. Lastly, rerunning APODs
+        saves us time and\nhelps us update our archive. In general, our rerun policy
+        currently is\nto only rerun APODs more than one year old to keep the pictures\nrelatively
+        \"new\" to new APOD viewers. We will almost\nnever rerun more than two pictures
+        in any given week.\nSo when you load the current\nAPOD,it is still, most probably,
+        a new picture. <p>\n\nQ5: I have a picture that would make a good APOD. Will
+        you use it? <br>\nA5: We can't promise to use it but we do strongly encourage
+        picture\n<a href=\"https://apod.nasa.gov/apod/lib/apsubmit2015.html\"\n>submissions
+        to APOD</a>.  Even if you only know of a good picture, please\ntell us about
+        it.  If you own the copyright for a submitted picture,\nplease grant us explicit
+        permission to use it.  The best way to show us\nyour picture is to load it
+        onto a web page and send us the URL. <p>\n\nPlease note that by submitting
+        your image to APOD, you are consenting for your image to be used on APOD in
+        all of its forms, including mirror sites, foreign language mirror sites, and
+        direct APOD derivative products. Some of these, like Facebook, carry advertising.
+        We do recommend that you include a small copyright notice in a corner of your
+        submitted images. <p>\n\nQ6: Can I use an APOD picture for my computer-screen
+        background? <br>\nA6: For personal, non-commercial, non-public fair use, yes.
+        <p>\n\nQ7: How can I get a nice poster of a particular APOD? <br>\nA7: APOD
+        does not sell posters. We therefore suggest that you print out a copy for
+        personal use, or use a search engine to locate a version for sale by a vendor.
+        \n\n<p>\n\nQ7a: How can I see a higher-resolution version of a particular\nAPOD?</br>\nA7a:
+        Clicking on the picture itself brings up the highest\nresolution version of
+        the image available from APOD.  It is possible\nthat higher resolution versions
+        exist.  To find these you should\nfollow the informative links in the APOD
+        text.<p>\n\nQ8: Can I use APOD pictures in my classroom? <br>\nA8: For non-commercial
+        fair use, yes.  Please note that many APOD\nimages have are copyrighted and
+        so to use them commercially you must\ngain explicit permission from the copyright
+        owners.  Many times, these\ncopyright owners can be found by following the
+        links provided under the\nAPOD image(s).  <p>\n\nQ9: Can I use your APOD images
+        for my brochure? <br>\nA9: Many APOD images are copyrighted and so to use
+        them you must write\nto the copyright owners for explicit permission. Many
+        times, these\ncopyright owners can be found by following the links provided
+        under the\nAPOD image(s).  <p>\n\nQ10: Can you please answer this question
+        about astronomy? <br>\nA10: We do get a lot of e-mail and can't promise to
+        respond due to time\nconstraints.  However, the APOD bulletin board \n<a href=\"http://asterisk.apod.com/\">Starship
+        Asterisk</a> \nis filled with knowledgeable and enthusiastic people who would
+        actually \nenjoy answering all of your astronomy questions.  In particlar,
+        \nStarship Asterisk's \n<a href=\"http://asterisk.apod.com/viewforum.php?f=30\"\n>Library</a>
+        is designed for newcomers.  \nPlease ask -- there is no question too easy
+        or too hard.  \n\nAlternatively, there are other web sites that are\ndevoted
+        to providing answers to space and astronomy questions.  \nTwo of these that
+        keep an impressive archive of questions and answers are: \n<a href=\"http://image.gsfc.nasa.gov/poetry/ask/askmag.html\">Ask
+        the Space\nScientist</a> and \n<a href=\"http://imagine.gsfc.nasa.gov/docs/ask_astro/\nask_an_astronomer.html\">Ask
+        an Astrophysicist</a>.\nPlease note that if you ask your question and it is
+        answered\npublicly, others can gain from your curiosity.  <p>\n\nQ11: Is APOD
+        available as a book? <br>\nA11: Selections from APOD's daily pages have been
+        compiled into\ntwo books titled \"Universe: 365 Days\" (May 1, 2003) and \"Astronomy:\n365
+        Days\" (October 1, 2006) - Publisher: Harry N Abrams.\n<p>\n\nQ12: Is APOD
+        available as a CD? <br>\nA12: Sorry, APOD CDs are no longer available.\n<p>\n\nQ13:
+        What if I used to be a millionaire but then I believed something\nI read on
+        APOD and now own only a single dented bucket?<br>\nA13: There are no guarantees.
+        Use APOD information at your own risk.<p>\n\nQ14: How long will APOD keep
+        going? <br>\nA14: If the \"Tomorrow\" line at the bottom of today's APOD is
+        not blank,\nthen at least until tomorrow. (Probably.) We certainly have no
+        plans\nto stop soon.  If you check the apod archive you can see that it begins\nin
+        June 1995.\n<p>\n\nQ15: Won't APOD soon run out of pictures? <br>\nA15: Probably
+        not. NASA has archived literally hundreds of thousands of\nspace and astronomy
+        related pictures and APOD readers have come to\nsubmit many images for our
+        consideration.\nSo far, we have more good pictures than we can run.\n<p>\n\nQ16:
+        Who writes the APOD text? <br>\nA16: Robert J. Nemiroff and Jerry T. Bonnell
+        have written most\nevery APOD. Starting in 2020, APOD has occasionally\nrun
+        text written by volunteers. \nIn general, volunteers are professional astronomers.
+        APOD occasionally \nreuses APOD text, in part to avoid restating a point that
+        \nhas been well-stated on APOD before. <p>\n\n\nBob and Jerry are friends,
+        professional astronomers, and\nwere once office-mates at NASA's Goddard Space
+        Flight Center in\nGreenbelt, MD.  Presently, Bob is a professor at Michigan\nTechnological
+        University in Houghton, Michigan, USA, while Jerry is a\nscientist at NASA/Goddard.
+        They are two mild and lazy guys\nwho might otherwise appear normal to an unsuspecting
+        guest. Together,\nthey have found new and unusual ways of annoying people
+        such as\nstaging <a href=\"http://antwrp.gsfc.nasa.gov/debate/debate.html\"\n>astronomical
+        debates</a>. Most people are surprised to learn that they\nhave developed
+        the perfect\n<a href=\"http://antwrp.gsfc.nasa.gov/htmltest/rjn_dig.html\">random\nnumber
+        generator</a>. <p>\n\nQ17: If you guys weren't so modest, what would you tell
+        us about APOD? <br>\nA17: Since we are so modest we keep quiet about a lot
+        of things.  For\nexample, it just wouldn't be proper to let slip that we feel
+        that APOD\nis one of the first sites (since 1995) to make journalistic use
+        of full\nweb hypertext. By \"full web hypertext\", we mean that the APOD text
+        is\nliberally annotated with hyperlinks to anywhere on the web where good\nand
+        relevant information is available.  We don't claim to be good at\nwriting
+        full web hypertext (we're too modest), just relatively early\nusers of this
+        informative type of writing.\n<p>\n\nRobert J. Nemiroff and Jerry T. Bonnell
+        \nfor Astronomy Picture of the Day\n<p>\n\n<center>\n<hr>\n<a href=\"http://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA\nWeb
+        Site Statements, Warnings, and Disclaimers</a><br>\n<b>NASA Official: </b>
+        Phil Newman.\n<a href=\"lib/about_apod.html#srapply\">Specific rights apply</a>.<br>\n<b>A
+        service of:</b>\n<a href=\"http://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n\n<a
+        href=\"http://www.nasa.gov/\">NASA</a> /\n<a href=\"http://www.gsfc.nasa.gov/\">GSFC</a>\n<br><b>&</b>
+        <a href=\"http://www.mtu.edu/\">Michigan Tech. U.</a><br>\n</center>\n\n</body>\n</html>\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 11 Feb 2023 12:26:34 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1

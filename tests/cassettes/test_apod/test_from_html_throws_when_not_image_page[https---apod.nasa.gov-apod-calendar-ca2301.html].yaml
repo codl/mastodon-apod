@@ -1,0 +1,117 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/calendar/ca2301.html
+  response:
+    body:
+      string: "<HTML><HEAD><TITLE>APOD 2023 January</TITLE>\n</HEAD><BODY BGCOLOR=\"#FFFFF2\">\n<CENTER><FONT
+        SIZE=+0><A HREF=\"allyears.html\">\n             Click on a picture and discover
+        the cosmos!</a> \n             <BR><FONT SIZE=+1>\n             Astronomy
+        Picture of the Day Calendar </FONT>\n             <B><P></FONT><FONT SIZE=+0><CENTER>\n<CENTER>\n<table><tr>\n<td><A
+        HREF=\"ca2212.html\"><font size=+1>Last\nMonth</A> \n</td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td>\n<td></td><td></td>\n<td>
+        <B><FONT SIZE=+1>January 2023</B></td>\n<td></td><td></td><td></td><td></td><td></td><td></td><td></td>\n<td></td><td></td>\n<td>
+        \ <A HREF=\"ca2302.html\"><font size=+1>Next Month</A></td>\n</tr>   \n</table>\n</FONT></FONT>\n<CENTER><TABLE
+        BGCOLOR=\"#FFFFF2\" >\n<TR>\n<TD><FONT COLOR=\"#330000\"><center>Sun</TD>\n<TD><FONT
+        COLOR=\"#330000\"><center>Mon</TD>\n<TD><FONT COLOR=\"#330000\"><center>Tue</TD>\n<TD><FONT
+        COLOR=\"#330000\"><center>Wed</TD>\n<TD><FONT COLOR=\"#330000\"><center>Thu</TD>\n<TD><FONT
+        COLOR=\"#330000\"><center>Fri</TD>\n<TD><FONT COLOR=\"#330000\"><center>Sat</TD></TR>\n<TR>\n<TD><A
+        HREF=\"../ap230101.html\"><IMG SRC=\"S_230101.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap230102.html\"><IMG
+        SRC=\"S_230102.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap230103.html\"><IMG SRC=\"S_230103.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap230104.html\"><IMG SRC=\"S_230104.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap230105.html\"><IMG
+        SRC=\"S_230105.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap230106.html\"><IMG SRC=\"S_230106.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap230107.html\"><IMG SRC=\"S_230107.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n</tr><tr>\n<TD><A HREF=\"../ap230108.html\"><IMG
+        SRC=\"S_230108.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap230109.html\"><IMG SRC=\"S_230109.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap230110.html\"><IMG SRC=\"S_230110.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap230111.html\"><IMG
+        SRC=\"S_230111.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap230112.html\"><IMG SRC=\"S_230112.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap230113.html\"><IMG SRC=\"S_230113.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap230114.html\"><IMG
+        SRC=\"S_230114.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n</tr><tr>\n<TD><A HREF=\"../ap230115.html\"><IMG SRC=\"S_230115.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap230116.html\"><IMG SRC=\"S_230116.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap230117.html\"><IMG
+        SRC=\"S_230117.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap230118.html\"><IMG SRC=\"S_230118.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap230119.html\"><IMG SRC=\"S_230119.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap230120.html\"><IMG
+        SRC=\"S_230120.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap230121.html\"><IMG SRC=\"S_230121.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n</tr><tr>\n<TD><A
+        HREF=\"../ap230122.html\"><IMG SRC=\"S_230122.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap230123.html\"><IMG
+        SRC=\"S_230123.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap230124.html\"><IMG SRC=\"S_230124.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap230125.html\"><IMG SRC=\"S_230125.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A HREF=\"../ap230126.html\"><IMG
+        SRC=\"S_230126.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap230127.html\"><IMG SRC=\"S_230127.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap230128.html\"><IMG SRC=\"S_230128.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n</tr><tr>\n<TD><A HREF=\"../ap230129.html\"><IMG
+        SRC=\"S_230129.jpg\" alt=\"Thumbnail image. Click to load APOD for this date\"
+        BORDER=0></A></TD>\n<TD><A HREF=\"../ap230130.html\"><IMG SRC=\"S_230130.jpg\"
+        alt=\"Thumbnail image. Click to load APOD for this date\" BORDER=0></A></TD>\n<TD><A
+        HREF=\"../ap230131.html\"><IMG SRC=\"S_230131.jpg\" alt=\"Thumbnail image.
+        Click to load APOD for this date\" BORDER=0></A></TD>\n</TR></TABLE><P></B>\n\n<
+        \ <A HREF=\"ca2212.html\"><font size=+1>Last Month</A>  |\n<A HREF=\"allyears.html\">\nCalendar</A>
+        \ |\n<A HREF=\"ca2302.html\">Next Month</A>  >\n<P>\n\n< </font><A HREF=\"../lib/aptree.html\">Index</A>
+        | \n<A HREF=\"http://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</A>\n|
+        \n<A HREF=\"mailto:,nemiroff@mtu.edu,\nbonnell@grossc.gsfc.nasa.gov\">Send
+        Mail to APOD</A>  |<A\nHREF=\"../astropix.html\"> Today's Picture</A>\n >\n<P>\nThis
+        calendar is generated by a robot written by Momoko.\n<HR>\n<b> Authors & editors:
+        </b>\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/rjn.html\">Robert Nemiroff</a>\n(<a
+        href=\"https://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\">Jerry\nBonnell</a>
+        (<a href=\"https://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA Technical Rep.:
+        </b> Phil Newman.\n<a href=\"../lib/about_apod.html#srapply\">Specific rights
+        apply</a>.<br>\n<b>A service of:</b>\n<a href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a>\nat\n<a
+        href=\"https://www.nasa.gov/\">NASA</a>/\n<a href=\"https://www.gsfc.nasa.gov/\">GSFC</a><br>
+        <b>&:</b>\n<a href=\"https://www.mtu.edu/\">Michigan Tech. U.</a><br>\n</BODY>\n</HTML>\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '6297'
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 11 Feb 2023 12:26:34 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1
