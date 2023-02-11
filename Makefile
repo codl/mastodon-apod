@@ -1,4 +1,4 @@
-IMAGE := mastodon-apod
+IMAGE := ghcr.io/codl/mastodon-apod
 CONTAINER := mastodon-apod
 UID := $(shell id -u)
 
