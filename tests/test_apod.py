@@ -1,4 +1,4 @@
-from apod import ApodPage, ApodBot, cleanup_alt_text
+from apod import ApodPage, ApodBot, cleanup_alt_text, ApodScraper
 import requests
 import pytest
 import mastodon
@@ -170,3 +170,8 @@ def test_extract_url(status_id, expected):
     status = m.status(status_id)
 
     assert ApodBot.extract_apod_url_from_status(status) == expected
+
+@pytest.mark.vcr
+def test_scraper_get_last_page():
+    scraper = ApodScraper()
+    assert scraper.latest_page().url == "https://apod.nasa.gov/apod/ap230211.html"

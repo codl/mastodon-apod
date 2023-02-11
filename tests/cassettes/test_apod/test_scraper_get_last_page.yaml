@@ -1,0 +1,184 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/
+  response:
+    body:
+      string: "<!doctype html>\n<html>\n<head>\n<title>Astronomy Picture of the Day\n</title>
+        \n<!-- gsfc meta tags -->\n<meta name=\"orgcode\" content=\"661\">\n<meta
+        name=\"rno\" content=\"phillip.a.newman\">\n<meta name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta
+        name=\"webmaster\" content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\"
+        content=\"A different astronomy and space science\nrelated image is featured
+        each day, along with a brief explanation.\">\n<!-- -->\n<meta name=viewport
+        content=\"width=device-width, initial-scale=1\">\n<meta name=keywords content=\"smc,
+        lmc, atacama desert\">\n<!-- -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n\n</head>\n\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#7F0F9F\"\nalink=\"#FF0000\">\n\n<center>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is\nfeatured, along with a brief explanation written by a professional
+        astronomer.\n<p>\n\n2023 February 11\n<br> \n\n<a href=\"image/2302/magellanic.jpg\">\n<IMG
+        SRC=\"image/2302/magellanic1200.jpg\"\nalt=\"See Explanation.  Clicking on
+        the picture will download\nthe highest resolution version available.\" style=\"max-width:100%\"></a>\n\n</center>\n\n<center>\n<b>
+        Magellanic Clouds over Chile </b> <br>\n\n<b>Image Credit &\n<a href=\"lib/about_apod.html#srapply\">Copyright</a>:</b>\n\n<a
+        href=\"https://www.astrobin.com/40v8a9/\">Felipe Mac Auliffe L\xF3pez</a>\n\n</center>
+        <p> \n\n<b> Explanation: </b> \n\nThe two prominent clouds in this Chilean
+        Atacama Desert\n<a href=\"https://www.astrobin.com/40v8a9/\">skyscape captured
+        on January 21</a>\nactually\n<a href=\"https://solarsystem.nasa.gov/solar-system/beyond/in-depth/\">lie
+        beyond</a> our Milky Way galaxy. \n\nKnown as\n<a href=\"ap190905.html\">the
+        Large</a> and\n<a href=\"ap210105.html\">the Small</a>\nMagellanic Clouds
+        they are\nso named for the 16th century Portuguese explorer Ferdinand Magellan,\nleader
+        of the first circumnavigation of planet Earth.\n\n<a href=\"ap210101.html\">Famous
+        jewels of southern hemisphere</a>\nskies, they are the brightest\nsatellite
+        galaxies of the Milky Way.\n\nThe larger cloud is some 160,000 light-years,
+        and the smaller 210,000\nlight-years distant.\n\nWhile both are irregular
+        dwarf galaxies in their own right,\nthey exhibit central barred structures
+        in the deep wide-angle view.\n\nWide and deep exposures also reveal faint
+        dusty\n<a href=\"https://www.cosmotography.com/images/galactic_cirrus.html\">galactic
+        cirrus</a>\nnebulae and the imprints of gravitational tidal interactions\n<a
+        href=\"ap160725.html\">between the Large and Small Magellanic Clouds</a>.\n\n<p>
+        <center> \n\n<b> Tomorrow's picture: </b>another cloudy day \n\n<p> <hr>\n<a
+        href=\"ap230210.html\">&lt;</a>\n| <a href=\"archivepix.html\">Archive</a>\n|
+        <a href=\"lib/apsubmit2015.html\">Submissions</a> \n| <a href=\"lib/aptree.html\">Index</a>\n|
+        <a href=\"https://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</a>\n|
+        <a href=\"calendar/allyears.html\">Calendar</a>\n| <a href=\"/apod.rss\">RSS</a>\n|
+        <a href=\"lib/edlinks.html\">Education</a>\n| <a href=\"lib/about_apod.html\">About
+        APOD</a>\n| <a href=\"http://asterisk.apod.com/discuss_apod.php?date=230211\">Discuss</a>\n|
+        <a href=\"ap230212.html\">&gt;</a>\n\n<hr><p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://www.phy.mtu.edu/faculty/Nemiroff.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\"\n>Jerry
+        Bonnell</a> (<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA
+        Official: </b> Phillip Newman\n<a href=\"lib/about_apod.html#srapply\">Specific
+        rights apply</a>.<br>\n<a href=\"https://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA
+        Web\nPrivacy Policy and Important Notices</a><br>\n<b>A service of:</b>\n<a
+        href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n<a href=\"https://www.nasa.gov/\">NASA</a>
+        /\n<a href=\"https://www.nasa.gov/centers/goddard/\">GSFC</a>,\n<br> <a href=\"https://science.nasa.gov/learners\">NASA
+        Science Activation</a>\n<br><b>&</b> <a href=\"http://www.mtu.edu/\">Michigan
+        Tech. U.</a><br>\n</center>\n</body>\n</html>\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 11 Feb 2023 11:42:20 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/ap230210.html
+  response:
+    body:
+      string: "<!doctype html>\n<html>\n<head>\n<title> APOD: 2023 February 10 - ZTF
+        meets ATLAS\n</title> \n<!-- gsfc meta tags -->\n<meta name=\"orgcode\" content=\"661\">\n<meta
+        name=\"rno\" content=\"phillip.a.newman\">\n<meta name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta
+        name=\"webmaster\" content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\"
+        content=\"A different astronomy and space science\nrelated image is featured
+        each day, along with a brief explanation.\">\n<!-- -->\n<meta name=viewport
+        content=\"width=device-width, initial-scale=1\">\n<meta name=keywords content=\"c/2022
+        e3 (ztf), c/2022 u2 (atlas), comet\">\n<!-- -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n\n</head>\n\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#7F0F9F\"\nalink=\"#FF0000\">\n\n<center>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is\nfeatured, along with a brief explanation written by a professional
+        astronomer.\n<p>\n\n2023 February 10\n<br> \n\n<a href=\"image/2302/C2022E3ZTFmeetsC2022U2Atlasbeschriftet.jpg\">\n<IMG
+        SRC=\"image/2302/C2022E3ZTFmeetsC2022U2Atlasbeschriftet1024.jpg\"\nalt=\"See
+        Explanation.  Clicking on the picture will download\nthe highest resolution
+        version available.\" style=\"max-width:100%\"></a>\n\n</center>\n\n<center>\n<b>
+        ZTF meets ATLAS </b> <br>\n\n<b>Image Credit &\n<a href=\"lib/about_apod.html#srapply\">Copyright</a>:</b>\n\n<a
+        href=\"https://astrofotografie-steve.de/kontakt/\">Stefan Bemmerl</a>\n\n</center>
+        <p> \n\n<b> Explanation: </b> \n\nFading as it\n<a href=\"https://www.facebook.com/groups/564399700347004/posts/5986568748130045/\">races
+        across</a>\nplanet Earth's northern skies\ncomet C/2022 E3 (ZTF)\n<a href=\"https://www.astrobin.com/ymb891/0/\">shares
+        this telescopic frame</a>\nwith comet\n<a href=\"https://theskylive.com/c2022u2-info\">C/2022
+        U2 (ATLAS)</a>.\n\nCaptured on the night of February 6 from\na garden observatory
+        in Germany's Bavarian Forest, the starry field of\nview toward the constellation
+        Auriga spans about 2.5 degrees.\n\n<a href=\"https://people.ast.cam.ac.uk/~jds/coms22.htm#22U2\">Discovered
+        by</a>\nsky survey projects in 2022 (the\n<a href=\"https://en.wikipedia.org/wiki/Zwicky_Transient_Facility\">Zwicky
+        Transient Facility</a>\nand the\n<a href=\"https://en.wikipedia.org/wiki/Asteroid_Terrestrial-impact_Last_Alert_System\">Asteroid
+        Terrestrial-impact Last Alert System</a>)\nthese\n<a href=\"https://solarsystem.nasa.gov/solar-system/oort-cloud/overview/\">long-period
+        comets</a>\nare outbound, reaching perihelion just last month.\n\nThe much
+        fainter comet ATLAS made its closest approach to our fair\nplanet on January
+        29 at a distance of about 4.6 light-minutes, compared\nto a mere 2.4 light-minutes
+        for comet ZTF on February 2.\n\nThis comet ATLAS lacks the well-developed
+        tails of the\n<a href=\"https://skyandtelescope.org/astronomy-news/understanding-the-tails-of-comet-ztf-c-2022-e3/\">formerly
+        naked-eye comet ZTF</a>.\n\nBut both comets sport greenish tinted comas, \nemission
+        from diatomic carbon molecules fluorescing in sunlight.\n\nContinuing its
+        dash across planet Earth's sky, the good-binocular\n<a href=\"https://earthsky.org/astronomy-essentials/new-comet-might-get-bright-enough-for-binoculars/\">comet
+        ZTF will appear close to bright planet Mars tonight</a>.\n\n<p> <center> \n\n<b>
+        Tomorrow's picture: </b><a href=\"ap230211.html\">light-weekend</a> \n\n<p>
+        <hr>\n<a href=\"ap230209.html\">&lt;</a>\n| <a href=\"archivepix.html\">Archive</a>\n|
+        <a href=\"lib/apsubmit2015.html\">Submissions</a> \n| <a href=\"lib/aptree.html\">Index</a>\n|
+        <a href=\"https://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</a>\n|
+        <a href=\"calendar/allyears.html\">Calendar</a>\n| <a href=\"/apod.rss\">RSS</a>\n|
+        <a href=\"lib/edlinks.html\">Education</a>\n| <a href=\"lib/about_apod.html\">About
+        APOD</a>\n| <a href=\n\"http://asterisk.apod.com/discuss_apod.php?date=230210\">Discuss</a>\n|
+        <a href=\"ap230211.html\">&gt;</a>\n\n<hr><p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://www.phy.mtu.edu/faculty/Nemiroff.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\"\n>Jerry
+        Bonnell</a> (<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA
+        Official: </b> Phillip Newman\n<a href=\"lib/about_apod.html#srapply\">Specific
+        rights apply</a>.<br>\n<a href=\"https://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA
+        Web\nPrivacy Policy and Important Notices</a><br>\n<b>A service of:</b>\n<a
+        href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n<a href=\"https://www.nasa.gov/\">NASA</a>
+        /\n<a href=\"https://www.nasa.gov/centers/goddard/\">GSFC</a>,\n<br> <a href=\"https://science.nasa.gov/learners\">NASA
+        Science Activation</a>\n<br><b>&</b> <a href=\"http://www.mtu.edu/\">Michigan
+        Tech. U.</a><br>\n</center>\n</body>\n</html>\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 11 Feb 2023 11:42:20 GMT
+      Keep-Alive:
+      - timeout=5, max=99
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1

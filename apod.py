@@ -14,6 +14,7 @@ from dataclasses import dataclass, field
 from typing import Optional, Any
 from itertools import chain, count
 from mastodon import Mastodon
+import dataclasses
 
 urllib3_cn.allowed_gai_family = lambda: socket.AF_INET
 
@@ -171,6 +172,32 @@ class ApodPage():
 
 
 
+class ApodScraper(object):
+    def __init__(self, session:None|requests.Session=None):
+        self.session: requests.Session
+        if session is not None:
+            self.session = session;
+        else:
+            self.session = requests.Session()
+            self.session.headers.update({
+                'user-agent':
+                    'mastodon-apod +https://github.com/codl/mastodon-apod'})
+
+    def latest_page(self) -> ApodPage:
+        IDX_URL = "https://apod.nasa.gov/apod/"
+        r = self.session.get(IDX_URL)
+        r.raise_for_status()
+        page = ApodPage.from_html(IDX_URL, r.content);
+        if page.prev_url is None:
+            raise ScrapeError("Index page has no previous link")
+        prev_r = self.session.get(page.prev_url);
+        prev_r.raise_for_status()
+        prev_page = ApodPage.from_html(page.prev_url, prev_r.content);
+        if prev_page.next_url is None:
+            raise ScrapeError("Previous page has no next link")
+        page = dataclasses.replace(page, url=prev_page.next_url)
+        return page
+
 
 class ApodBot(ananas.PineappleBot):
     mastodon: Mastodon
@@ -181,7 +208,7 @@ class ApodBot(ananas.PineappleBot):
         self.session.headers.update({
             'user-agent':
                 'mastodon-apod +https://github.com/codl/mastodon-apod'})
-
+        self.scraper = ApodScraper(session = self.session)
 
     @ananas.daily(1, 28)
     @ananas.daily(7, 28)
@@ -198,6 +225,12 @@ class ApodBot(ananas.PineappleBot):
             if not last_page.next_url:
                 raise Exception("Last page doesn't have a next page")
             next_url = last_page.next_url
+            resp = self.session.get(next_url)
+
+            if resp.status_code == 404:
+                return
+            resp.raise_for_status()
+            page = ApodPage.from_html(next_url, resp.text)
 
             if next_url in recent_urls:
                 raise Exception("Next page has been posted recently")
@@ -208,19 +241,8 @@ class ApodBot(ananas.PineappleBot):
                 raise Exception("Date guessed from next page url seems to be in the past")
 
         else:
-            ARCHIVE = 'https://apod.nasa.gov/apod/archivepix.html'
-            resp = self.session.get(ARCHIVE)
-            resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, 'html.parser')
-            next_url = urljoin(ARCHIVE, soup.b.a['href'])
+            page = self.scraper.latest_page()
 
-        resp = self.session.get(next_url)
-
-        if resp.status_code == 404:
-            return
-        resp.raise_for_status()
-
-        page = ApodPage.from_html(next_url, resp.text)
 
         post_text = "{page.title}\n\n{page.credit}\n\n{page.url} #APOD".format(page=page)
 
