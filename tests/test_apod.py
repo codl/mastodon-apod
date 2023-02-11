@@ -1,4 +1,4 @@
-from apod import ApodPage, ApodBot, cleanup_alt_text, ApodScraper
+from apod import ApodPage, ApodBot, ScrapeError, cleanup_alt_text, ApodScraper
 import requests
 import pytest
 import mastodon
@@ -170,6 +170,22 @@ def test_extract_url(status_id, expected):
     status = m.status(status_id)
 
     assert ApodBot.extract_apod_url_from_status(status) == expected
+
+
+@pytest.mark.vcr
+@pytest.mark.parametrize(
+    "url",
+    (
+        "https://apod.nasa.gov/apod/archivepix.html",
+        "https://apod.nasa.gov/apod/lib/aptree.html",
+
+    )
+)
+def test_from_html_throws_when_not_image_page(url:str, page_from_url):
+    with pytest.raises(ScrapeError):
+        page_from_url(url)
+
+
 
 @pytest.mark.vcr
 def test_scraper_get_last_page():

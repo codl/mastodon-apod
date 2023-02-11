@@ -1,0 +1,95 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/lib/aptree.html
+  response:
+    body:
+      string: "<head>\n<title> APOD Index </title>\n</head>\n<body bgcolor=\"#FFF5FF\"
+        text=\"#000000\"  link=\"#0000FF\"\n                       vlink=\"#7F0F9F\"
+        alink=\"#FF0000\">\n\n<center>\n<table>\n<tr>\n<td> <img src=\"../apod.gif\"
+        alt=\"logo\"> </td>\n<td> <h1> Astronomy Picture of the Day <br>\nIndex -
+        Main Page </h1> </td>\n\n</tr>\n</table>\n</center>\n\n<hr>\n<center>\n| \n<a
+        href=\"/apod/astropix.html\">Today's Picture</a> |\n<a href=\"aptree.html\"><Index></a>
+        \n<a href=\"../archivepix.html\">Archive</a> | \n<a href=\"http://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</a>
+        |\n\n<a href=\"/apod/calendar/allyears.html\">Calendar</a> |\n</center>\n<hr>\n\n<center>\n<table><tr><td>\n\n</td><td><h2><IMG
+        SRC=\"../calendar/S_960823.jpg\"\nalt=\"stars\"><p>\nCosmos<p><IMG SRC=\"../calendar/S_960522.jpg\"\nalt=\"nebula\"></h2>\n</td><td></td><td></td><td><b>\n
+        \ Stars :\n\t<A HREF=\"../binary_stars.html\">Binary Stars</A>  *\n\t<A HREF=\"../black_holes.html\">Black
+        Holes</A> *\n\t<A HREF=\"../globular_clusters.html\">Globular Clusters</A>
+        * \n        <A HREF=\"../individual_stars.html\">Individual Stars</A> *\n\t<A
+        HREF=\"../neutron_stars.html\">Neutron Stars</A>  *\n\t<A HREF=\"../stellar_nurseries.html\">Nurseries
+        </A> * \n\t<A HREF=\"../open_clusters.html\">Open Clusters</A> *\n\t<A HREF=\"../sun.html\">Sun</A>
+        *\n\t<A HREF=\"../white_dwarfs.html\">White Dwarfs</A> \n\n<P>\nGalaxies :\n\t<A
+        HREF=\"../clusters_of_galaxies.html\">Clusters of Galaxies</A> *\n        <A
+        HREF=\"../colliding_galaxies.html\">Colliding Galaxies</A> * \n        <A
+        HREF=\"../elliptical_galaxies.html\">Elliptical Galaxies</A> *\n\t<A HREF=\"../local_group.html\">Local
+        Group</A> *\n\t<A HREF=\"../milky_way.html\">Milky Way</A> *\n\t<A HREF=\"../spiral_galaxies.html\">Spiral
+        Galaxies</A>  \n\n<P>\nNebulae :\n\t<A HREF=\"../dark_nebulae.html\">Dark
+        Nebulae</A> *\t\n\t<A HREF=\"../emission_nebulae.html\">Emission Nebulae</A>
+        *\n\t<A HREF=\"../planetary_nebulae.html\">Planetary Nebulae</A> *\n\t<A HREF=\"../reflection_nebulae.html\">Reflection
+        Nebulae</A> *\n\t<A HREF=\"../supernova_remnants.html\">Supernova Remnants</A>
+        \ \n<P>\n\nMiscellaneous : \n    <A HREF=\"../quasars.html\">Quasars/Active
+        Galactic Nuclei</A> * \n    <A HREF=\"../dark_matter.html\">Dark Matter</A>\n</td></tr></table>\n\n\n<hr><center>\n<table><tr>\n<td></td><td></td><td></td><td><b>\n\n<A
+        HREF=\"../sun.html\">Sun</A> * \n\t<A HREF=\"../mercury.html\">Mercury</A>
+        \ *\n\t<A HREF=\"../venus.html\">Venus</A> *\n\t<A HREF=\"../earth.html\">Earth</A>
+        *\n        <A HREF=\"../moon.html\">Earth's Moon</A> * \n\t<A HREF=\"../mars.html\">Mars</A>
+        *\n\t<A HREF=\"../jupiter.html\">Jupiter</A> *\n\t<A HREF=\"../jupiter_moons.html\">Jupiter's
+        Moons</A> *\n\t<A HREF=\"../saturn.html\">Saturn</A>  *\n\t<A HREF=\"../saturn_moons.html\">Saturn's
+        Moons</A> *\n\t<A HREF=\"../uranus.html\">Uranus</A>  *\n\t<A HREF=\"../neptune.html\">Neptune</A>
+        \ *\n\t<A HREF=\"../pluto.html\">Pluto</A> <p> \n\n\t<A HREF=\"comets.html\"><Comets></A>Comets
+        --- \n                   <A HREF=\"../hyakutake.html\">Hyakutake</A> *\n                   <A
+        HREF=\"../hale_bopp.html\">Hale-Bopp</A> *\n                   <A HREF=\"../halley.html\">Halley</A>
+        <p>\n\n        <A HREF=\"../asteroids.html\">Asteroids</A>\n\n</td>\n</td><td>\n<h2>Solar
+        System </h2></td><td>\n<IMG SRC=\"../calendar/S_971029.jpg\"\nalt=\"saturn\">\n<IMG
+        SRC=\"../calendar/S_960501.jpg\"\nalt=\"cactus and comet\">\n</td>\n</tr></table>\n\n<hr>\n<table><tr><td><IMG
+        SRC=\"../calendar/S_960210.jpg\"\nalt=\"rocket\"></td><td><h2>Space\nTechnology</h2></td><td></td><td></td><td><b>\n\n
+        \  <A HREF=\"../rockets.html\">Rockets/Launch Vehicles</A> *\n   <A HREF=\"../orbiting_observatories.html\">Orbiting
+        Observatories</A> * \n   <A HREF=\"../space_stations.html\">Space Stations</A>
+        *\n   <A HREF=\"../earth_observatories.html\">Earth Observatories </a> \n</tr></table>\n\n<hr><center>\n<table><tr><td><b>\n\n
+        \   \n    <a href=\"../scientists.html\">Scientists</a> * \n    <a href=\"../astronauts.html\">Astronauts</a>
+        \n\n</td><td></td><td></td><td></td><td>\n</td><td><h2>People</h2></td><td><IMG
+        SRC=\"../calendar/S_971011.jpg\"\nalt=\"astronaut\">   \n</td>\n</tr></table>\n\n<hr>\n<center>\n<table><tr><td><IMG
+        SRC=\"../calendar/S_970809.jpg\"\nalt=\"night sky\">\n</td><td><h2>Sky</h2></td><td></td><td></td><td><b>\n\n
+        \     <A HREF=\"../messier.html\">Messier Objects</A>  *\n      <A HREF=\"../index/SkyView.html\">Sky
+        Views</A>\n\n</tr></table>\n\n<hr>\n<center>\n<b> Authors & editors: </b>\n<a
+        href=\"http://antwrp.gsfc.nasa.gov/htmltest/rjn.html\">Robert\nNemiroff</a>\n\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a \nhref=\"http://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\">Jerry\nBonnell</a>
+        (<a href=\"http://www.usra.edu/\">USRA</a>)<br>\n<b>NASA Technical Rep.: </b>\n<a
+        href=\"mailto:jpn@grossc.gsfc.nasa.gov\">Jay Norris</a>.\n<a href=\"about_apod.html#srapply\"\n>Specific
+        rights apply</a>.<br>\n\n<b>A service of:</b>\n<a href=\"http://lheawww.gsfc.nasa.gov/docs/lhea/homepg_lhea.html\">LHEA</a>\nat\n<a
+        href=\"http://www.nasa.gov/\">NASA</a>/\n<a href=\"http://www.gsfc.nasa.gov/\">GSFC</a><br>\n<b>&:</b>\n<a
+        href=\"http://www.mtu.edu/\">Michigan Tech. U.</a><br>\n</body>\n</html>"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '4889'
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 11 Feb 2023 12:10:11 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1
