@@ -80,6 +80,10 @@ class ApodPage():
         main_el = None
         alt = None
 
+        h1_el = soup.h1
+        if h1_el is None or h1_el.get_text().strip() != "Astronomy Picture of the Day":
+            raise ScrapeError("Page does not look like an APOD picture page")
+
         if image_el and 'src' in image_el.attrs:
             if 'alt' in image_el.attrs:
                 alt = image_el['alt']
