@@ -330,3 +330,9 @@ class ApodBot(ananas.PineappleBot):
             return
         self.log("force_check", "Poked by {}, doing a forced check".format(user.acct))
         self.check_apod()
+
+    @ananas.hourly(minute=53)
+    def accept_one_page_of_follow_requests(self):
+        follow_requests = self.mastodon.follow_requests()
+        for acct in follow_requests:
+            self.mastodon.follow_request_authorize(acct.id)
