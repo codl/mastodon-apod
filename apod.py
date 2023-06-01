@@ -325,14 +325,18 @@ class ApodBot(ananas.PineappleBot):
 
 
     @ananas.reply
-    def force_check(self, _, user):
+    def react(self, post, user):
         if user.acct != self.config.admin:
             return
-        self.log("force_check", "Poked by {}, doing a forced check".format(user.acct))
-        self.check_apod()
+        if re.search(r"\baccept\b", post.content):
+            self.accept_one_page_of_follow_requests()
+        else:
+            self.log("react", "Poked by {}, doing a forced check".format(user.acct))
+            self.check_apod()
 
     @ananas.hourly(minute=53)
     def accept_one_page_of_follow_requests(self):
         follow_requests = self.mastodon.follow_requests()
         for acct in follow_requests:
+            self.log("accept_one_page_of_follow_requests", "Accepting follow request from {}".format(acct.acct))
             self.mastodon.follow_request_authorize(acct.id)
