@@ -2,3 +2,5 @@ beautifulsoup4
 ananas>=1.1.0
 requests
 pillow
+
+urllib3<2 # https://github.com/kevin1024/vcrpy/issues/688
