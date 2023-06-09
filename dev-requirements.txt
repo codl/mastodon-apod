@@ -24,7 +24,7 @@ pluggy==1.0.0
     # via pytest
 pyparsing==3.0.9
     # via packaging
-pyright==1.1.292
+pyright==1.1.313
     # via -r dev-requirements.in
 pytest==7.2.1
     # via
