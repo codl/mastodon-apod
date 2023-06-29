@@ -166,7 +166,8 @@ def test_from_html_alt(page_from_url):
     ("109024311093141985", None), # a reply
     ))
 def test_extract_url(status_id, expected):
-    m = mastodon.Mastodon(api_base_url="https://botsin.space")
+    m = mastodon.Mastodon(api_base_url="https://botsin.space",
+                          user_agent="mastodon-apod test suite +https://github.com/codl/mastodon-apod")
     status = m.status(status_id)
 
     assert ApodBot.extract_apod_url_from_status(status) == expected

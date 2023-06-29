@@ -1,4 +1,5 @@
 -c requirements.txt
 pytest
 pytest-recording
+vcrpy<5  # https://github.com/kiwicom/pytest-recording/issues/111
 pyright

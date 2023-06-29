@@ -9,35 +9,40 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - mastodon-apod test suite +https://github.com/codl/mastodon-apod
     method: GET
     uri: https://botsin.space/api/v1/instance/
   response:
     body:
-      string: !!binary |
-        H4sIALGsNmMAA7RWS4/bNhD+K6yA3GzrYdleL1AgQXtt0UN6aLuBQFEjiQlFsiRlrxPsf8+QlLXW
-        dlO0BWrYMDmcN2c+zpdkNDy5T2rlLJcbqymDZJU47gT8lWx7ZVzVgGWGa8eVRJZ35CdqnWqUJFxa
-        RyUD0ipDvCihsvELQoXgYDeoYin8vuf2WQzX35Ik7+RFSSCMSmJ5J8moiVOkBkLJaMGQHgwQFDaj
-        JBc1Bi2BuCG/4jkq7AyAl3E9kB9Ug9wt/stmZI4Ibh00BGPwpw9jlm0ZJb2B9vuHJKW1Gl06KAMP
-        STgDLtHRgfooiKYdRImUxtMN+U2NZOBd7/23ipypdN60gROH86s2HJjBXtWHjfcPPT9x9lL9g3mQ
-        /ofphIFygYlkSnD5dhjblktBa7thasDjE0YeM73d7DZbpIxG2OT+S2KdATpw2VVU+wI4W3ufpov7
-        fsILd9QFdp/jiqlRuuR+dyiKeDTaKy0/5ttst0N6o9AlOdN3ZZ6jItePQy2jr71z2htrucCbvTWZ
-        Wu6gGrVQtLHxPM2ybPrlqTK845KK1CgUW7coUuXtMd9Xb4q7/E1x3GjZYZCCym7Ea0HX/0hAJh9W
-        iYEO79iEK0OyMyOsEqq1UScqKgN/jtxAcz3g8oSe2AokrcUzmSnZ8m6MWmIWfRIgpGigjxXrqaEM
-        rw8puyxbBeIADacVdY6yfgDpE1qirpkVrft7hqbSmGS8oOS+2GLOXpFDi6PW2ITIPPABKnfRMUo+
-        YLzpRw0+/riJuYjrjre+HHgDKj1DPcybQZfzGnPAPjlUO1NU51XQseEoRk9wu5nXj+vlTsv1gvdW
-        yUmZmtt5O0R/r5vts/7oY9y0grJ5Q2/WQ0lv7N7uYlhxve20niNCNrumtvU1EVJTWf4ZKsEH7ss1
-        K+92h312PcMWN/xxPt0fDoci30+6FpJlfiy3WZldz1pD8XqwUmaO/Xy21Fp4sSzDC9dKiLmUlJ5K
-        tVy9KK1QJmqC0J0vMuw3eNT8Wpfba+XdEot9cTyU+6enUMZYU66ibOrSLwnHGk9yjw9YihJdx21E
-        E+yakFbG3Etaw60W9FJN/AGDEPYc60EI34aKffLN0yIIYvdgy85rFGUK0cm310zsjBr1vGMIUL7O
-        qbdbZPlhnZXrbPs+y+7Dd4NJ+x2tSOW89YiROkKkd0B9R3h4Dm4RhtSjI8OFeIwiU/z+3XmO6y27
-        1PhqBO4JdyelET1vAGwBXW+X6TpRR83fg91k3qaR+RtQd4TiWO/zuqTNXX23LzcfdTcbqDwAcfY/
-        2umBNvBPA4nM3zCwK7Z53RzL8sAO9a49Lgz8u0D+i50Wm0udfftMRV/i50r27+D1xcpWM6xfacXh
-        6B8V66rp1ZtqsijW2XGd5+EhVh+5R2LElZaDaMIam82MIiD0TY85ePTyPyvCzMVpp9hoDEh2wQFB
-        +Jq/VqYNr/zTapItFrKIFjgapAMXHG/1gsNPRyX/HIeS1xVsFwosPI5UkAY0ZwFr/MTBei4adGYp
-        uFsIomLadeimRHx1lxW6YqTqDNX9JQxuUbO4EAQgdJI74iEHn7Cl1vKFVuZfVq8WzjZOgVpZh3ez
-        FNu/7kyH81mwjkcGBkDzwSXOyIkrgfmFpZ7DMhuOik9oyw+RHmqt9W+uT4nCec2EKfNFOu+eFfyo
-        COKQZ4qO47BHa7+LwhqUFjgX/oJB9ji7rgJ3o85Tnj88fQUAAP//AwD1YjN9iQsAAA==
+      string: '{"uri":"botsin.space","title":"botsin.space","short_description":"A
+        Mastodon instance for bots and bot allies.","description":"This instance is
+        for bots and bot allies. Anyone can sign up to be a user here or run your
+        bot here. Users agree to the Code of Conduct listed on the \u003ca href=\"/about/more\"\u003einformation
+        page\u003c/a\u003e. You should also review the \u003ca href=\"/terms\"\u003eterms
+        of service\u003c/a\u003e.\r\n\r\n","email":"colin@muffinlabs.com","version":"4.1.2","urls":{"streaming_api":"wss://botsin.space"},"stats":{"user_count":7973,"status_count":21098535,"domain_count":32275},"thumbnail":"https://files.botsin.space/site_uploads/files/000/000/003/@1x/f094348494098e9e.png","languages":["en"],"registrations":true,"approval_required":true,"invites_enabled":false,"configuration":{"accounts":{"max_featured_tags":10},"statuses":{"max_characters":500,"max_media_attachments":4,"characters_reserved_per_url":23},"media_attachments":{"supported_mime_types":["image/jpeg","image/png","image/gif","image/heic","image/heif","image/webp","image/avif","video/webm","video/mp4","video/quicktime","video/ogg","audio/wave","audio/wav","audio/x-wav","audio/x-pn-wave","audio/vnd.wave","audio/ogg","audio/vorbis","audio/mpeg","audio/mp3","audio/webm","audio/flac","audio/aac","audio/m4a","audio/x-m4a","audio/mp4","audio/3gpp","video/x-ms-asf"],"image_size_limit":10485760,"image_matrix_limit":16777216,"video_size_limit":41943040,"video_frame_rate_limit":60,"video_matrix_limit":2304000},"polls":{"max_options":4,"max_characters_per_option":50,"min_expiration":300,"max_expiration":2629746}},"contact_account":{"id":"1","username":"muffinista","acct":"muffinista","display_name":"colin
+        mitchell","locked":false,"bot":false,"discoverable":false,"group":false,"created_at":"2017-04-03T00:00:00.000Z","note":"\u003cp\u003ehello!
+        i run botsin.space but my personal account is muffinista@toot.site so if you
+        need me you can check there\u003c/p\u003e","url":"https://botsin.space/@muffinista","avatar":"https://files.botsin.space/accounts/avatars/000/000/001/original/c766bf1ee2ed9287.jpg","avatar_static":"https://files.botsin.space/accounts/avatars/000/000/001/original/c766bf1ee2ed9287.jpg","header":"https://files.botsin.space/accounts/headers/000/000/001/original/5231bd9447c7b5f9.jpg","header_static":"https://files.botsin.space/accounts/headers/000/000/001/original/5231bd9447c7b5f9.jpg","followers_count":4662,"following_count":18,"statuses_count":464,"last_status_at":"2023-06-28","noindex":true,"emojis":[],"roles":[{"id":"3","name":"Owner","color":""}],"fields":[{"name":"pronouns","value":"he/him","verified_at":null},{"name":"home","value":"\u003ca
+        href=\"https://muffinlabs.com\" target=\"_blank\" rel=\"nofollow noopener
+        noreferrer me\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan
+        class=\"\"\u003emuffinlabs.com\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e","verified_at":null},{"name":"personal
+        account","value":"\u003ca href=\"https://toot.site/@muffinista\" target=\"_blank\"
+        rel=\"nofollow noopener noreferrer me\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan
+        class=\"\"\u003etoot.site/@muffinista\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e","verified_at":null}]},"rules":[{"id":"1","text":"No
+        accounts that promote crytptocurrency\r\n"},{"id":"2","text":"No police/military
+        organization accounts\r\n"},{"id":"3","text":"No sexual depictions of children\r\n"},{"id":"4","text":"No
+        uncurated news bots posting\r\n"},{"id":"5","text":"No untagged nudity, pornography
+        and sexually explicit content\r\n"},{"id":"6","text":"No untagged gore and
+        extremely graphic violence\r\n"},{"id":"7","text":"No stalking or harassment
+        of other users\r\n"},{"id":"8","text":"Do not use bots to abuse other people.
+        Punch up, not down\r\n"},{"id":"9","text":"Respect the standards of the fediverse.
+        If a human would likely add CW to a post, a bot should also add a CW."},{"id":"10","text":"Your
+        signup request must include the magic word!\r\n\r\nThe magic word is.... spreadsheet"},{"id":"11","text":"No
+        mirrors of someone else''s Twitter accounts. If they want to be here, they
+        can create their own account.\r\n\r\n"},{"id":"12","text":"No interactions
+        with people who don''t opt in to the interaction. If you mention another user,
+        they must either follow the bot, or they must''ve started the interaction
+        themselves.\r\n"}]}'
     headers:
       Cache-Control:
       - max-age=180, public
@@ -46,22 +51,17 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Security-Policy:
-      - 'base-uri ''none''; default-src ''none''; frame-ancestors ''none''; font-src
-        ''self'' https://botsin.space; img-src ''self'' https: data: blob: https://botsin.space;
-        style-src ''self'' https://botsin.space ''nonce-ruEbmffhemdxikegaFQi9g=='';
-        media-src ''self'' https: data: https://botsin.space; frame-src ''self'' https:;
-        manifest-src ''self'' https://botsin.space; connect-src ''self'' data: blob:
-        https://botsin.space https://files.botsin.space wss://botsin.space; script-src
-        ''self'' https://botsin.space; child-src ''self'' blob: https://botsin.space;
-        worker-src ''self'' blob: https://botsin.space'
+      - default-src 'none'; frame-ancestors 'none'; form-action 'none'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 30 Sep 2022 08:45:58 GMT
+      - Thu, 29 Jun 2023 10:03:40 GMT
       ETag:
-      - W/"4ba163cbd500aa1f46dbb0e5e1c3ed04"
+      - W/"b4adc2a0e265593f0c3a79254261f3f8"
       Permissions-Policy:
       - interest-cohort=()
+      Referrer-Policy:
+      - same-origin
       Server:
       - Mastodon
       Strict-Transport-Security:
@@ -70,7 +70,8 @@ interactions:
       Transfer-Encoding:
       - chunked
       Vary:
-      - Accept, Accept-Encoding, Origin
+      - Accept-Encoding
+      - Accept, Origin
       X-Cached:
       - HIT
       X-Content-Type-Options:
@@ -82,11 +83,11 @@ interactions:
       X-RateLimit-Remaining:
       - '299'
       X-RateLimit-Reset:
-      - '2022-09-30T08:50:00.360894Z'
+      - '2023-06-29T10:05:00.829391Z'
       X-Request-Id:
-      - 78fdb5f6-1b79-4bb6-bb3d-0056a0982e4e
+      - 2b1238ed-40b1-4fb0-b241-4d370216138b
       X-Runtime:
-      - '0.085687'
+      - '4.085540'
       X-XSS-Protection:
       - '0'
     status:
@@ -102,62 +103,62 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - mastodon-apod test suite +https://github.com/codl/mastodon-apod
     method: GET
     uri: https://botsin.space/api/v1/statuses/109069184629858810
   response:
     body:
-      string: !!binary |
-        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
-        2REAAA==
+      string: "{\"id\":\"109069184629858810\",\"created_at\":\"2022-09-27T07:28:01.499Z\",\"in_reply_to_id\":null,\"in_reply_to_account_id\":null,\"sensitive\":false,\"spoiler_text\":\"\",\"visibility\":\"public\",\"language\":\"en\",\"uri\":\"https://botsin.space/users/APoD/statuses/109069184629858810\",\"url\":\"https://botsin.space/@APoD/109069184629858810\",\"replies_count\":0,\"reblogs_count\":17,\"favourites_count\":11,\"edited_at\":null,\"content\":\"\\u003cp\\u003e\\u003ca
+        href=\\\"https://www.youtube.com/watch?v=do4Cb__WhlY\\\" target=\\\"_blank\\\"
+        rel=\\\"nofollow noopener noreferrer\\\"\\u003e\\u003cspan class=\\\"invisible\\\"\\u003ehttps://www.\\u003c/span\\u003e\\u003cspan
+        class=\\\"ellipsis\\\"\\u003eyoutube.com/watch?v=do4Cb__Whl\\u003c/span\\u003e\\u003cspan
+        class=\\\"invisible\\\"\\u003eY\\u003c/span\\u003e\\u003c/a\\u003e\\u003c/p\\u003e\\u003cp\\u003eDART:
+        Impact on Asteroid Dimorphos\\u003c/p\\u003e\\u003cp\\u003eVideo Credit: NASA,
+        JHUAPL, DART\\u003c/p\\u003e\\u003cp\\u003e\\u003ca href=\\\"https://apod.nasa.gov/apod/ap220927.html\\\"
+        target=\\\"_blank\\\" rel=\\\"nofollow noopener noreferrer\\\"\\u003e\\u003cspan
+        class=\\\"invisible\\\"\\u003ehttps://\\u003c/span\\u003e\\u003cspan class=\\\"ellipsis\\\"\\u003eapod.nasa.gov/apod/ap220927.ht\\u003c/span\\u003e\\u003cspan
+        class=\\\"invisible\\\"\\u003eml\\u003c/span\\u003e\\u003c/a\\u003e \\u003ca
+        href=\\\"https://botsin.space/tags/APOD\\\" class=\\\"mention hashtag\\\"
+        rel=\\\"tag\\\"\\u003e#\\u003cspan\\u003eAPOD\\u003c/span\\u003e\\u003c/a\\u003e\\u003c/p\\u003e\",\"reblog\":null,\"application\":{\"name\":\"mastodon-apod\",\"website\":\"https://github.com/codl/mastodon-apod\"},\"account\":{\"id\":\"21962\",\"username\":\"APoD\",\"acct\":\"APoD\",\"display_name\":\"Astronomy
+        Picture of the Day\",\"locked\":false,\"bot\":true,\"discoverable\":true,\"group\":false,\"created_at\":\"2018-01-12T00:00:00.000Z\",\"note\":\"\\u003cp\\u003eDiscover
+        the cosmos! A different image of our fascinating universe every day. \\u003c/p\\u003e\\u003cp\\u003e\U0001F30C
+        \\u003ca href=\\\"https://apod.nasa.gov/\\\" target=\\\"_blank\\\" rel=\\\"nofollow
+        noopener noreferrer\\\"\\u003e\\u003cspan class=\\\"invisible\\\"\\u003ehttps://\\u003c/span\\u003e\\u003cspan
+        class=\\\"\\\"\\u003eapod.nasa.gov/\\u003c/span\\u003e\\u003cspan class=\\\"invisible\\\"\\u003e\\u003c/span\\u003e\\u003c/a\\u003e\\u003c/p\\u003e\\u003cp\\u003e(Automated
+        mirror, supervised by \\u003cspan class=\\\"h-card\\\"\\u003e\\u003ca href=\\\"https://chitter.xyz/@codl\\\"
+        class=\\\"u-url mention\\\"\\u003e@\\u003cspan\\u003ecodl\\u003c/span\\u003e\\u003c/a\\u003e\\u003c/span\\u003e,
+        who is not an astronomer)\\u003c/p\\u003e\",\"url\":\"https://botsin.space/@APoD\",\"avatar\":\"https://files.botsin.space/accounts/avatars/000/021/962/original/2c7b5e5412024ff8.jpg\",\"avatar_static\":\"https://files.botsin.space/accounts/avatars/000/021/962/original/2c7b5e5412024ff8.jpg\",\"header\":\"https://files.botsin.space/accounts/headers/000/021/962/original/36d50348e0dfd7e9.jpg\",\"header_static\":\"https://files.botsin.space/accounts/headers/000/021/962/original/36d50348e0dfd7e9.jpg\",\"followers_count\":81768,\"following_count\":1,\"statuses_count\":2011,\"last_status_at\":\"2023-06-29\",\"noindex\":false,\"emojis\":[],\"roles\":[],\"fields\":[{\"name\":\"Banner\",\"value\":\"\\u003ca
+        href=\\\"https://apod.nasa.gov/apod/ap131231.html\\\" target=\\\"_blank\\\"
+        rel=\\\"nofollow noopener noreferrer me\\\"\\u003e\\u003cspan class=\\\"invisible\\\"\\u003ehttps://\\u003c/span\\u003e\\u003cspan
+        class=\\\"ellipsis\\\"\\u003eapod.nasa.gov/apod/ap131231.ht\\u003c/span\\u003e\\u003cspan
+        class=\\\"invisible\\\"\\u003eml\\u003c/span\\u003e\\u003c/a\\u003e\",\"verified_at\":null},{\"name\":\"Avatar\",\"value\":\"\\u003ca
+        href=\\\"https://apod.nasa.gov/apod/ap220206.html\\\" target=\\\"_blank\\\"
+        rel=\\\"nofollow noopener noreferrer me\\\"\\u003e\\u003cspan class=\\\"invisible\\\"\\u003ehttps://\\u003c/span\\u003e\\u003cspan
+        class=\\\"ellipsis\\\"\\u003eapod.nasa.gov/apod/ap220206.ht\\u003c/span\\u003e\\u003cspan
+        class=\\\"invisible\\\"\\u003eml\\u003c/span\\u003e\\u003c/a\\u003e\",\"verified_at\":null}]},\"media_attachments\":[],\"mentions\":[],\"tags\":[{\"name\":\"apod\",\"url\":\"https://botsin.space/tags/apod\"}],\"emojis\":[],\"card\":{\"url\":\"https://www.youtube.com/watch?v=do4Cb__WhlY\",\"title\":\"DART:
+        Impact on Asteroid Dimorphos\",\"description\":\"Credit: NASA, JHU APL, DARTDetails:
+        https://apod.nasa.gov/apod/ap220927.htmlComments: http://asterisk.apod.com/discuss_apod.php?date=220927\",\"type\":\"video\",\"author_name\":\"\",\"author_url\":\"\",\"provider_name\":\"YouTube\",\"provider_url\":\"\",\"html\":\"\\u003ciframe
+        src=\\\"https://www.youtube.com/embed/do4Cb__WhlY\\\" width=\\\"640\\\" height=\\\"360\\\"
+        allowtransparency=\\\"true\\\" scrolling=\\\"no\\\" frameborder=\\\"0\\\"\\u003e\\u003c/iframe\\u003e\",\"width\":640,\"height\":360,\"image\":null,\"embed_url\":\"\",\"blurhash\":\"U22rs+WB00t7ofayWBj[4nof_3RjM{j[xuWB\"},\"poll\":null}"
     headers:
       Cache-Control:
-      - no-store
+      - private, no-store
       Connection:
       - keep-alive
       Content-Encoding:
       - gzip
       Content-Security-Policy:
-      - 'base-uri ''none''; default-src ''none''; frame-ancestors ''none''; font-src
-        ''self'' https://botsin.space; img-src ''self'' https: data: blob: https://botsin.space;
-        style-src ''self'' https://botsin.space ''nonce-rxzgfssNjOcQIe2VSRDn7g=='';
-        media-src ''self'' https: data: https://botsin.space; frame-src ''self'' https:;
-        manifest-src ''self'' https://botsin.space; connect-src ''self'' data: blob:
-        https://botsin.space https://files.botsin.space wss://botsin.space; script-src
-        ''self'' https://botsin.space; child-src ''self'' blob: https://botsin.space;
-        worker-src ''self'' blob: https://botsin.space'
+      - default-src 'none'; frame-ancestors 'none'; form-action 'none'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 30 Sep 2022 08:45:58 GMT
+      - Thu, 29 Jun 2023 10:03:40 GMT
       ETag:
-      - W/"20c5a1393a0a6ffc9aecc05fc7f7b175"
+      - W/"93374315524fa187a6747ec9e83c6897"
       Permissions-Policy:
       - interest-cohort=()
+      Referrer-Policy:
+      - same-origin
       Server:
       - Mastodon
       Strict-Transport-Security:
@@ -166,7 +167,8 @@ interactions:
       Transfer-Encoding:
       - chunked
       Vary:
-      - Accept, Accept-Encoding, Origin
+      - Accept-Encoding
+      - Accept, Origin
       X-Cached:
       - MISS
       X-Content-Type-Options:
@@ -176,13 +178,13 @@ interactions:
       X-RateLimit-Limit:
       - '300'
       X-RateLimit-Remaining:
-      - '299'
+      - '295'
       X-RateLimit-Reset:
-      - '2022-09-30T08:50:00.540939Z'
+      - '2023-06-29T10:05:00.855589Z'
       X-Request-Id:
-      - 9ece554a-dbd3-42df-a5e4-1ca276ab49e6
+      - 973ce7e7-e1c7-4dc8-a48f-31745bbf97ae
       X-Runtime:
-      - '0.026650'
+      - '0.025355'
       X-XSS-Protection:
       - '0'
     status:
