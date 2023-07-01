@@ -34,7 +34,7 @@ six==1.16.0
     # via
     #   -c requirements.txt
     #   vcrpy
-vcrpy==4.4.0
+vcrpy==5.0.0
     # via
     #   -r dev-requirements.in
     #   pytest-recording
