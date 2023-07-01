@@ -20,7 +20,7 @@ packaging==23.1
     # via pytest
 pluggy==1.0.0
     # via pytest
-pyright==1.1.311
+pyright==1.1.316
     # via -r dev-requirements.in
 pytest==7.4.0
     # via
