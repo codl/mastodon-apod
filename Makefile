@@ -4,7 +4,7 @@ UID := $(shell id -u)
 
 lock: requirements.txt dev-requirements.txt ci-requirements.txt
 
-requirements.txt: requirements.in
+requirements.txt: pyproject.toml
 	pip-compile $<
 
 dev-requirements.txt: dev-requirements.in requirements.txt
