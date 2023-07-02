@@ -50,6 +50,11 @@ def guess_date_from_url(url:str) -> Optional[date]:
     if not match:
         return None
     year = int(match['year'])
+    if year >= 95:
+        year += 1900
+    else:
+        year += 2000
+    # cant wait to find out what apod will do in 2095
     month = int(match['month'])
     day = int(match['day'])
     return date(year, month, day)

@@ -200,7 +200,6 @@ def test_scraper_get_last_page():
     assert scraper.latest_page().url == "https://apod.nasa.gov/apod/ap230211.html"
 
 
-@pytest.mark.xfail
 @pytest.mark.parametrize(
     ("url", "expected"),
     (
