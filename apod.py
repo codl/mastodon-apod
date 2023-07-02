@@ -6,7 +6,7 @@ from datetime import date, datetime, timedelta, timezone
 import re
 from urllib.parse import urljoin, urlparse
 import mimetypes
-from io import BytesIO
+from io import BytesIO, IOBase
 from PIL import Image
 import socket
 import requests.packages.urllib3.util.connection as urllib3_cn
@@ -202,6 +202,10 @@ class ApodScraper(object):
         page = dataclasses.replace(page, url=prev_page.next_url)
         return page
 
+@dataclass
+class OutgoingMedia:
+    io: IOBase
+    mime: str
 
 class ApodBot(ananas.PineappleBot):
     mastodon: Mastodon
@@ -253,14 +257,16 @@ class ApodBot(ananas.PineappleBot):
         medias = []
         for media_url, mime, i in zip(page.media_urls, page.media_mimes, count()):
             if mime.startswith("image/"):
-                image_content = self.fetch_and_fit_image(media_url)
+
+                m = self.fetch_and_fit_media(media_url)
+                image_content = m.io
                 if i == 0:
                     alt = page.alt
                 else:
                     alt = None
                 media = self.mastodon.media_post(
                         image_content,
-                        mime_type=mime,
+                        mime_type=m.mime,
                         description=alt)
                 medias.append(media['id'])
         if page.video_url:
@@ -277,19 +283,29 @@ class ApodBot(ananas.PineappleBot):
             if changed:
                 self.config.save()
 
-    def fetch_and_fit_image(self, image_url):
+    def fetch_and_fit_media(self, media_url:str) -> OutgoingMedia:
         """returns a BytesIO"""
-        image_resp = self.session.get(image_url)
+        return self.fit_media(self.fetch_media(media_url))
+
+    def fetch_media(self, media_url:str) -> IOBase:
+        image_resp = self.session.get(media_url)
         image_resp.raise_for_status()
 
         imageio = BytesIO(image_resp.content)
+        return imageio
+
+    @staticmethod
+    def fit_media(imageio:IOBase) -> OutgoingMedia:
         outio = BytesIO()
 
         image = Image.open(imageio)
         image.thumbnail((1080, 1080))
         image.save(outio, image.format)
         outio.seek(0)
-        return outio
+        return OutgoingMedia(outio, Image.MIME.get(
+            image.format,  # type: ignore   # in the None case, dict.get just returns default
+            "application/octet-stream"))
+
 
     @cached_property
     def my_uid(self):
