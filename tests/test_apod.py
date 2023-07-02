@@ -1,4 +1,5 @@
-from apod import ApodPage, ApodBot, ScrapeError, cleanup_alt_text, ApodScraper
+from datetime import date
+from apod import ApodPage, ApodBot, ScrapeError, cleanup_alt_text, ApodScraper, guess_date_from_url
 import requests
 import pytest
 import mastodon
@@ -197,3 +198,15 @@ def test_from_html_throws_when_not_image_page(url:str, page_from_url):
 def test_scraper_get_last_page():
     scraper = ApodScraper()
     assert scraper.latest_page().url == "https://apod.nasa.gov/apod/ap230211.html"
+
+
+@pytest.mark.xfail
+@pytest.mark.parametrize(
+    ("url", "expected"),
+    (
+        ("https://apod.nasa.gov/apod/ap230702.html", date(2023, 7, 2)),
+        ("https://apod.nasa.gov/apod/ap950616.html", date(1995, 6, 16)),
+    )
+)
+def test_guess_date_from_url(url: str, expected: date):
+    assert guess_date_from_url(url) == expected
