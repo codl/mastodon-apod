@@ -205,7 +205,8 @@ def test_scraper_get_last_page():
     (
         ("https://apod.nasa.gov/apod/ap230702.html", date(2023, 7, 2)),
         ("https://apod.nasa.gov/apod/ap950616.html", date(1995, 6, 16)),
+        ("https://apod.nasa.gov/apod/index.html", None),
     )
 )
-def test_guess_date_from_url(url: str, expected: date):
+def test_guess_date_from_url(url: str, expected: date | None):
     assert guess_date_from_url(url) == expected
