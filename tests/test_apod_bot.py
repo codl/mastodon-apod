@@ -14,3 +14,9 @@ def test_fit_media_scales_image(testdata):
     out = ApodBot.fit_media(big_image)
     i = Image.open(out.io)
     assert i.width * i.height <= 1080 * 1080
+
+@pytest.mark.xfail  # would fix https://github.com/codl/mastodon-apod/issues/122
+def test_fit_media_converts_gif_to_video(testdata):
+    animated_gif = testdata("animated.gif")
+    out = ApodBot.fit_media(animated_gif)
+    assert out.mime.startswith("video/")
