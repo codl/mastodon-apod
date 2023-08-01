@@ -12,7 +12,9 @@ FROM common as test
 COPY requirements.txt dev-requirements.txt ./
 RUN --mount=type=cache,target=/root/.cache/pip/http \
     pip-sync requirements.txt dev-requirements.txt
-COPY pyproject.toml src/ tests/ ./
+COPY pyproject.toml .
+COPY src/ ./src/
+COPY tests/ ./tests/
 RUN pip install .
 CMD ["python", "-m", "pytest"]
 
@@ -26,7 +28,9 @@ COPY requirements.txt ./
 RUN --mount=type=cache,target=/root/.cache/pip/http \
     pip-sync requirements.txt
 
-COPY pyproject.toml src/ ./
+COPY pyproject.toml ./
+COPY src/ ./src/
+RUN ls
 RUN pip install .
 
 CMD ["ananas", "config/ananas.cfg"]
