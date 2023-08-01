@@ -4,8 +4,6 @@
 #
 #    pip-compile dev-requirements.in
 #
-attrs==23.1.0
-    # via pytest-recording
 idna==3.4
     # via
     #   -c requirements.txt
@@ -26,15 +24,11 @@ pytest==7.4.0
     # via
     #   -r dev-requirements.in
     #   pytest-recording
-pytest-recording==0.12.2
+pytest-recording==0.13.0
     # via -r dev-requirements.in
 pyyaml==6.0
     # via vcrpy
-six==1.16.0
-    # via
-    #   -c requirements.txt
-    #   vcrpy
-vcrpy==4.4.0
+vcrpy==5.1.0
     # via
     #   -r dev-requirements.in
     #   pytest-recording
