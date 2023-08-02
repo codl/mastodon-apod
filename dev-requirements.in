@@ -2,4 +2,3 @@
 pytest
 pytest-recording
 vcrpy
-pyright

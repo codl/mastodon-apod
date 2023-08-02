@@ -12,14 +12,10 @@ iniconfig==2.0.0
     # via pytest
 multidict==6.0.4
     # via yarl
-nodeenv==1.8.0
-    # via pyright
 packaging==23.1
     # via pytest
 pluggy==1.0.0
     # via pytest
-pyright==1.1.311
-    # via -r dev-requirements.in
 pytest==7.4.0
     # via
     #   -r dev-requirements.in
@@ -36,6 +32,3 @@ wrapt==1.15.0
     # via vcrpy
 yarl==1.9.2
     # via vcrpy
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
