@@ -8,11 +8,16 @@ it uses [ananas][]
 
 ## how to use
 
-this requires pipenv and is only tested on python 3.10
+this is only tested on python 3.10
 
-* install dependencies
+you should run this from a [virtual environemnt][venv] or risk suffering
+terrible dependency mismatches sometime in the future
 
-      $ pip -r requirements.txt
+[venv]: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
+
+* install the package and its dependencies
+
+      $ pip install .
 
 * fill in config file
 
@@ -21,7 +26,7 @@ this requires pipenv and is only tested on python 3.10
 
 * run
 
-      $ pipenv run ananas config/ananas.cfg
+      $ ananas config/ananas.cfg
 
 * enjoy
 
