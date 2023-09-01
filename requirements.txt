@@ -24,7 +24,7 @@ mastodon-py==1.8.1
     # via
     #   ananas
     #   mastodon-apod (pyproject.toml)
-more-itertools==10.0.0
+more-itertools==10.1.0
     # via ananas
 pillow==10.0.1
     # via mastodon-apod (pyproject.toml)
