@@ -15,7 +15,6 @@ def test_fit_media_scales_image(testdata):
     i = Image.open(out.io)
     assert i.width * i.height <= 1080 * 1080
 
-@pytest.mark.xfail # https://github.com/codl/mastodon-apod/issues/179
 def test_fit_media_respects_exif_orientation(testdata):
     upside_down = testdata("upside_down.jpg")
     out = ApodBot.fit_media(upside_down)

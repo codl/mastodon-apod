@@ -8,6 +8,7 @@ from urllib.parse import urljoin, urlparse
 import mimetypes
 from io import BytesIO, IOBase
 from PIL import Image
+from PIL.ImageOps import exif_transpose
 import socket
 import requests.packages.urllib3.util.connection as urllib3_cn
 from dataclasses import dataclass, field
@@ -304,6 +305,7 @@ class ApodBot(ananas.PineappleBot):
         outio = BytesIO()
 
         image = Image.open(imageio)
+        exif_transpose(image, in_place=True)
         image.thumbnail((1080, 1080))
         image.save(outio, image.format)
         outio.seek(0)
