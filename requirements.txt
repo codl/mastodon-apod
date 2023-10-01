@@ -42,7 +42,7 @@ six==1.16.0
     #   configobj
     #   mastodon-py
     #   python-dateutil
-soupsieve==2.4.1
+soupsieve==2.5
     # via beautifulsoup4
 urllib3==2.0.4
     # via requests
