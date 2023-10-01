@@ -64,6 +64,16 @@ test_cases = (
         prev_url="https://apod.nasa.gov/apod/ap211009.html",
         next_url="https://apod.nasa.gov/apod/ap211011.html",
     ),
+    ApodPage(
+        url="http://www.star.ucl.ac.uk/~apod/apod/ap231001.html",
+        title="A Desert Eclipse",
+        credit="Image Credit & Copyright: Maxime Daviron",
+        media_urls=["http://www.star.ucl.ac.uk/~apod/apod/image/2310/DesertEclipse_Daviron_2000.jpg",],
+        media_mimes=["image/jpeg",],
+        prev_url="http://www.star.ucl.ac.uk/~apod/apod/ap230930.html",
+        next_url="http://www.star.ucl.ac.uk/~apod/apod/ap231002.html",
+        alt="An empty desert is shown with rolling tan sand dunes and a tan glow to the air above. A lone tree grows in the image centre. High above, the Sun glows - but the centre of the Sun is blackened out by an unusual disk.",
+    ),
 )
 
 

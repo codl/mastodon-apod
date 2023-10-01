@@ -1,0 +1,106 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: http://www.star.ucl.ac.uk/~apod/apod/ap231001.html
+  response:
+    body:
+      string: "\uFEFF<!doctype html>\n<html>\n<head>\n<title>Astronomy Picture of
+        the Day\n</title> \n<!-- gsfc meta tags -->\n<meta name=\"orgcode\" content=\"661\">\n<meta
+        name=\"rno\" content=\"phillip.a.newman\">\n<meta name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta
+        name=\"webmaster\" content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\"
+        content=\"A different astronomy and space science\nrelated image is featured
+        each day, along with a brief explanation.\">\n<!-- -->\n<meta name=viewport
+        content=\"width=device-width, initial-scale=1\">\n<meta name=\"keywords\"
+        content=\"annular eclipse, UAE, tree\">\n<!-- -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n<script>\n
+        \ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n
+        \ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new\n  Date();a=s.createElement(o),\n
+        \ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n
+        \ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n\n
+        \ ga('create', 'UA-52459891-1', 'auto');\n  ga('send', 'pageview');\n\n</script>\n<link
+        rel=\"icon\" type=\"image/ico\" href=\"./favicon.ico\">\n</head>\n\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#7F0F9F\"\nalink=\"#FF0000\">\n\n<CENTER>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is\nfeatured, along with a brief explanation written by a professional
+        astronomer.\n<p>\n\n2023 October 1 \n<br> \n<br> \n <a href=\"image/2310/DesertEclipse_Daviron_2000.jpg\">\n<IMG
+        SRC=\"image/2310/DesertEclipse_Daviron_960.jpg\"\nalt=\"An empty desert is
+        shown with rolling tan sand dunes and \na tan glow to the air above. A lone
+        tree grows in the image centre.\nHigh above, the Sun glows - but the centre
+        of the Sun is blackened\nout by an unusual disk. \nPlease see the explanation
+        for more detailed information.\"\nstyle=\"max-width:100%\"></a>\n</CENTER>\n\n<CENTER>\n<b>
+        A Desert Eclipse </b> <br> \n<b> Image Credit & Copyright: </b> \n<a href=\"http://maximedaviron.com/bio\">Maxime
+        Daviron</a>\n</CENTER> <p> \n\n<b> Explanation: </b> \nA good place to see
+        a ring-of-fire eclipse, it seemed, would be from a desert.\n\nIn a desert,
+        there should be relatively few obscuring clouds and trees. \n\nTherefore late
+        December of 2019, a group of photographers traveled to the \n<a href=\"https://en.wikipedia.org/wiki/United_Arab_Emirates\"\n>United
+        Arab Emirates</a> and \n<a href=\"https://en.wikipedia.org/wiki/Rub%27_al_Khali\">Rub
+        al-Khali</a>, \nthe largest continuous sand desert in world, \nto capture
+        clear images of an \n<a href=\"ap191228.html\">unusual eclipse</a> that would
+        be passing over. \n\nA <a href=\"ap170301.html\">ring-of-fire eclipse</a>
+        is an \nannular eclipse that occurs when \n<a href=\"https://solarsystem.nasa.gov/moons/earths-moon/overview/\">the
+        Moon</a> \nis far enough away on its elliptical orbit around \n<a href=\"https://solarsystem.nasa.gov/planets/earth/overview/\">the
+        Earth</a> \nso that it appears too small, angularly, to cover \n<a href=\"https://solarsystem.nasa.gov/solar-system/sun/overview/\"\n>the
+        entire Sun</a>.\n\nAt the maximum of an \n<a href=\"https://starchild.gsfc.nasa.gov/docs/StarChild/questions/question6.html\"\n>annular
+        eclipse</a>, the edges of the Sun can be seen all around the edges of the
+        Moon, so that the Moon appears to be a dark spot that covers most -- but not
+        all -- of the Sun.\n\n<a href=\"https://en.wikipedia.org/wiki/Solar_eclipse_of_December_26,_2019\"\n>This
+        particular eclipse</a>, they knew, would peak \n<a href=\"ap191227.html\">soon
+        after sunrise</a>. \n\nAfter <a href=\n\"https://www.facebook.com/media/set/?set=a.2313450158759190&type=3\"\n>seeking
+        out</a> such a dry and barren place, it turned out that some of the most \n<a
+        href=\"https://www.facebook.com/pg/APOD.Sky/photos/?tab=album&album_id=2313450158759190\">interesting
+        eclipse images</a> \nactually included \n<a href=\"ap181230.html\">a tree
+        in the foreground</a>, because, in addition to the \n<a href=\"ap160119.html\">sand
+        dune</a>s, \nthe tree gave the surreal background a contrasting sense of normalcy,
+        scale, and \n<a href=\"ap170611.html\">texture</a>. \n\nOn Saturday, October
+        14, a new \n<a href=\"ap030605.html\">ring of fire</a> will be visible \nthrough
+        clear skies from a thin swath crossing both \n<a href=\n\"https://en.wikipedia.org/wiki/Americas#/media/File:Americas_(orthographic_projection).svg\"\n>North
+        and South America</a>.\n\n\n<p> <CENTER> \n<b> Tomorrow's picture: </b>high
+        sprites \n\n<p> <hr>\n<a href=\"ap230930.html\">&lt;</a>\n| <a href=\"archivepix.html\">Archive</a>\n|
+        <a href=\"lib/apsubmit2015.html\">Submissions</a> \n| <a href=\"lib/aptree.html\">Index</a>\n|
+        <a href=\"https://apod.it/uk/\">Search</a>\n| <a href=\"calendar/allyears.html\">Calendar</a>\n|
+        <a href=\"/apod.rss\">RSS</a>\n| <a href=\"lib/edlinks.html\">Education</a>\n|
+        <a href=\"lib/about_apod.html\">About APOD</a>\n| <a href=\n\"https://asterisk.apod.com/discuss_apod.php?date=231001\">Discuss</a>\n|
+        <a href=\"ap231002.html\">&gt;</a>\n\n<hr><p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://www.phy.mtu.edu/faculty/Nemiroff.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\"\n>Jerry
+        Bonnell</a> (<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA
+        Official: </b> Phillip Newman\n<a href=\"lib/about_apod.html#srapply\">Specific
+        rights apply</a>.<br>\n<a href=\"https://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA
+        Web\nPrivacy Policy and Important Notices</a><br>\n<b>A service of:</b>\n<a
+        href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n<a href=\"https://www.nasa.gov/\">NASA</a>
+        /\n<a href=\"https://www.nasa.gov/centres/goddard/\">GSFC</a>,\n<br> <a href=\"https://science.nasa.gov/learners\">NASA
+        Science Activation</a>\n<br><b>&</b> <a href=\"http://www.mtu.edu/\">Michigan
+        Tech. U.</a><br>\n</CENTER>\n</body>\n</html>\n\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '5866'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sun, 01 Oct 2023 17:17:59 GMT
+      ETag:
+      - '"16ea-606a28f64ac59"'
+      Keep-Alive:
+      - timeout=5, max=100
+      Last-Modified:
+      - Sun, 01 Oct 2023 07:25:20 GMT
+      Server:
+      - Apache/2.4.6 (Scientific Linux) OpenSSL/1.0.2k-fips mod_fcgid/2.3.9 PHP/5.4.16
+    status:
+      code: 200
+      message: OK
+version: 1

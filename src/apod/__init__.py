@@ -19,7 +19,7 @@ import dataclasses
 
 urllib3_cn.allowed_gai_family = lambda: socket.AF_INET
 
-APOD_URL_RE = re.compile(r'https://apod.nasa.gov/apod/ap(?P<year>[0-9]{2})(?P<month>[0-9]{2})(?P<day>[0-9]{2}).html')
+APOD_URL_RE = re.compile(r'http(?:s://apod\.nasa\.gov|://www\.star\.ucl\.ac\.uk/~apod)/apod/ap(?P<year>[0-9]{2})(?P<month>[0-9]{2})(?P<day>[0-9]{2}).html')
 
 class ConfigNotWriteable(Exception):
     pass
@@ -230,6 +230,7 @@ class ApodBot(ananas.PineappleBot):
     @ananas.daily(19, 28)
     def check_apod(self):
 
+        fallback_url = None
         recent_urls = self.get_recent_urls()
         if recent_urls:
             last_url = recent_urls[0]
@@ -239,10 +240,19 @@ class ApodBot(ananas.PineappleBot):
             if not last_page.next_url:
                 raise Exception("Last page doesn't have a next page")
             next_url = last_page.next_url
+
+            # normalise url
+            next_url_path = next_url.removeprefix("http://www.star.ucl.ac.uk/~apod").removeprefix("https://apod.nasa.gov")
+            next_url = "https://apod.nasa.gov" + next_url_path
+
             resp = self.session.get(next_url)
 
             if resp.status_code == 404:
-                return
+                # Fallback to UCL in case of US govt shutdown
+                next_url = "http://www.star.ucl.ac.uk/~apod/" + next_url_path
+                resp = self.session.get(next_url)
+                if resp.status_code == 404:
+                    return
             resp.raise_for_status()
             page = ApodPage.from_html(next_url, resp.text)
 
