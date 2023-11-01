@@ -16,7 +16,7 @@ packaging==23.1
     # via pytest
 pluggy==1.0.0
     # via pytest
-pytest==7.4.2
+pytest==7.4.3
     # via
     #   -r dev-requirements.in
     #   pytest-recording
