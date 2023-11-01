@@ -26,7 +26,7 @@ mastodon-py==1.8.1
     #   mastodon-apod (pyproject.toml)
 more-itertools==10.1.0
     # via ananas
-pillow==10.0.1
+pillow==10.1.0
     # via mastodon-apod (pyproject.toml)
 python-dateutil==2.8.2
     # via mastodon-py
