@@ -20,7 +20,7 @@ pytest==7.4.3
     # via
     #   -r dev-requirements.in
     #   pytest-recording
-pytest-recording==0.13.0
+pytest-recording==0.13.1
     # via -r dev-requirements.in
 pyyaml==6.0
     # via vcrpy
