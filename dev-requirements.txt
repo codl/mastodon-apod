@@ -8,9 +8,9 @@ multidict==6.0.4
     # via yarl
 packaging==23.1
     # via pytest
-pluggy==1.0.0
+pluggy==1.4.0
     # via pytest
-pytest==7.4.3
+pytest==8.1.1
     # via pytest-recording
 pytest-recording==0.13.0
 pyyaml==6.0.1
