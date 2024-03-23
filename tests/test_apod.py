@@ -1,5 +1,12 @@
 from datetime import date
-from apod import ApodPage, ApodBot, ScrapeError, cleanup_alt_text, ApodScraper, guess_date_from_url
+from apod import (
+    ApodPage,
+    ApodBot,
+    ScrapeError,
+    cleanup_alt_text,
+    ApodScraper,
+    guess_date_from_url,
+)
 import requests
 import pytest
 import mastodon
@@ -16,7 +23,7 @@ test_cases = (
         media_urls=[
             "https://apod.nasa.gov/apod/image/2006/OrionMountains_Tabbush_960.jpg",
             "https://apod.nasa.gov/apod/image/2006/OrionMountains_Tabbush_960_annotated.jpg",
-            ],
+        ],
         media_mimes=["image/jpeg", "image/jpeg"],
     ),
     ApodPage(
@@ -34,27 +41,39 @@ test_cases = (
         url="https://apod.nasa.gov/apod/ap960821.html",
         title="A Close-Up of the Lagoon's Hourglass",
         credit="Credit: J. Trauger (JPL /Caltech), HST, STSci, NASA",
-        media_urls=["https://apod.nasa.gov/apod/image/hourglass_hst_big.jpg",],
-        media_mimes=["image/jpeg",],
+        media_urls=[
+            "https://apod.nasa.gov/apod/image/hourglass_hst_big.jpg",
+        ],
+        media_mimes=[
+            "image/jpeg",
+        ],
     ),
     ApodPage(
         # older page format
         url="https://apod.nasa.gov/apod/ap950622.html",
         title="The Earth from Apollo 17",
         credit="Picture Credit: NASA, Apollo 17, NSSDC",
-        media_urls=["https://apod.nasa.gov/apod/image/earth_a17.gif",],
-        media_mimes=["image/gif",],
+        media_urls=[
+            "https://apod.nasa.gov/apod/image/earth_a17.gif",
+        ],
+        media_mimes=[
+            "image/gif",
+        ],
     ),
     ApodPage(
         # image in button, wildcard <script> tag
         url="https://apod.nasa.gov/apod/ap220424.html",
         title="Split the Universe",
         credit="Image Credit: NASA, Erwin Schrödinger's cat",
-        media_urls=["https://apod.nasa.gov/apod/image/1704/SatelliteSale_NASA_960_split3.jpg",],
-        media_mimes=["image/jpeg",],
+        media_urls=[
+            "https://apod.nasa.gov/apod/image/1704/SatelliteSale_NASA_960_split3.jpg",
+        ],
+        media_mimes=[
+            "image/jpeg",
+        ],
         next_url="https://apod.nasa.gov/apod/ap220425.html",
         prev_url="https://apod.nasa.gov/apod/ap220423.html",
-        ),
+    ),
     ApodPage(
         url="https://apod.nasa.gov/apod/ap211010.html",
         title="Full Moon Silhouettes",
@@ -68,8 +87,12 @@ test_cases = (
         url="http://www.star.ucl.ac.uk/~apod/apod/ap231001.html",
         title="A Desert Eclipse",
         credit="Image Credit & Copyright: Maxime Daviron",
-        media_urls=["http://www.star.ucl.ac.uk/~apod/apod/image/2310/DesertEclipse_Daviron_2000.jpg",],
-        media_mimes=["image/jpeg",],
+        media_urls=[
+            "http://www.star.ucl.ac.uk/~apod/apod/image/2310/DesertEclipse_Daviron_2000.jpg",
+        ],
+        media_mimes=[
+            "image/jpeg",
+        ],
         prev_url="http://www.star.ucl.ac.uk/~apod/apod/ap230930.html",
         next_url="http://www.star.ucl.ac.uk/~apod/apod/ap231002.html",
         alt="An empty desert is shown with rolling tan sand dunes and a tan glow to the air above. A lone tree grows in the image centre. High above, the Sun glows - but the centre of the Sun is blackened out by an unusual disk.",
@@ -162,6 +185,7 @@ def page_from_url(requests_session):
 
     return page_from_url
 
+
 @pytest.mark.vcr
 def test_from_html_alt(page_from_url):
     page = page_from_url("https://apod.nasa.gov/apod/ap220420.html")
@@ -170,15 +194,21 @@ def test_from_html_alt(page_from_url):
         == "The featured image shows four planets lined up behind the RFK Triboro bridge in New York City. The image was taken just before sunrise two days ago."
     )
 
+
 @pytest.mark.vcr
-@pytest.mark.parametrize(('status_id', 'expected'), (
-    ("109018224046459751", "https://apod.nasa.gov/apod/ap220918.html"),
-    ("109069184629858810", "https://apod.nasa.gov/apod/ap220927.html"),
-    ("109024311093141985", None), # a reply
-    ))
+@pytest.mark.parametrize(
+    ("status_id", "expected"),
+    (
+        ("109018224046459751", "https://apod.nasa.gov/apod/ap220918.html"),
+        ("109069184629858810", "https://apod.nasa.gov/apod/ap220927.html"),
+        ("109024311093141985", None),  # a reply
+    ),
+)
 def test_extract_url(status_id, expected):
-    m = mastodon.Mastodon(api_base_url="https://botsin.space",
-                          user_agent="mastodon-apod test suite +https://github.com/codl/mastodon-apod")
+    m = mastodon.Mastodon(
+        api_base_url="https://botsin.space",
+        user_agent="mastodon-apod test suite +https://github.com/codl/mastodon-apod",
+    )
     status = m.status(status_id)
 
     assert ApodBot.extract_apod_url_from_status(status) == expected
@@ -196,12 +226,11 @@ def test_extract_url(status_id, expected):
         "https://apod.nasa.gov/apod/lib/about_apod.html",
         "https://apod.nasa.gov/apod/ap_faq.html",
         "https://apod.nasa.gov/apod/lib/edlinks.html",
-    )
+    ),
 )
-def test_from_html_throws_when_not_image_page(url:str, page_from_url):
+def test_from_html_throws_when_not_image_page(url: str, page_from_url):
     with pytest.raises(ScrapeError):
         page_from_url(url)
-
 
 
 @pytest.mark.vcr
@@ -216,7 +245,7 @@ def test_scraper_get_last_page():
         ("https://apod.nasa.gov/apod/ap230702.html", date(2023, 7, 2)),
         ("https://apod.nasa.gov/apod/ap950616.html", date(1995, 6, 16)),
         ("https://apod.nasa.gov/apod/index.html", None),
-    )
+    ),
 )
 def test_guess_date_from_url(url: str, expected: date | None):
     assert guess_date_from_url(url) == expected
