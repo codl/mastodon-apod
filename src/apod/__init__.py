@@ -2,7 +2,7 @@ from functools import cached_property
 import ananas
 import requests
 from bs4 import BeautifulSoup
-from datetime import date, datetime, timedelta, timezone
+from datetime import date
 import re
 from urllib.parse import urljoin, urlparse
 import mimetypes
@@ -160,7 +160,7 @@ class ApodPage():
                         text_lines.append(line)
                     line = ""
 
-        text_lines = [re.sub('[\n ]+', ' ', l).strip() for l in text_lines]
+        text_lines = [re.sub('[\n ]+', ' ', a).strip() for a in text_lines]
 
         prev_el = soup.find("a", string="<")
         next_el = soup.find("a", string=">")
@@ -186,7 +186,7 @@ class ApodScraper(object):
     def __init__(self, session:None|requests.Session=None):
         self.session: requests.Session
         if session is not None:
-            self.session = session;
+            self.session = session
         else:
             self.session = requests.Session()
             self.session.headers.update({
@@ -197,12 +197,12 @@ class ApodScraper(object):
         IDX_URL = "https://apod.nasa.gov/apod/"
         r = self.session.get(IDX_URL)
         r.raise_for_status()
-        page = ApodPage.from_html(IDX_URL, r.content);
+        page = ApodPage.from_html(IDX_URL, r.content)
         if page.prev_url is None:
             raise ScrapeError("Index page has no previous link")
-        prev_r = self.session.get(page.prev_url);
+        prev_r = self.session.get(page.prev_url)
         prev_r.raise_for_status()
-        prev_page = ApodPage.from_html(page.prev_url, prev_r.content);
+        prev_page = ApodPage.from_html(page.prev_url, prev_r.content)
         if prev_page.next_url is None:
             raise ScrapeError("Previous page has no next link")
         page = dataclasses.replace(page, url=prev_page.next_url)
@@ -230,7 +230,6 @@ class ApodBot(ananas.PineappleBot):
     @ananas.daily(19, 28)
     def check_apod(self):
 
-        fallback_url = None
         recent_urls = self.get_recent_urls()
         if recent_urls:
             last_url = recent_urls[0]

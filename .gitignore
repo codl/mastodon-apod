@@ -2,3 +2,4 @@ config/ananas.cfg
 apod.log
 __pycache__
 .pytest_cache
+build
