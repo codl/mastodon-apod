@@ -2,15 +2,12 @@ IMAGE := ghcr.io/codl/mastodon-apod
 CONTAINER := mastodon-apod
 UID := $(shell id -u)
 
-lock: requirements.txt dev-requirements.txt ci-requirements.txt
+lock: requirements.txt dev-requirements.txt
 
 requirements.txt: pyproject.toml constraints.txt
 	uv pip compile -c constraints.txt -o $@ $<
 
 dev-requirements.txt: dev-requirements.in requirements.txt constraints.txt
-	uv pip compile -o $@ $<
-
-ci-requirements.txt: ci-requirements.in dev-requirements.txt requirements.txt constraints.txt
 	uv pip compile -o $@ $<
 
 docker:
