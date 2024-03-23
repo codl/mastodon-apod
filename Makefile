@@ -4,14 +4,14 @@ UID := $(shell id -u)
 
 lock: requirements.txt dev-requirements.txt ci-requirements.txt
 
-requirements.txt: pyproject.toml
-	pip-compile $<
+requirements.txt: pyproject.toml constraints.txt
+	uv pip compile -c constraints.txt -o $@ $<
 
-dev-requirements.txt: dev-requirements.in requirements.txt
-	pip-compile $<
+dev-requirements.txt: dev-requirements.in requirements.txt constraints.txt
+	uv pip compile -o $@ $<
 
-ci-requirements.txt: ci-requirements.in dev-requirements.txt requirements.txt
-	pip-compile $<
+ci-requirements.txt: ci-requirements.in dev-requirements.txt requirements.txt constraints.txt
+	uv pip compile -o $@ $<
 
 docker:
 	docker buildx build --target bot -t $(IMAGE) .

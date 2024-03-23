@@ -1,3 +1,4 @@
 -c requirements.txt
 -c dev-requirements.txt
+-c constraints.txt
 pip-tools
