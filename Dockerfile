@@ -1,36 +1,45 @@
-ARG python_version=3.10
-FROM python:$python_version as common
+ARG python_version=3.12
 
-WORKDIR /app
+FROM alpine:3.19.1 as uv
 
-COPY ci-requirements.txt ./
-RUN --mount=type=cache,target=/root/.cache/pip/http \
-    pip install -r ci-requirements.txt
+RUN apk add --no-cache curl
+RUN curl --location --silent "https://github.com/astral-sh/uv/releases/download/0.1.24/uv-x86_64-unknown-linux-musl.tar.gz" | gunzip | tar x
+RUN install uv-x86_64-unknown-linux-musl/uv /
 
-FROM common as test
+
+FROM python:$python_version as test
+
+ENV UV_CACHE_DIR=/var/cache/uv
+COPY --from=uv /uv /bin/uv
 
 COPY requirements.txt dev-requirements.txt ./
-RUN --mount=type=cache,target=/root/.cache/pip/http \
-    pip-sync requirements.txt dev-requirements.txt
+RUN --mount=type=cache,target=/var/cache/uv \
+	uv pip sync --system requirements.txt dev-requirements.txt
 COPY pyproject.toml .
 COPY src/ ./src/
 COPY tests/ ./tests/
-RUN pip install .
+RUN --mount=type=cache,target=/var/cache/uv \
+	uv pip install --system .
 CMD ["python", "-m", "pytest"]
 
-FROM common as bot
+
+FROM python:$python_version as bot
+
+ENV UV_CACHE_DIR=/var/cache/uv
+COPY --from=uv /uv /bin/uv
 
 # Ensure running user can write to log file
 RUN touch apod.log
 RUN chmod 666 apod.log
 
 COPY requirements.txt ./
-RUN --mount=type=cache,target=/root/.cache/pip/http \
-    pip-sync requirements.txt
+RUN --mount=type=cache,target=/var/cache/uv \
+	uv pip sync --system requirements.txt
+
 
 COPY pyproject.toml ./
 COPY src/ ./src/
-RUN ls
-RUN pip install .
+RUN --mount=type=cache,target=/var/cache/uv \
+	uv pip install --system .
 
 CMD ["ananas", "config/ananas.cfg"]
