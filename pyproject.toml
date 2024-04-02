@@ -9,11 +9,11 @@ maintainers=[
     {name="codl", email="codl@codl.fr"},
 ]
 dependencies = [
-	"beautifulsoup4",
+	"beautifulsoup4>=4.8",
 	"ananas>=1.1.0",
 	"mastodon.py>=1.8.1",
-	"requests",
-	"pillow",
+	"requests>=2.30",
+	"pillow>=10.0",
 ]
 requires-python = ">=3.10"
 version = "0.1"
