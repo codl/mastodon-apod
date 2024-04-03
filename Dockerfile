@@ -3,7 +3,7 @@ ARG python_version=3.12
 FROM alpine:3.19.1 as uv
 
 RUN apk add --no-cache curl
-RUN curl --location --silent "https://github.com/astral-sh/uv/releases/download/0.1.24/uv-x86_64-unknown-linux-musl.tar.gz" | gunzip | tar x
+RUN curl --location --silent "https://github.com/astral-sh/uv/releases/download/0.1.28/uv-x86_64-unknown-linux-musl.tar.gz" | gunzip | tar x
 RUN install uv-x86_64-unknown-linux-musl/uv /
 
 
