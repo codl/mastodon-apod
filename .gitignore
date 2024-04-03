@@ -3,3 +3,5 @@ apod.log
 __pycache__
 .pytest_cache
 build
+.tox
+*.egg-info
