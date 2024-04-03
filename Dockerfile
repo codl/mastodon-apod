@@ -20,7 +20,7 @@ COPY src/ ./src/
 COPY tests/ ./tests/
 RUN --mount=type=cache,target=/var/cache/uv \
 	uv pip install --system .
-CMD ["python", "-m", "pytest"]
+CMD ["python", "-m", "pytest", "tests"]
 
 
 FROM python:$python_version as bot
