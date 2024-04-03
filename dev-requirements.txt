@@ -4,9 +4,9 @@ idna==3.6
     # via yarl
 iniconfig==2.0.0
     # via pytest
-multidict==6.0.4
+multidict==6.0.5
     # via yarl
-packaging==23.1
+packaging==24.0
     # via pytest
 pluggy==1.4.0
     # via pytest
@@ -17,7 +17,7 @@ pyyaml==6.0.1
     # via vcrpy
 vcrpy==6.0.1
     # via pytest-recording
-wrapt==1.15.0
+wrapt==1.16.0
     # via vcrpy
-yarl==1.9.2
+yarl==1.9.4
     # via vcrpy
