@@ -1,15 +1,16 @@
 from datetime import date
+
+import mastodon
+import pytest
+import requests
 from apod import (
-    ApodPage,
     ApodBot,
+    ApodPage,
+    ApodScraper,
     ScrapeError,
     cleanup_alt_text,
-    ApodScraper,
     guess_date_from_url,
 )
-import requests
-import pytest
-import mastodon
 
 test_cases = (
     ApodPage(

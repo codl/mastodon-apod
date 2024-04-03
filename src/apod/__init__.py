@@ -1,21 +1,22 @@
+import dataclasses
+import mimetypes
+import re
+import socket
+from dataclasses import dataclass, field
+from datetime import date
 from functools import cached_property
+from io import BytesIO, IOBase
+from itertools import chain, count
+from typing import Any, Optional
+from urllib.parse import urljoin, urlparse
+
 import ananas
 import requests
+import requests.packages.urllib3.util.connection as urllib3_cn
 from bs4 import BeautifulSoup
-from datetime import date
-import re
-from urllib.parse import urljoin, urlparse
-import mimetypes
-from io import BytesIO, IOBase
+from mastodon import Mastodon
 from PIL import Image
 from PIL.ImageOps import exif_transpose
-import socket
-import requests.packages.urllib3.util.connection as urllib3_cn
-from dataclasses import dataclass, field
-from typing import Optional, Any
-from itertools import chain, count
-from mastodon import Mastodon
-import dataclasses
 
 urllib3_cn.allowed_gai_family = lambda: socket.AF_INET
 
@@ -272,9 +273,7 @@ class ApodBot(ananas.PineappleBot):
         else:
             page = self.scraper.latest_page()
 
-        post_text = "{page.title}\n\n{page.credit}\n\n{page.url} #APOD".format(
-            page=page
-        )
+        post_text = "{page.title}\n\n{page.credit}\n\n{page.url} #APOD".format(page=page)
 
         medias = []
         for media_url, mime, i in zip(page.media_urls, page.media_mimes, count()):
