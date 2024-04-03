@@ -18,7 +18,7 @@ mastodon-py==1.8.1
     # via ananas
 more-itertools==10.1.0
     # via ananas
-pillow==10.2.0
+pillow==10.3.0
 python-dateutil==2.9.0.post0
     # via mastodon-py
 python-magic==0.4.27
