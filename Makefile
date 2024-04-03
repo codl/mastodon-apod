@@ -4,10 +4,10 @@ UID := $(shell id -u)
 
 lock: requirements.txt dev-requirements.txt
 
-requirements.txt: pyproject.toml constraints.txt
-	uv pip compile -c constraints.txt -o $@ $<
+requirements.txt: pyproject.toml
+	uv pip compile -o $@ $<
 
-dev-requirements.txt: dev-requirements.in requirements.txt constraints.txt
+dev-requirements.txt: dev-requirements.in requirements.txt
 	uv pip compile -o $@ $<
 
 docker:
