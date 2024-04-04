@@ -2,7 +2,12 @@ ARG python_version=3.12.2
 
 FROM python:$python_version as uv
 
-RUN curl --location --silent "https://github.com/astral-sh/uv/releases/download/0.1.28/uv-x86_64-unknown-linux-musl.tar.gz" | gunzip | tar x
+ARG uv_version=0.1.29
+
+RUN wget "https://github.com/astral-sh/uv/releases/download/$uv_version/uv-x86_64-unknown-linux-musl.tar.gz"
+RUN wget "https://github.com/astral-sh/uv/releases/download/$uv_version/uv-x86_64-unknown-linux-musl.tar.gz.sha256"
+RUN sha256sum --check uv-x86_64-unknown-linux-musl.tar.gz.sha256
+RUN tar -xf uv-x86_64-unknown-linux-musl.tar.gz
 RUN install uv-x86_64-unknown-linux-musl/uv /
 
 
