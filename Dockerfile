@@ -2,7 +2,7 @@ ARG python_version=3.12.2
 
 FROM python:$python_version as uv
 
-ARG uv_version=0.1.29
+ARG uv_version=0.1.38
 
 RUN wget "https://github.com/astral-sh/uv/releases/download/$uv_version/uv-x86_64-unknown-linux-musl.tar.gz"
 RUN wget "https://github.com/astral-sh/uv/releases/download/$uv_version/uv-x86_64-unknown-linux-musl.tar.gz.sha256"
