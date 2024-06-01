@@ -13,7 +13,9 @@ filelock==3.13.3
     #   tox
     #   virtualenv
 idna==3.7
-    # via yarl
+    # via
+    #   -c requirements.txt
+    #   yarl
 iniconfig==2.0.0
     # via pytest
 multidict==6.0.5
@@ -27,20 +29,26 @@ platformdirs==4.2.0
     # via
     #   tox
     #   virtualenv
-pluggy==1.4.0
+pluggy==1.5.0
     # via
     #   pytest
     #   tox
 pyproject-api==1.6.1
     # via tox
-pytest==8.1.2
-    # via pytest-recording
+pytest==8.2.1
+    # via
+    #   -r dev-requirements.in
+    #   pytest-recording
 pytest-recording==0.13.1
+    # via -r dev-requirements.in
 pyyaml==6.0.1
     # via vcrpy
 tox==4.14.2
+    # via -r dev-requirements.in
 vcrpy==6.0.1
-    # via pytest-recording
+    # via
+    #   -r dev-requirements.in
+    #   pytest-recording
 virtualenv==20.25.1
     # via tox
 wrapt==1.16.0
