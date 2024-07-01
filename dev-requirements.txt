@@ -43,7 +43,7 @@ pytest-recording==0.13.1
     # via -r dev-requirements.in
 pyyaml==6.0.1
     # via vcrpy
-tox==4.14.2
+tox==4.15.1
     # via -r dev-requirements.in
 vcrpy==6.0.1
     # via
