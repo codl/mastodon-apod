@@ -4,7 +4,7 @@ ananas==1.1.0
 beautifulsoup4==4.12.3
 blurhash==1.1.4
     # via mastodon-py
-certifi==2024.2.2
+certifi==2024.7.4
     # via requests
 charset-normalizer==3.3.2
     # via requests
