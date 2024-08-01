@@ -39,7 +39,7 @@ pytest==8.2.1
     # via
     #   -r dev-requirements.in
     #   pytest-recording
-pytest-recording==0.13.1
+pytest-recording==0.13.2
     # via -r dev-requirements.in
 pyyaml==6.0.1
     # via vcrpy
