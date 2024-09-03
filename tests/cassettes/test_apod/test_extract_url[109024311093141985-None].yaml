@@ -14,38 +14,46 @@ interactions:
     uri: https://botsin.space/api/v1/instance/
   response:
     body:
-      string: '{"uri":"botsin.space","title":"botsin.space","short_description":"A
-        Mastodon instance for bots and bot allies.","description":"This instance is
-        for bots and bot allies. Anyone can sign up to be a user here or run your
-        bot here. Users agree to the Code of Conduct listed on the \u003ca href=\"/about/more\"\u003einformation
-        page\u003c/a\u003e. You should also review the \u003ca href=\"/terms\"\u003eterms
-        of service\u003c/a\u003e.\r\n\r\n","email":"colin@muffinlabs.com","version":"4.1.2","urls":{"streaming_api":"wss://botsin.space"},"stats":{"user_count":7973,"status_count":21098535,"domain_count":32275},"thumbnail":"https://files.botsin.space/site_uploads/files/000/000/003/@1x/f094348494098e9e.png","languages":["en"],"registrations":true,"approval_required":true,"invites_enabled":false,"configuration":{"accounts":{"max_featured_tags":10},"statuses":{"max_characters":500,"max_media_attachments":4,"characters_reserved_per_url":23},"media_attachments":{"supported_mime_types":["image/jpeg","image/png","image/gif","image/heic","image/heif","image/webp","image/avif","video/webm","video/mp4","video/quicktime","video/ogg","audio/wave","audio/wav","audio/x-wav","audio/x-pn-wave","audio/vnd.wave","audio/ogg","audio/vorbis","audio/mpeg","audio/mp3","audio/webm","audio/flac","audio/aac","audio/m4a","audio/x-m4a","audio/mp4","audio/3gpp","video/x-ms-asf"],"image_size_limit":10485760,"image_matrix_limit":16777216,"video_size_limit":41943040,"video_frame_rate_limit":60,"video_matrix_limit":2304000},"polls":{"max_options":4,"max_characters_per_option":50,"min_expiration":300,"max_expiration":2629746}},"contact_account":{"id":"1","username":"muffinista","acct":"muffinista","display_name":"colin
-        mitchell","locked":false,"bot":false,"discoverable":false,"group":false,"created_at":"2017-04-03T00:00:00.000Z","note":"\u003cp\u003ehello!
-        i run botsin.space but my personal account is muffinista@toot.site so if you
-        need me you can check there\u003c/p\u003e","url":"https://botsin.space/@muffinista","avatar":"https://files.botsin.space/accounts/avatars/000/000/001/original/c766bf1ee2ed9287.jpg","avatar_static":"https://files.botsin.space/accounts/avatars/000/000/001/original/c766bf1ee2ed9287.jpg","header":"https://files.botsin.space/accounts/headers/000/000/001/original/5231bd9447c7b5f9.jpg","header_static":"https://files.botsin.space/accounts/headers/000/000/001/original/5231bd9447c7b5f9.jpg","followers_count":4662,"following_count":18,"statuses_count":464,"last_status_at":"2023-06-28","noindex":true,"emojis":[],"roles":[{"id":"3","name":"Owner","color":""}],"fields":[{"name":"pronouns","value":"he/him","verified_at":null},{"name":"home","value":"\u003ca
-        href=\"https://muffinlabs.com\" target=\"_blank\" rel=\"nofollow noopener
-        noreferrer me\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan
-        class=\"\"\u003emuffinlabs.com\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e","verified_at":null},{"name":"personal
-        account","value":"\u003ca href=\"https://toot.site/@muffinista\" target=\"_blank\"
-        rel=\"nofollow noopener noreferrer me\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan
-        class=\"\"\u003etoot.site/@muffinista\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e","verified_at":null}]},"rules":[{"id":"1","text":"No
-        accounts that promote crytptocurrency\r\n"},{"id":"2","text":"No police/military
-        organization accounts\r\n"},{"id":"3","text":"No sexual depictions of children\r\n"},{"id":"4","text":"No
-        uncurated news bots posting\r\n"},{"id":"5","text":"No untagged nudity, pornography
-        and sexually explicit content\r\n"},{"id":"6","text":"No untagged gore and
-        extremely graphic violence\r\n"},{"id":"7","text":"No stalking or harassment
-        of other users\r\n"},{"id":"8","text":"Do not use bots to abuse other people.
-        Punch up, not down\r\n"},{"id":"9","text":"Respect the standards of the fediverse.
-        If a human would likely add CW to a post, a bot should also add a CW."},{"id":"10","text":"Your
-        signup request must include the magic word!\r\n\r\nThe magic word is.... spreadsheet"},{"id":"11","text":"No
-        mirrors of someone else''s Twitter accounts. If they want to be here, they
-        can create their own account.\r\n\r\n"},{"id":"12","text":"No interactions
-        with people who don''t opt in to the interaction. If you mention another user,
-        they must either follow the bot, or they must''ve started the interaction
-        themselves.\r\n"}]}'
+      string: !!binary |
+        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
     headers:
       Cache-Control:
-      - max-age=180, public
+      - max-age=300, public, stale-while-revalidate=30, stale-if-error=86400
       Connection:
       - keep-alive
       Content-Encoding:
@@ -55,11 +63,9 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 29 Jun 2023 10:03:41 GMT
+      - Tue, 03 Sep 2024 05:40:43 GMT
       ETag:
-      - W/"b4adc2a0e265593f0c3a79254261f3f8"
-      Permissions-Policy:
-      - interest-cohort=()
+      - W/"5f760a7b33d07bd6c9e16307f0f9ccce"
       Referrer-Policy:
       - same-origin
       Server:
@@ -83,13 +89,16 @@ interactions:
       X-RateLimit-Remaining:
       - '299'
       X-RateLimit-Reset:
-      - '2023-06-29T10:05:00.829391Z'
+      - '2024-09-03T05:40:00.605035Z'
       X-Request-Id:
-      - 2b1238ed-40b1-4fb0-b241-4d370216138b
+      - 4c941741-1a0d-4ca2-8ccb-dc7fad3a4d45
       X-Runtime:
-      - '4.085540'
+      - '0.039264'
       X-XSS-Protection:
       - '0'
+      vary:
+      - Accept-Encoding
+      - Accept, Origin
     status:
       code: 200
       message: OK
@@ -108,30 +117,29 @@ interactions:
     uri: https://botsin.space/api/v1/statuses/109024311093141985
   response:
     body:
-      string: "{\"id\":\"109024311093141985\",\"created_at\":\"2022-09-19T09:16:05.653Z\",\"in_reply_to_id\":\"109024238105549619\",\"in_reply_to_account_id\":\"108228634059522784\",\"sensitive\":false,\"spoiler_text\":\"\",\"visibility\":\"public\",\"language\":\"en\",\"uri\":\"https://botsin.space/users/APoD/statuses/109024311093141985\",\"url\":\"https://botsin.space/@APoD/109024311093141985\",\"replies_count\":1,\"reblogs_count\":0,\"favourites_count\":1,\"edited_at\":null,\"content\":\"\\u003cp\\u003e\\u003cspan
-        class=\\\"h-card\\\"\\u003e\\u003ca href=\\\"https://mastodon.online/@_MoonArcadia_\\\"
-        class=\\\"u-url mention\\\"\\u003e@\\u003cspan\\u003e_MoonArcadia_\\u003c/span\\u003e\\u003c/a\\u003e\\u003c/span\\u003e
-        Unlikely, but it\\u0026#39;s worth a try\\u003c/p\\u003e\",\"reblog\":null,\"application\":{\"name\":\"Tusky
-        Test\",\"website\":\"https://tusky.app\"},\"account\":{\"id\":\"21962\",\"username\":\"APoD\",\"acct\":\"APoD\",\"display_name\":\"Astronomy
-        Picture of the Day\",\"locked\":false,\"bot\":true,\"discoverable\":true,\"group\":false,\"created_at\":\"2018-01-12T00:00:00.000Z\",\"note\":\"\\u003cp\\u003eDiscover
-        the cosmos! A different image of our fascinating universe every day. \\u003c/p\\u003e\\u003cp\\u003e\U0001F30C
-        \\u003ca href=\\\"https://apod.nasa.gov/\\\" target=\\\"_blank\\\" rel=\\\"nofollow
-        noopener noreferrer\\\"\\u003e\\u003cspan class=\\\"invisible\\\"\\u003ehttps://\\u003c/span\\u003e\\u003cspan
-        class=\\\"\\\"\\u003eapod.nasa.gov/\\u003c/span\\u003e\\u003cspan class=\\\"invisible\\\"\\u003e\\u003c/span\\u003e\\u003c/a\\u003e\\u003c/p\\u003e\\u003cp\\u003e(Automated
-        mirror, supervised by \\u003cspan class=\\\"h-card\\\"\\u003e\\u003ca href=\\\"https://chitter.xyz/@codl\\\"
-        class=\\\"u-url mention\\\"\\u003e@\\u003cspan\\u003ecodl\\u003c/span\\u003e\\u003c/a\\u003e\\u003c/span\\u003e,
-        who is not an astronomer)\\u003c/p\\u003e\",\"url\":\"https://botsin.space/@APoD\",\"avatar\":\"https://files.botsin.space/accounts/avatars/000/021/962/original/2c7b5e5412024ff8.jpg\",\"avatar_static\":\"https://files.botsin.space/accounts/avatars/000/021/962/original/2c7b5e5412024ff8.jpg\",\"header\":\"https://files.botsin.space/accounts/headers/000/021/962/original/36d50348e0dfd7e9.jpg\",\"header_static\":\"https://files.botsin.space/accounts/headers/000/021/962/original/36d50348e0dfd7e9.jpg\",\"followers_count\":81768,\"following_count\":1,\"statuses_count\":2011,\"last_status_at\":\"2023-06-29\",\"noindex\":false,\"emojis\":[],\"roles\":[],\"fields\":[{\"name\":\"Banner\",\"value\":\"\\u003ca
-        href=\\\"https://apod.nasa.gov/apod/ap131231.html\\\" target=\\\"_blank\\\"
-        rel=\\\"nofollow noopener noreferrer me\\\"\\u003e\\u003cspan class=\\\"invisible\\\"\\u003ehttps://\\u003c/span\\u003e\\u003cspan
-        class=\\\"ellipsis\\\"\\u003eapod.nasa.gov/apod/ap131231.ht\\u003c/span\\u003e\\u003cspan
-        class=\\\"invisible\\\"\\u003eml\\u003c/span\\u003e\\u003c/a\\u003e\",\"verified_at\":null},{\"name\":\"Avatar\",\"value\":\"\\u003ca
-        href=\\\"https://apod.nasa.gov/apod/ap220206.html\\\" target=\\\"_blank\\\"
-        rel=\\\"nofollow noopener noreferrer me\\\"\\u003e\\u003cspan class=\\\"invisible\\\"\\u003ehttps://\\u003c/span\\u003e\\u003cspan
-        class=\\\"ellipsis\\\"\\u003eapod.nasa.gov/apod/ap220206.ht\\u003c/span\\u003e\\u003cspan
-        class=\\\"invisible\\\"\\u003eml\\u003c/span\\u003e\\u003c/a\\u003e\",\"verified_at\":null}]},\"media_attachments\":[],\"mentions\":[{\"id\":\"108228634059522784\",\"username\":\"_MoonArcadia_\",\"url\":\"https://mastodon.online/@_MoonArcadia_\",\"acct\":\"_MoonArcadia_@mastodon.online\"}],\"tags\":[],\"emojis\":[],\"card\":null,\"poll\":null}"
+      string: !!binary |
+        H4sIAAAAAAAAA91Wa27jNhC+Cqv+jSXq5VheFHWK/C0QoOmfNguBlkY21zQpkJQTNcgN9g69Yo/Q
+        oSzZVjbZPLBtgQJBLA5nhvP45nHv8dKbeyHNaJTEIf7GYRJms9Q78woNzEKZM4scEY2iCc0mYXZN
+        s3k4ndPUn6bxb8jHZa6hFm1uVX6iLYpnIU3TJJuG2SMuVhSqkXbgnkXRbBonNM3SKDqfJchtQBpu
+        +Q68ecWEAaTUigvQuYU7Zw/y7LjhSy64bfFcN0vBC6QKJlcNW6GgBxLPjeb4uba2NvMgWCpruPRN
+        zQoIGgPaBBdX6jIwllk8muDJSDRaPKdj0Yk/KeXc5WDyzldvHjrKUqjVgULPvIrtFFpoR2xQ8iHu
+        shECM6GkBXfp3TSUxkXd/cD+gHZIUghmzA833npSMF3eeMRqJo3A/CFRqhvvVIKRtYbKcfcebZmx
+        qlTSV1JwiU7lPyslL3TBSs5y1DaobyYYCrJFW7iSg9LF0Y49YSzdXQbH257ARqfjNfkVbdiAaM/I
+        srGEW0eOpt/H2QdDbpW2a8LQu7YX7EPhDcEdQsZqDH7BnJ3e/N6TbOsQcd2YTUuuwVgUuIUlYgxO
+        MmvdtY+i3gNqKPqM3O9rJAqzaeTAgKjp1bncex2nPZ5KbmrB2nzgMVYrqbYtueKFbTQQVRG7BnLJ
+        WgdXVWygPKAcseXNrW6g01OoHWi2FDDQVlo19YH5UYGGswkNJ2F0Tem8+/Mppa5Apeq8HGHnstfe
+        mVIos1XmO3JBSl5VoDG/hG+xiJytiE9SMVNwidGUK9JILEttgAD+tKRkrU/GyRg99Nefnz+TZ3DH
+        alX6khnmr9QucKhlegUWOfIl1vEGKRpEh+BKCaFuiVSqBolmS4WqQGvQL4B9VB5cdk1DwMAzWPIM
+        SkfCg8wjq18h+cWzryuKI7ZfakCv7XMOrDuGUT5hrbCtGn8k0EPfBHtmEyCQAhqFAVZAoDRfIRZE
+        EBXnyxTSJMTZkFTVzP9Urw4P5K6jYkP+595ZAyvhtY7smZ95IJ6WKY2TGdCyKs8hGz3wNkfe884e
+        2ih1GAE4NtNkuMCaO5kNw6AaSFGSUjf0jM33V4dxnbhxTaOu/rks4e7QN2CrPnHjzX//iF1ToTP7
+        z4qDKN33oV3+xCTWmhu1TDTHFvJCHbsT/gvjMIpDf2234p2VjYPmXytuEILXhpuni/yxS+8qeozD
+        18veBRo0xzwch//D2SEbF/vKfV82IkQEnf6vsnFw6T/Jxi9qC3btBuJSqw38eJKXKwEM52PtLr/Z
+        jlasubWg/bv2j2BRqFK8eS1zQosTNW/dzJ4MyEfclLbgFj1mLSvWzoi+n/T27DvK86v+yT41Why/
+        GHtf31KPe9iIvHgk5T2gZZatehtPW6HLyrA+1lgGvYd/AyaisOQjDQAA
     headers:
       Cache-Control:
-      - private, no-store
+      - max-age=15, public, stale-while-revalidate=30, stale-if-error=86400
       Connection:
       - keep-alive
       Content-Encoding:
@@ -141,11 +149,9 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 29 Jun 2023 10:03:42 GMT
+      - Tue, 03 Sep 2024 05:40:43 GMT
       ETag:
-      - W/"1bdeb5d262e7fa307682369cb74b7371"
-      Permissions-Policy:
-      - interest-cohort=()
+      - W/"fc649a2bbef0f9f093dab3a89e3c617c"
       Referrer-Policy:
       - same-origin
       Server:
@@ -157,7 +163,7 @@ interactions:
       - chunked
       Vary:
       - Accept-Encoding
-      - Accept, Origin
+      - Authorization, Origin
       X-Cached:
       - MISS
       X-Content-Type-Options:
@@ -167,15 +173,18 @@ interactions:
       X-RateLimit-Limit:
       - '300'
       X-RateLimit-Remaining:
-      - '294'
+      - '297'
       X-RateLimit-Reset:
-      - '2023-06-29T10:05:00.997994Z'
+      - '2024-09-03T05:45:00.469539Z'
       X-Request-Id:
-      - a027d9c3-b7dc-41c3-889b-992628298906
+      - 7fd81c10-5017-422c-b8fe-002a1cd871eb
       X-Runtime:
-      - '0.025672'
+      - '0.102939'
       X-XSS-Protection:
       - '0'
+      vary:
+      - Accept-Encoding
+      - Authorization, Origin
     status:
       code: 200
       message: OK
