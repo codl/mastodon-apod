@@ -1,5 +1,0 @@
--c requirements.txt 
-pytest
-pytest-recording
-vcrpy
-tox

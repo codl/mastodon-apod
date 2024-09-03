@@ -39,3 +39,11 @@ line-length = 89
 [tool.isort]
 profile = "black"
 line_length = 89
+
+[tool.uv]
+dev-dependencies= [
+	"pytest",
+	"pytest-recording",
+	"vcrpy",
+	"tox",
+]
