@@ -15,7 +15,7 @@ FROM python:$python_version as test
 
 ENV UV_CACHE_DIR=/var/cache/uv
 COPY --from=uv /uv /bin/uv
-RUN uv venv venv
+RUN uv venv /venv
 RUN . venv/bin/activate
 
 COPY uv.lock pyproject.toml .
@@ -30,8 +30,10 @@ FROM python:$python_version as bot
 
 ENV UV_CACHE_DIR=/var/cache/uv
 COPY --from=uv /uv /bin/uv
-RUN uv venv venv
+RUN uv venv /venv
 RUN . venv/bin/activate
+
+ENV PATH=/venv/bin:$PATH
 
 # Ensure running user can write to log file
 RUN touch apod.log
@@ -42,4 +44,4 @@ COPY src/ ./src/
 RUN --mount=type=cache,target=/var/cache/uv \
 	uv sync --no-dev --frozen
 
-CMD ["ananas", "config/ananas.cfg"]
+CMD ananas config/ananas.cfg
