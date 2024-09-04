@@ -10,9 +10,9 @@ from itertools import chain, count
 from typing import Any, Optional
 from urllib.parse import urljoin, urlparse
 
-import ananas
 import requests
 import requests.packages.urllib3.util.connection as urllib3_cn
+import structlog
 from bs4 import BeautifulSoup
 from mastodon import Mastodon
 from PIL import Image
@@ -217,21 +217,26 @@ class OutgoingMedia:
     mime: str
 
 
-class ApodBot(ananas.PineappleBot):
+def _make_session() -> requests.Session:
+    session = requests.Session()
+    session.headers.update(
+        {"user-agent": "mastodon-apod +https://github.com/codl/mastodon-apod"}
+    )
+    return session
+
+
+
+@dataclass
+class ApodBot():
     mastodon: Mastodon
+    session: requests.Session = field(default_factory=_make_session)
+    log: structlog.stdlib.BoundLogger = field(default_factory=structlog.get_logger())
+    admin: str|None = None
 
-    def __init__(self, *args, **kwargs):
-        ananas.PineappleBot.__init__(self, *args, **kwargs)
-        self.session = requests.Session()
-        self.session.headers.update(
-            {"user-agent": "mastodon-apod +https://github.com/codl/mastodon-apod"}
-        )
-        self.scraper = ApodScraper(session=self.session)
+    @cached_property
+    def scraper(self):
+        return ApodScraper(session=self.session)
 
-    @ananas.daily(1, 28)
-    @ananas.daily(7, 28)
-    @ananas.daily(13, 28)
-    @ananas.daily(19, 28)
     def check_apod(self):
         recent_urls = self.get_recent_urls()
         if recent_urls:
@@ -293,15 +298,6 @@ class ApodBot(ananas.PineappleBot):
 
         self.mastodon.status_post(post_text, media_ids=medias)
 
-        for key in ("state", "prev_url", "next_url", "last_post_datetime", "canary"):
-            changed = False
-            if key in self.config:
-                # change to a del once <https://github.com/chr-1x/ananas/issues/27> is fixed
-                self.config[key] = None
-                changed = True
-            if changed:
-                self.config.save()
-
     def fetch_and_fit_media(self, media_url: str) -> OutgoingMedia:
         """returns a BytesIO"""
         return self.fit_media(self.fetch_media(media_url))
@@ -362,17 +358,17 @@ class ApodBot(ananas.PineappleBot):
                     url = a["href"]
             return url
 
-    @ananas.reply
     def react(self, post, user):
-        if user.acct != self.config.admin:
+        if user.acct != self.admin:
             return
+        log = self.log.bind(user=user)
         if re.search(r"\baccept\b", post.content):
+            log.info("accepting follow requests")
             self.accept_one_page_of_follow_requests()
         else:
-            self.log("react", "Poked by {}, doing a forced check".format(user.acct))
+            log.info("forced check")
             self.check_apod()
 
-    @ananas.hourly(minute=53)
     def accept_one_page_of_follow_requests(self):
         follow_requests = self.mastodon.follow_requests()
         for acct in follow_requests:
