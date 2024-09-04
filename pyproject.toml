@@ -44,6 +44,6 @@ line_length = 89
 dev-dependencies= [
 	"pytest",
 	"pytest-recording",
-	"vcrpy",
+	"vcrpy>=6.0.1",
 	"tox",
 ]
