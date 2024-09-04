@@ -3,6 +3,7 @@ from datetime import date
 import mastodon
 import pytest
 import requests
+
 from apod import (
     ApodBot,
     ApodPage,

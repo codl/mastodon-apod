@@ -1,8 +1,9 @@
 from pathlib import Path
 
 import pytest
-from apod import ApodBot
 from PIL import Image
+
+from apod import ApodBot
 
 
 @pytest.fixture
