@@ -28,8 +28,8 @@ COPY uv.lock pyproject.toml .
 COPY src/ ./src/
 COPY tests/ ./tests/
 RUN --mount=type=cache,target=/var/cache/uv \
-	uv sync --frozen
-CMD ["python", "-m", "pytest", "tests"]
+	uv sync --all-extras --frozen
+CMD ["python", "-m", "pytest"]
 
 
 FROM python:$python_version as bot
