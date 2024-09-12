@@ -24,7 +24,8 @@ test = [
 	"pytest-recording>=0.13.2",
 	"vcrpy>=6.0.1",
 	"urllib3>=1.26.0,<2",
-	"tox",
+	"tox>=4",
+	"coverage>=7.6.1,<8",
 ]
 
 [tool.setuptools]

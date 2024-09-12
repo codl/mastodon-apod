@@ -2,14 +2,6 @@ IMAGE := ghcr.io/codl/mastodon-apod
 CONTAINER := mastodon-apod
 UID := $(shell id -u)
 
-lock: requirements.txt dev-requirements.txt
-
-requirements.txt: pyproject.toml
-	uv pip compile -o $@ $<
-
-dev-requirements.txt: dev-requirements.in requirements.txt
-	uv pip compile -o $@ $<
-
 docker:
 	docker buildx build --target bot -t $(IMAGE) .
 
@@ -27,4 +19,14 @@ test-docker:
 	docker buildx build --target test -t $(IMAGE):test .
 	docker run --rm $(IMAGE):test
 
-.PHONY: docker up docker-rm docker-run test-docker lock
+sync:
+	uv sync --all-extras
+
+test: sync
+	uv run python -m pytest
+
+coverage: sync
+	uv run python -m coverage run --source=src -m pytest
+	uv run python -m coverage report
+
+.PHONY: docker up docker-rm docker-run test-docker coverage test sync
