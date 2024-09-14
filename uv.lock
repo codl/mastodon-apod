@@ -281,12 +281,12 @@ requires-dist = [
     { name = "coverage", marker = "extra == 'test'", specifier = ">=7.6.1,<8" },
     { name = "mastodon-py", specifier = ">=1.8.1,<2" },
     { name = "pillow", specifier = ">=10.0,<11" },
-    { name = "pytest", marker = "extra == 'test'", specifier = ">=8.3.2" },
-    { name = "pytest-recording", marker = "extra == 'test'", specifier = ">=0.13.2" },
+    { name = "pytest", marker = "extra == 'test'", specifier = ">=8.3.2,<9" },
+    { name = "pytest-recording", marker = "extra == 'test'", specifier = ">=0.13.2,<0.14" },
     { name = "requests", specifier = ">=2.30,<3" },
     { name = "tox", marker = "extra == 'test'", specifier = ">=4" },
     { name = "urllib3", marker = "extra == 'test'", specifier = ">=1.26.0,<2" },
-    { name = "vcrpy", marker = "extra == 'test'", specifier = ">=6.0.1" },
+    { name = "vcrpy", marker = "extra == 'test'", specifier = ">=6.0.1,<7" },
 ]
 
 [[package]]
