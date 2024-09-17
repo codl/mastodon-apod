@@ -8,8 +8,8 @@ from functools import cached_property
 from io import BytesIO, IOBase
 from itertools import chain, count
 from typing import Any, Optional
-from urllib.parse import urljoin, urlparse
 
+import ada_url
 import ananas
 import requests
 import requests.packages.urllib3.util.connection as urllib3_cn
@@ -108,7 +108,7 @@ class ApodPage:
                     )
                     if match:
                         found_rollover = True
-                        media_urls.append(urljoin(url, match.group(1)))
+                        media_urls.append(ada_url.join_url(url, match.group(1)))
                         media_mimes.append(mimetypes.guess_type(media_urls[-1])[0])
                         break
 
@@ -118,25 +118,27 @@ class ApodPage:
                         mime = mimetypes.guess_type(parent["href"])[0]
                         if mime.startswith("image/"):
                             media_mimes = [mime]
-                            media_urls = [urljoin(url, parent["href"])]
+                            media_urls = [ada_url.join_url(url, parent["href"])]
                             main_el = parent
                         else:
                             raise ScrapeError("Unsupported mimetype {}".format(mime))
                         break
 
             if found_rollover or not media_urls:
-                media_urls.insert(0, urljoin(url, image_el["src"]))
+                media_urls.insert(0, ada_url.join_url(url, image_el["src"]))
                 media_mimes.insert(0, mimetypes.guess_type(media_urls[0])[0])
                 main_el = image_el
 
         elif iframe_el and "src" in iframe_el.attrs:
             main_el = iframe_el
-            up = urlparse(iframe_el["src"])
-            if up.hostname in ("www.youtube.com", "youtube.com", "youtu.be"):
-                videoid = up.path.split("/")[-1]
+            up = ada_url.parse_url(iframe_el["src"], attributes=("hostname", "pathname"))
+            hostname = up.get("hostname", "")
+            path = up.get("pathname", "")
+            if hostname in ("www.youtube.com", "youtube.com", "youtu.be"):
+                videoid = path.split("/")[-1]
                 video_url = "https://www.youtube.com/watch?v={}".format(videoid)
-            elif up.hostname in ("player.vimeo.com"):
-                videoid = up.path.split("/")[-1]
+            elif hostname in ("player.vimeo.com"):
+                videoid = path.split("/")[-1]
                 video_url = "https://vimeo.com/{}".format(videoid)
             else:
                 raise ScrapeError("Unsupported iframe {}".format(iframe_el["src"]))
@@ -168,8 +170,8 @@ class ApodPage:
 
         prev_el = soup.find("a", string="<")
         next_el = soup.find("a", string=">")
-        prev_url = urljoin(url, prev_el["href"]) if prev_el else None
-        next_url = urljoin(url, next_el["href"]) if next_el else None
+        prev_url = ada_url.join_url(url, prev_el["href"]) if prev_el else None
+        next_url = ada_url.join_url(url, next_el["href"]) if next_el else None
 
         return cls(
             url=url,
