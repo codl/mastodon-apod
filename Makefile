@@ -11,7 +11,7 @@ docker-rm:
 
 docker-run:
 	docker run --name $(CONTAINER) -d --restart unless-stopped \
-		-v ${PWD}/config/:/app/config --user $(UID) $(IMAGE)
+		-v ${PWD}/config/:/config --user $(UID) $(IMAGE)
 
 up: docker docker-rm docker-run
 

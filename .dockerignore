@@ -1,1 +1,9 @@
-.gitignore
+config/ananas.cfg
+apod.log
+__pycache__
+.pytest_cache
+build
+.tox
+*.egg-info
+.coverage
+Dockerfile
