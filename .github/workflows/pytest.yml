@@ -20,6 +20,7 @@ jobs:
     - uses: astral-sh/setup-uv@v3
       with:
         enable-cache: true
+        cache-suffix: ${{ matrix.python-version }}
     - name: Set up python ${{ matrix.python-version }}
       run: |
         uv venv --python=${{ matrix.python-version }}
