@@ -16,9 +16,12 @@ jobs:
     - uses: astral-sh/setup-uv@v3
       with:
         enable-cache: true
+    - name: Set up python 3.12
+      run: |
+        uv venv --python=3.12
     - name: Install dependencies and package
       run: |
-        uv sync --all-extras
+        uv sync --all-extras --frozen
     - name: Test with pytest
       run: |
-        uv run python -m pytest
+        uv run --frozen python -m pytest
