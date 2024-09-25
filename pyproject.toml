@@ -27,7 +27,7 @@ test = [
 	"urllib3>=1.26.5,<2",
 	"tox>=4",
 	"tox-uv>=1.11.3",
-	"coverage>=7.6.1,<8",
+	"coverage[toml]>=7.6.1,<8",
 ]
 
 [tool.setuptools]

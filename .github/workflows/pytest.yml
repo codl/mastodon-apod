@@ -26,6 +26,39 @@ jobs:
     - name: Install dependencies and package
       run: |
         uv sync --all-extras --frozen
+
     - name: Test with pytest
       run: |
-        uv run --frozen python -m pytest
+        uv run --frozen python -m coverage run --parallel -m pytest
+
+    - name: Upload coverage data
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-data-${{ matrix.python-version }}
+        path: .coverage.*
+        include-hidden-files: true
+        if-no-files-found: ignore
+
+  coverage:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: astral-sh/setup-uv@v3
+      with:
+        enable-cache: true
+        cache-suffix: coverage
+    - uses: actions/download-artifact@v4
+      with:
+        pattern: coverage-data-*
+        merge-multiple: true
+    - run: |
+        uv tool install coverage[toml]
+        coverage combine
+        coverage html --skip-covered --skip-empty
+        coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
+    - uses: actions/upload-artifact@v4
+      with:
+        name: html-report
+        path: htmlcov
+
