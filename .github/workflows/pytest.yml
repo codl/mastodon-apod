@@ -7,7 +7,11 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  test:
+    strategy: 
+      matrix:
+        python-version: ["3.12", "3.11", "3.10"]
+
 
     runs-on: ubuntu-latest
 
@@ -16,9 +20,9 @@ jobs:
     - uses: astral-sh/setup-uv@v3
       with:
         enable-cache: true
-    - name: Set up python 3.12
+    - name: Set up python ${{ matrix.python-version }}
       run: |
-        uv venv --python=3.12
+        uv venv --python=${{ matrix.python-version }}
     - name: Install dependencies and package
       run: |
         uv sync --all-extras --frozen
