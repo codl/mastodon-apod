@@ -1,12 +1,12 @@
 # syntax=docker/dockerfile:1.9
 ARG python_version=3.12.6
 
-FROM python:$python_version as build
+FROM python:$python_version AS build
 
 ENV UV_LINK_MODE=copy
 ENV UV_PROJECT_ENVIRONMENT=/app
 
-COPY --from=ghcr.io/astral-sh/uv:0.4.15 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.4.18 /uv /bin/uv
 
 COPY pyproject.toml /_lock/
 COPY uv.lock /_lock/
@@ -29,7 +29,7 @@ RUN --mount=type=cache,target=/root/.cache \
         /src
 
 
-FROM build as test
+FROM build AS test
 
 ENV UV_LINK_MODE=copy
 ENV UV_PROJECT_ENVIRONMENT=/app
@@ -56,7 +56,7 @@ WORKDIR /src
 CMD ["/app/bin/python", "-m", "pytest"]
 
 
-FROM python:$python_version as bot
+FROM python:$python_version AS bot
 
 COPY --from=build /app /app
 
@@ -65,4 +65,4 @@ ENV PYTHONUNBUFFERED=1
 
 RUN umask 111 && touch apod.log
 
-CMD ananas /config/ananas.cfg
+CMD ["ananas", "/config/ananas.cfg"]
