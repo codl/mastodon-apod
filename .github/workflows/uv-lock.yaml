@@ -1,5 +1,5 @@
 # based on https://github.com/EdmundGoodman/update-bot
-name: uv-lock
+name: Bump uv lockfile
 
 on:
   workflow_dispatch:
@@ -26,11 +26,10 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Update uv lockfile
-          title: Update uv lockfile
+          commit-message: bump deps
+          title: Bump locked dependencies
           body-path: uv_output.md
-          branch: uv-lock
+          branch: bump-uv-lock
           base: main
           delete-branch: true
           add-paths: uv.lock
