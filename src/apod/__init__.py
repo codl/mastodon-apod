@@ -15,7 +15,11 @@ import ada_url
 import requests
 import requests.packages.urllib3.util.connection as urllib3_cn
 import structlog
-import tomllib
+
+try:
+    import tomllib
+except ImportError:
+    import tomli as tomllib
 from bs4 import BeautifulSoup
 from mastodon import Mastodon
 from PIL import Image

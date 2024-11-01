@@ -382,6 +382,7 @@ dependencies = [
     { name = "requests" },
     { name = "rich" },
     { name = "structlog" },
+    { name = "tomli", marker = "python_full_version < '3.11' and python_full_version >= '3.10'" },
     { name = "typer" },
     { name = "whenever" },
 ]
@@ -406,6 +407,7 @@ requires-dist = [
     { name = "requests", specifier = ">=2.30,<3" },
     { name = "rich", specifier = ">=13.8.0,<14" },
     { name = "structlog", specifier = ">=24.4.0,<25" },
+    { name = "tomli", marker = "python_full_version < '3.11'" },
     { name = "typer", specifier = ">=0.12.5" },
     { name = "whenever", specifier = ">=0.6.10" },
 ]
