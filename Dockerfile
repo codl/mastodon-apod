@@ -63,6 +63,4 @@ COPY --from=build /app /app
 ENV PATH=/app/bin:$PATH
 ENV PYTHONUNBUFFERED=1
 
-RUN umask 111 && touch apod.log
-
-CMD ["ananas", "/config/ananas.cfg"]
+CMD ["/app/bin/python", "-m", "apod", "/config.toml"]
