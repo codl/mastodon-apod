@@ -242,9 +242,9 @@ class ApodBot:
     session: requests.Session = field(default_factory=_make_session)
     log: structlog.stdlib.BoundLogger = field(default_factory=structlog.get_logger)
     admin: str | None = None
-    last_post: None|Instant = None
-    last_check:Instant = field(default_factory=Instant.now)
-    last_follow_accept:Instant = field(default_factory=Instant.now)
+    last_post: None | Instant = None
+    last_check: Instant = field(default_factory=Instant.now)
+    last_follow_accept: Instant = field(default_factory=Instant.now)
 
     @cached_property
     def scraper(self):
@@ -431,7 +431,9 @@ class ApodBot:
                     self.log.error(str(e))
                     break
 
-            if (not self.last_post or self.last_post + TimeDelta(hours=6) < Instant.now()) and self.last_check + TimeDelta(hours=1) < Instant.now():
+            if (
+                not self.last_post or self.last_post + TimeDelta(hours=6) < Instant.now()
+            ) and self.last_check + TimeDelta(hours=1) < Instant.now():
                 self.log.info("checking apod on schedule")
                 try:
                     self.check_apod()
