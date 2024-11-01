@@ -242,12 +242,16 @@ class ApodBot:
     session: requests.Session = field(default_factory=_make_session)
     log: structlog.stdlib.BoundLogger = field(default_factory=structlog.get_logger)
     admin: str | None = None
+    last_post: None|Instant = None
+    last_check:Instant = field(default_factory=Instant.now)
+    last_follow_accept:Instant = field(default_factory=Instant.now)
 
     @cached_property
     def scraper(self):
         return ApodScraper(session=self.session)
 
     def check_apod(self):
+        self.last_check = Instant.now()
         log = self.log.bind()
         recent_urls = self.get_recent_urls()
         if recent_urls:
@@ -309,9 +313,10 @@ class ApodBot:
         if page.video_url:
             post_text = "{}\n\n{}".format(page.video_url, post_text)
 
-        log.info("posting", page=page)
+        log.info("posting new picture", page=page)
 
         self.mastodon.status_post(post_text, media_ids=medias)
+        self.last_post = Instant.now()
 
     def fetch_and_fit_media(self, media_url: str) -> OutgoingMedia:
         """returns a BytesIO"""
@@ -389,6 +394,7 @@ class ApodBot:
     def accept_one_page_of_follow_requests(self):
         follow_requests = self.mastodon.follow_requests()
         log = self.log.bind()
+        self.last_follow_accept = Instant.now()
         for acct in follow_requests:
             log.info(
                 "Accepting follow request",
@@ -398,8 +404,6 @@ class ApodBot:
 
     def run(self):
         self.log.info("booting up")
-        last_check = Instant.now()
-        last_follow_accept = Instant.now()
         try:
             self.check_apod()
             self.accept_one_page_of_follow_requests()
@@ -427,16 +431,14 @@ class ApodBot:
                     self.log.error(str(e))
                     break
 
-            if last_check + TimeDelta(hours=1) < Instant.now():
-                last_check = Instant.now()
+            if (not self.last_post or self.last_post + TimeDelta(hours=6) < Instant.now()) and self.last_check + TimeDelta(hours=1) < Instant.now():
                 self.log.info("checking apod on schedule")
                 try:
                     self.check_apod()
                 except Exception as e:
                     self.log.error(str(e))
 
-            if last_follow_accept + TimeDelta(minutes=10) < Instant.now():
-                last_follow_accept = Instant.now()
+            if self.last_follow_accept + TimeDelta(minutes=10) < Instant.now():
                 try:
                     self.accept_one_page_of_follow_requests()
                 except Exception as e:
