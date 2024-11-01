@@ -2,6 +2,7 @@ import dataclasses
 import mimetypes
 import re
 import socket
+import typing
 from dataclasses import dataclass, field
 from datetime import date
 from functools import cached_property
@@ -435,7 +436,7 @@ class ApodBot:
                     self.log.error(str(e))
 
     @classmethod
-    def fromConfigFile(cls, p: Path) -> "Self":
+    def fromConfigFile(cls, p: Path) -> "typing.Self":
         with p.open("rb") as f:
             config = tomllib.load(f)
         for key in "instance", "access_token":
