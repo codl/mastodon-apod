@@ -9,7 +9,7 @@ from io import BytesIO, IOBase
 from itertools import chain, count
 from pathlib import Path
 from time import sleep
-from typing import Any, BinaryIO, Optional, Self
+from typing import Any, BinaryIO, Optional
 
 import ada_url
 import requests
@@ -431,7 +431,7 @@ class ApodBot:
                     self.log.error(str(e))
 
     @classmethod
-    def fromConfigFile(cls, p: Path) -> Self:
+    def fromConfigFile(cls, p: Path) -> "Self":
         with p.open("rb") as f:
             config = tomllib.load(f)
         for key in "instance", "access_token":
