@@ -6,10 +6,6 @@ on:
   schedule:
     - cron: 21 5 1 * *
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   lock:
     runs-on: ubuntu-latest
@@ -33,3 +29,4 @@ jobs:
           base: main
           delete-branch: true
           add-paths: uv.lock
+          token: ${{ secrets.UV_LOCK_PAT }}
