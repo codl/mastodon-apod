@@ -1,5 +1,4 @@
-config/ananas.cfg
-apod.log
+config.toml
 __pycache__
 .pytest_cache
 build
