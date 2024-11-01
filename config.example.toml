@@ -1,0 +1,5 @@
+instance="https://social.example.com"
+access_token="abc123"
+
+# optional
+#admin="gargron@mastodon.social"

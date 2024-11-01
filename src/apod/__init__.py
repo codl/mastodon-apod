@@ -7,16 +7,20 @@ from datetime import date
 from functools import cached_property
 from io import BytesIO, IOBase
 from itertools import chain, count
-from typing import Any, Optional
+from pathlib import Path
+from time import sleep
+from typing import Any, BinaryIO, Optional, Self
 
 import ada_url
-import ananas
 import requests
 import requests.packages.urllib3.util.connection as urllib3_cn
+import structlog
+import tomllib
 from bs4 import BeautifulSoup
 from mastodon import Mastodon
 from PIL import Image
 from PIL.ImageOps import exif_transpose
+from whenever import Instant, TimeDelta
 
 urllib3_cn.allowed_gai_family = lambda: socket.AF_INET
 
@@ -25,7 +29,7 @@ APOD_URL_RE = re.compile(
 )
 
 
-class ConfigNotWriteable(Exception):
+class ConfigError(Exception):
     pass
 
 
@@ -219,21 +223,25 @@ class OutgoingMedia:
     mime: str
 
 
-class ApodBot(ananas.PineappleBot):
+def _make_session() -> requests.Session:
+    session = requests.Session()
+    session.headers.update(
+        {"user-agent": "mastodon-apod +https://github.com/codl/mastodon-apod"}
+    )
+    return session
+
+
+@dataclass
+class ApodBot:
     mastodon: Mastodon
+    session: requests.Session = field(default_factory=_make_session)
+    log: structlog.stdlib.BoundLogger = field(default_factory=structlog.get_logger)
+    admin: str | None = None
 
-    def __init__(self, *args, **kwargs):
-        ananas.PineappleBot.__init__(self, *args, **kwargs)
-        self.session = requests.Session()
-        self.session.headers.update(
-            {"user-agent": "mastodon-apod +https://github.com/codl/mastodon-apod"}
-        )
-        self.scraper = ApodScraper(session=self.session)
+    @cached_property
+    def scraper(self):
+        return ApodScraper(session=self.session)
 
-    @ananas.daily(1, 28)
-    @ananas.daily(7, 28)
-    @ananas.daily(13, 28)
-    @ananas.daily(19, 28)
     def check_apod(self):
         recent_urls = self.get_recent_urls()
         if recent_urls:
@@ -295,20 +303,11 @@ class ApodBot(ananas.PineappleBot):
 
         self.mastodon.status_post(post_text, media_ids=medias)
 
-        for key in ("state", "prev_url", "next_url", "last_post_datetime", "canary"):
-            changed = False
-            if key in self.config:
-                # change to a del once <https://github.com/chr-1x/ananas/issues/27> is fixed
-                self.config[key] = None
-                changed = True
-            if changed:
-                self.config.save()
-
     def fetch_and_fit_media(self, media_url: str) -> OutgoingMedia:
         """returns a BytesIO"""
         return self.fit_media(self.fetch_media(media_url))
 
-    def fetch_media(self, media_url: str) -> IOBase:
+    def fetch_media(self, media_url: str) -> BinaryIO:
         image_resp = self.session.get(media_url)
         image_resp.raise_for_status()
 
@@ -316,7 +315,7 @@ class ApodBot(ananas.PineappleBot):
         return imageio
 
     @staticmethod
-    def fit_media(imageio: IOBase) -> OutgoingMedia:
+    def fit_media(imageio: BinaryIO) -> OutgoingMedia:
         outio = BytesIO()
 
         image = Image.open(imageio)
@@ -364,22 +363,86 @@ class ApodBot(ananas.PineappleBot):
                     url = a["href"]
             return url
 
-    @ananas.reply
     def react(self, post, user):
-        if user.acct != self.config.admin:
+        if user.acct != self.admin:
             return
+        log = self.log.bind(user=user)
         if re.search(r"\baccept\b", post.content):
+            log.info("accepting follow requests")
             self.accept_one_page_of_follow_requests()
         else:
-            self.log("react", "Poked by {}, doing a forced check".format(user.acct))
+            log.info("forced check")
             self.check_apod()
 
-    @ananas.hourly(minute=53)
     def accept_one_page_of_follow_requests(self):
         follow_requests = self.mastodon.follow_requests()
+        log = self.log.bind()
         for acct in follow_requests:
-            self.log(
-                "accept_one_page_of_follow_requests",
-                "Accepting follow request from {}".format(acct.acct),
+            log.info(
+                "Accepting follow request",
+                acct=acct.acct,
             )
             self.mastodon.follow_request_authorize(acct.id)
+
+    def run(self):
+        self.log.info("booting up")
+        last_check = Instant.now()
+        last_follow_accept = Instant.now()
+        try:
+            self.check_apod()
+            self.accept_one_page_of_follow_requests()
+        except Exception as e:
+            self.log.error(str(e))
+        last_mention_id: str | None = None
+        try:
+            last_mention = self.mastodon.notifications(types=("mentions",), limit=1)[0]
+            if last_mention:
+                last_mention_id = last_mention.id
+        except IndexError:
+            pass
+
+        self.log.info("ready")
+
+        while True:
+            sleep(20)
+            for notification in self.mastodon.notifications(
+                types=("mentions",), min_id=last_mention_id
+            ):
+                last_mention_id = notification.id
+                try:
+                    self.react(notification.status, notification.account)
+                except Exception as e:
+                    self.log.error(str(e))
+                    break
+
+            if last_check + TimeDelta(hours=1) < Instant.now():
+                last_check = Instant.now()
+                self.log.info("checking apod on schedule")
+                try:
+                    self.check_apod()
+                except Exception as e:
+                    self.log.error(str(e))
+
+            if last_follow_accept + TimeDelta(minutes=10) < Instant.now():
+                last_follow_accept = Instant.now()
+                try:
+                    self.accept_one_page_of_follow_requests()
+                except Exception as e:
+                    self.log.error(str(e))
+
+    @classmethod
+    def fromConfigFile(cls, p: Path) -> Self:
+        with p.open("rb") as f:
+            config = tomllib.load(f)
+        for key in "instance", "access_token":
+            if key not in config:
+                m = "Config file is incomplete, missing {}".format(key)
+                raise ConfigError(m)
+        instance: str = config["instance"]
+        access_token: str = str(config["access_token"])
+        admin: str | None = config.get("admin")
+
+        mastodon = Mastodon(access_token=access_token, api_base_url=instance)
+        mastodon.version_check_mode = "none"
+
+        return cls(mastodon=mastodon, admin=admin)

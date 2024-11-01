@@ -1,7 +1,0 @@
-[apod]
-class = apod.ApodBot
-client_id = FILL
-client_secret = THESE
-access_token = IN
-domain = THIS ONE TOO
-
