@@ -40,7 +40,7 @@ jobs:
         uv venv --python=${{ matrix.python-version }}
     - name: Install dependencies and package
       run: |
-        uv sync --all-extras --frozen
+        uv sync --group test --frozen
 
     - name: Test with pytest
       run: |

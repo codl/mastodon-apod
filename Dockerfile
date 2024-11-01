@@ -1,12 +1,12 @@
 # syntax=docker/dockerfile:1.9
-ARG python_version=3.12.6
+ARG python_version=3.13.0
 
 FROM python:$python_version AS build
 
 ENV UV_LINK_MODE=copy
 ENV UV_PROJECT_ENVIRONMENT=/app
 
-COPY --from=ghcr.io/astral-sh/uv:0.4.18 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.4.29 /uv /bin/uv
 
 COPY pyproject.toml /_lock/
 COPY uv.lock /_lock/
@@ -39,7 +39,7 @@ cd /_lock
 uv sync \
     --frozen \
     --no-install-project \
-    --extra test
+    --group test
 EOT
 
 RUN --mount=type=cache,target=/root/.cache <<EOT
@@ -47,7 +47,7 @@ cd /src
 uv pip install \
     --python=$UV_PROJECT_ENVIRONMENT \
     --no-deps \
-    .[test]
+    .
 EOT
 
 ENV PYTHONUNBUFFERED=1
