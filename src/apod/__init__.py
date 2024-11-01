@@ -248,9 +248,11 @@ class ApodBot:
         return ApodScraper(session=self.session)
 
     def check_apod(self):
+        log = self.log.bind()
         recent_urls = self.get_recent_urls()
         if recent_urls:
             last_url = recent_urls[0]
+            log = log.bind(last_url=last_url)
             resp = self.session.get(last_url)
             resp.raise_for_status()
             last_page = ApodPage.from_html(last_url, resp.content)
@@ -271,6 +273,7 @@ class ApodBot:
                 next_url = "http://www.star.ucl.ac.uk/~apod/" + next_url_path
                 resp = self.session.get(next_url)
                 if resp.status_code == 404:
+                    log.info("checked, no new picture")
                     return
             resp.raise_for_status()
             page = ApodPage.from_html(next_url, resp.text)
@@ -306,6 +309,8 @@ class ApodBot:
         if page.video_url:
             post_text = "{}\n\n{}".format(page.video_url, post_text)
 
+        log.info("posting", page=page)
+
         self.mastodon.status_post(post_text, media_ids=medias)
 
     def fetch_and_fit_media(self, media_url: str) -> OutgoingMedia:
@@ -338,7 +343,9 @@ class ApodBot:
 
     @cached_property
     def my_uid(self):
-        return self.mastodon.account_verify_credentials()["id"]
+        uid = self.mastodon.account_verify_credentials()["id"]
+        self.log.info("got self user id", uid=uid)
+        return uid
 
     def get_recent_urls(self) -> list[str]:
         statuses = self.mastodon.account_statuses(
@@ -371,7 +378,7 @@ class ApodBot:
     def react(self, post, user):
         if user.acct != self.admin:
             return
-        log = self.log.bind(user=user)
+        log = self.log.bind(reacting_to_user=user.acct)
         if re.search(r"\baccept\b", post.content):
             log.info("accepting follow requests")
             self.accept_one_page_of_follow_requests()
