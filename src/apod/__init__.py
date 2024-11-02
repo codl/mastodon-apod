@@ -421,15 +421,14 @@ class ApodBot:
 
         while True:
             sleep(20)
-            for notification in self.mastodon.notifications(
-                types=("mentions",), min_id=last_mention_id
-            ):
-                last_mention_id = notification.id
-                try:
+            try:
+                for notification in self.mastodon.notifications(
+                    types=("mentions",), min_id=last_mention_id
+                ):
+                    last_mention_id = notification.id
                     self.react(notification.status, notification.account)
-                except Exception as e:
-                    self.log.error(str(e))
-                    break
+            except Exception as e:
+                self.log.error(str(e))
 
             if (
                 not self.last_post or self.last_post + TimeDelta(hours=6) < Instant.now()
