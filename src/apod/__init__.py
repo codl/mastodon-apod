@@ -409,26 +409,29 @@ class ApodBot:
             self.accept_one_page_of_follow_requests()
         except Exception as e:
             self.log.error(str(e))
-        last_mention_id: str | None = None
+        last_notification_id: str | None = None
         try:
-            last_mention = self.mastodon.notifications(types=("mentions",), limit=1)[0]
-            if last_mention:
-                last_mention_id = last_mention.id
+            last_notification = self.mastodon.notifications(limit=1)[0]
+            if last_notification:
+                last_notification_id = last_notification.id
         except IndexError:
             pass
 
-        self.log.info("ready")
+        log = self.log.bind()
+        log.info("ready")
 
         while True:
             sleep(20)
             try:
                 for notification in self.mastodon.notifications(
-                    types=("mentions",), min_id=last_mention_id
+                    min_id=last_notification_id
                 ):
-                    last_mention_id = notification.id
-                    self.react(notification.status, notification.account)
+                    log = self.log.bind(**notification)
+                    if notification.type == "mention":
+                        self.react(notification.status, notification.account)
+                    last_notification_id = notification.id
             except Exception as e:
-                self.log.error(str(e))
+                log.error(str(e))
 
             if (
                 not self.last_post or self.last_post + TimeDelta(hours=6) < Instant.now()
@@ -443,7 +446,7 @@ class ApodBot:
                 try:
                     self.accept_one_page_of_follow_requests()
                 except Exception as e:
-                    self.log.error(str(e))
+                    log.error(str(e))
 
     @classmethod
     def fromConfigFile(cls, p: Path) -> "typing.Self":
