@@ -22,7 +22,8 @@ EOT
 COPY pyproject.toml uv.lock /src/
 COPY src /src/src
 COPY tests /src/tests
-RUN --mount=type=cache,target=/root/.cache \
+#RUN --mount=type=cache,target=/root/.cache \
+RUN \
     uv pip install \
         --python=$UV_PROJECT_ENVIRONMENT \
         --no-deps \
