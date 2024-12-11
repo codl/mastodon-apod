@@ -387,6 +387,11 @@ class ApodBot:
         if re.search(r"\baccept\b", post.content):
             log.info("accepting follow requests")
             self.accept_one_page_of_follow_requests()
+        elif re.search(r"\bping\b", post.content):
+            log.info("replying to ping")
+            self.mastodon.status_post(
+                f"@{user.acct} pong", in_reply_to_id=post.id, visibility="direct"
+            )
         else:
             log.info("forced check")
             self.check_apod()
@@ -403,7 +408,8 @@ class ApodBot:
             self.mastodon.follow_request_authorize(acct.id)
 
     def run(self):
-        self.log.info("booting up")
+        log = self.log.bind()
+        log.info("booting up")
         try:
             self.check_apod()
             self.accept_one_page_of_follow_requests()
@@ -414,22 +420,31 @@ class ApodBot:
             last_notification = self.mastodon.notifications(limit=1)[0]
             if last_notification:
                 last_notification_id = last_notification.id
+                log.info(
+                    "found last notification", last_notification_id=last_notification_id
+                )
         except IndexError:
             pass
 
-        log = self.log.bind()
         log.info("ready")
 
         while True:
-            sleep(20)
+            sleep(12)
             try:
+                self.log.info("notifications", last_notification_id=last_notification_id)
                 for notification in self.mastodon.notifications(
-                    min_id=last_notification_id
+                    since_id=last_notification_id
                 ):
-                    log = self.log.bind(**notification)
+                    log = self.log.bind(
+                        notification_id=notification.id,
+                        type=notification.type,
+                        acct=notification.account.acct,
+                    )
                     if notification.type == "mention":
                         self.react(notification.status, notification.account)
-                    last_notification_id = notification.id
+                    last_notification_id = max(last_notification_id, notification.id)
+
+                    log.info("processed notification")
             except Exception as e:
                 log.error(str(e))
 
@@ -442,7 +457,7 @@ class ApodBot:
                 except Exception as e:
                     self.log.error(str(e))
 
-            if self.last_follow_accept + TimeDelta(minutes=10) < Instant.now():
+            if self.last_follow_accept + TimeDelta(minutes=5) < Instant.now():
                 try:
                     self.accept_one_page_of_follow_requests()
                 except Exception as e:
