@@ -6,7 +6,7 @@ FROM python:$python_version AS build
 ENV UV_LINK_MODE=copy
 ENV UV_PROJECT_ENVIRONMENT=/app
 
-COPY --from=ghcr.io/astral-sh/uv:0.5.2 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.5.7 /uv /bin/uv
 
 COPY pyproject.toml /_lock/
 COPY uv.lock /_lock/
