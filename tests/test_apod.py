@@ -119,6 +119,14 @@ def test_from_html(requests_session: requests.Session, page: ApodPage):
 
     assert ApodPage.from_html(page.url, resp.content) == page
 
+@pytest.mark.vcr
+def test_link_to_page_doesnt_crash(requests_session: requests.Session):
+    URL = "https://apod.nasa.gov/apod/ap241207.html"
+    resp = requests_session.get(URL)
+    resp.raise_for_status()
+    assert ApodPage.from_html(URL, resp.content)
+
+
 
 @pytest.mark.parametrize(
     "raw_alt_text, expected",

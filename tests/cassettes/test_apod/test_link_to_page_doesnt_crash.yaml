@@ -1,0 +1,90 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/ap241207.html
+  response:
+    body:
+      string: "<!doctype html>\n<html>\n<head>\n<title> APOD: 2024 December 7 - Rocket
+        Engine Fireplace\n</title>\n<!-- gsfc meta tags -->\n<meta name=\"orgcode\"
+        content=\"661\">\n<meta name=\"rno\" content=\"amber straughn\">\n<meta name=\"content-owner\"
+        content=\"Jerry.T.Bonnell.1\">\n<meta name=\"webmaster\" content=\"michael.arida\">\n<meta
+        name=\"description\" content=\"A different astronomy and space science\nrelated
+        image is featured each day, along with a brief explanation.\">\n<!-- -->\n<meta
+        name=viewport content=\"width=device-width, initial-scale=1\">\n<meta name=\"keywords\"
+        content=\"sls, rs-25, rocket engine, artemis\">\n<!-- -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n\n</head>\n\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#7F0F9F\"\nalink=\"#FF0000\">\n\n<center>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is\nfeatured, along with a brief explanation written by a professional
+        astronomer.\n<p>\n\n2024 December 7\n<br>\n\n<!--\n<a href=\"image/2412/NASARocketEngineFireplaceSnap.png\">\n-->\n<a
+        href=\"https://plus.nasa.gov/video/nasa-rocket-engine-fireplace/\">\n<IMG
+        SRC=\"image/2412/NASARocketEngineFireplaceSnap600.png\"\nalt=\"See Explanation.
+        \ Clicking on the picture will download\nthe highest resolution version available.\"
+        style=\"max-width:100%\"></a>\n\n</center>\n\n<center>\n<b> Rocket Engine
+        Fireplace </b> <br> \n\n<b> Image and Video Credit: </b>\n\n<a href=\"https://www.nasa.gov/\">NASA</a>\n\n</center>
+        <p> \n\n<b> Explanation: </b> \n\nYou might not think a close up view of rocket
+        engines producing 8.8 million\npounds of thrust would be relaxing, but here
+        it can be.\n\nIn fact, you can get a warm and cozy feeling just spending a
+        few moments\nwatching\n<a href=\"https://plus.nasa.gov/video/nasa-rocket-engine-fireplace/\">NASA's
+        holiday rocket engine fireplace</a>.\n\nThe video features a loop of the Space
+        Launch System rocket's\n<a href=\"https://en.wikipedia.org/wiki/RS-25\">RS-25</a>
+        main\nengines throttled up and running flanked by\nsolid rocket boosters and
+        framed by a stone fireplace.\n\nThe accompanying audio track mixes the drastically
+        muted sounds of\nthe rocket engines firing with the more familiar sounds\nof
+        a burning, crackling wood fire.\n\nAI elements are included in the composed
+        video along with an\nimage and logo from the\n<a href=\"ap231130.html\">Artemis
+        I</a>\nmission.\n\nThe Artemis I uncrewed mission to the Moon and back again\nlaunched
+        in November 2022 on a\n<a href=\"https://www.nasa.gov/humans-in-space/space-launch-system/\">Space
+        Launch System</a>\nrocket.\n\n<p> <center> \n\n<b> Tomorrow's picture: </b><a
+        href=\"ap241208.html\">at Saturn's north pole</a>\n\n<p> <hr>\n<a href=\"ap241206.html\">&lt;</a>\n|
+        <a href=\"archivepix.html\">Archive</a>\n| <a href=\"lib/apsubmit2015.html\">Submissions</a>
+        \n| <a href=\"lib/aptree.html\">Index</a>\n| <a href=\"https://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</a>\n|
+        <a href=\"calendar/allyears.html\">Calendar</a>\n| <a href=\"/apod.rss\">RSS</a>\n|
+        <a href=\"lib/edlinks.html\">Education</a>\n| <a href=\"lib/about_apod.html\">About
+        APOD</a>\n| <a href=\"http://asterisk.apod.com/discuss_apod.php?date=241207\">Discuss</a>\n|
+        <a href=\"ap241208.html\">&gt;</a>\n\n<hr><p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://www.phy.mtu.edu/faculty/Nemiroff.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\"\n>Jerry
+        Bonnell</a> (<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA
+        Official: </b> Amber Straughn\n<a href=\"lib/about_apod.html#srapply\">Specific
+        rights apply</a>.<br>\n<a href=\"https://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA
+        Web\nPrivacy Policy and Important Notices</a><br>\n<b>A service of:</b>\n<a
+        href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n<a href=\"https://www.nasa.gov/\">NASA</a>
+        /\n<a href=\"https://www.nasa.gov/centers/goddard/\">GSFC</a>,\n<br> <a href=\"https://science.nasa.gov/learners\">NASA
+        Science\nActivation</a>\n<br><b>&</b> <a href=\"http://www.mtu.edu/\">Michigan
+        Tech. U.</a><br>\n</center>\n</body>\n</html>\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Wed, 11 Dec 2024 06:48:15 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1
