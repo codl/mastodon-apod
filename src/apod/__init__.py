@@ -124,13 +124,11 @@ class ApodPage:
             if not found_rollover:  # if there is a rollover image, we ignore the link
                 for parent in image_el.parents:
                     if parent.name == "a":
-                        mime = mimetypes.guess_type(parent["href"])[0]
-                        if mime.startswith("image/"):
-                            media_mimes = [mime]
+                        mime = mimetypes.guess_type(parent["href"])
+                        if mime[0] and mime[0].startswith("image/"):
+                            media_mimes = [mime[0]]
                             media_urls = [ada_url.join_url(url, parent["href"])]
                             main_el = parent
-                        else:
-                            raise ScrapeError("Unsupported mimetype {}".format(mime))
                         break
 
             if found_rollover or not media_urls:
@@ -299,7 +297,7 @@ class ApodBot:
 
         medias = []
         for media_url, mime, i in zip(page.media_urls, page.media_mimes, count()):
-            if mime.startswith("image/"):
+            if mime[0] and mime.startswith("image/"):
                 m = self.fetch_and_fit_media(media_url)
                 image_content = m.io
                 if i == 0:
