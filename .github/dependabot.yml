@@ -4,6 +4,8 @@ enable-beta-ecosystems: true
 updates:
 - package-ecosystem: "uv" 
   directory: "/"
+  schedule:
+    interval: monthly
 #- package-ecosystem: pip
 #  allow: 
 #    - dependency-type: direct
