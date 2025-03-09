@@ -3,8 +3,8 @@ name: Bump uv lockfile
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 21 5 1 * *
+  #schedule:
+  #  - cron: 21 5 1 * *
 
 jobs:
   lock:
