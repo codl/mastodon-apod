@@ -1,5 +1,9 @@
 version: 2
+
+enable-beta-ecosystems: true
 updates:
+- package-ecosystem: "uv" 
+  directory: "/"
 #- package-ecosystem: pip
 #  allow: 
 #    - dependency-type: direct
