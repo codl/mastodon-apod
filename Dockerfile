@@ -59,9 +59,12 @@ CMD ["/app/bin/python", "-m", "pytest"]
 
 FROM python:$python_version AS bot
 
+RUN apt-get update && apt-get install -y tini && rm -rf /var/lib/apt/lists/*
+
 COPY --from=build /app /app
 
 ENV PATH=/app/bin:$PATH
 ENV PYTHONUNBUFFERED=1
 
+ENTRYPOINT ["/usr/bin/tini", "-v", "--"]
 CMD ["/app/bin/python", "-m", "apod", "/config.toml"]
