@@ -1,0 +1,104 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/ap250518.html
+  response:
+    body:
+      string: "<!doctype html>\n<html>\n<head>\n<title> APOD: 2025 May 18 \u2013 Pluto
+        Flyover from New Horizons \n</title> \n<!-- gsfc meta tags -->\n<meta name=\"orgcode\"
+        content=\"661\">\n<meta name=\"rno\" content=\"amber.n.straughn\">\n<meta
+        name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta name=\"webmaster\"
+        content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\" content=\"A
+        different astronomy and space science\nrelated image is featured each day,
+        along with a brief explanation.\">\n<!-- -->\n<meta name=viewport content=\"width=device-width,
+        initial-scale=1\">\n<meta name=\"keywords\" content=\"Pluto, New Horizons,
+        flyover\">\n<!-- -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n</head>\n\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#7F0F9F\" alink=\"#FF0000\">\n\n<center>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is featured, along with a brief explanation written by a professional
+        astronomer.\n<p>\n\n2025 May 18 \n<br> \n<video width=\"960\" height=\"540\"
+        controls muted>\n<source src=\"image/2505/PlutoFlyover_NewHorizons.mp4\"\n\ttype=\"video/mp4\">\nYour
+        browser does not support the video tag.\nAlt text: A flyover of Pluto is shown
+        from the New\nHorizons spacecraft.\n</video>\n</center>\n\n<center>\n<b> Pluto
+        Flyover from New Horizons </b> <br> \n<b> Video Credit: </b> \n<a href=\"https://www.nasa.gov/\">NASA</a>,
+        \n<a href=\"http://www.jhuapl.edu/\">JHUAPL</a>, \n<a href=\"http://www.swri.org/\">SwRI</a>,
+        \nP. Schenk & J. Blackwell \n(<a href=\"http://www.lpi.usra.edu/\">LPI</a>);\n<i>
+        Music </i> <a href=\"https://www.last.fm/music/Puddle+of+Infinity/Open+sea+morning\">Open
+        Sea Morning by Puddle of Infinity</a>  \n</center> <p> \n\n<b> Explanation:
+        </b> \nWhat if you could fly over \n<a href=\"https://science.nasa.gov/dwarf-planets/pluto/\"\n>Pluto</a>
+        -- what might you see?\n\nThe <a href=\"https://science.nasa.gov/mission/new-horizons/\"\n>New
+        Horizons</a> spacecraft did just this in \n<a href=\"ap150715.html\">2015
+        July</a> \nas it shot past the distant world at a speed of about 80,000 kilometers
+        per hour.\n\nImages from this spectacular passage have been \ncolor enhanced,
+        vertically scaled, and digitally combined into the \n<a href=\"https://www.jpl.nasa.gov/images/pia21863-soaring-over-pluto/\"\n>featured
+        two-minute time-lapse video</a>.\n\nAs your <a href=\"https://www.youtube.com/watch?v=Of2HU3LGdbo\"\n>journey</a>
+        begins, light dawns on \n<a href=\"ap151214.html\">mountains</a> \nthought
+        to be composed of water ice but colored by frozen nitrogen. \n\nSoon, to your
+        right, you see a \n<a href=\"ap161122.html\">flat sea</a> of mostly \n<a href=\"https://en.wikipedia.org/wiki/Solid_nitrogen\">solid
+        nitrogen</a> \nthat has segmented into strange polygons that are thought to
+        have \n<a href=\"https://www.youtube.com/watch?v=4JC1ijzmH3U\">bubbled up</a>
+        \nfrom a comparatively warm \n<a href=\"https://en.wikipedia.org/wiki/Pluto#Internal_structure\">interior</a>.
+        \n\nCraters and ice mountains are <a href=\n\"https://upload.wikimedia.org/wikipedia/commons/5/5e/Sputnik_Planitia_nomenclature.png\"\n>common
+        sights</a> below.\n\nThe <a href=\"https://www.youtube.com/watch?v=rJzKDbnXyH0\">video</a>
+        \ndims and ends over terrain dubbed \n<a href=\"ap160402.html\">bladed</a>
+        because it shows \n500-meter high ridges separated by kilometer-sized gaps.
+        \n\nThe robotic <a href=\n\"https://www.nasa.gov/image/ames/take-new-horizons-for-a-spin-and-print-your-own-model\"\n>New
+        Horizons spacecraft</a> has too much \n<a href=\"http://www.physicsclassroom.com/Physics-Interactives/Momentum-and-Collisions/Collision-Carts/Collision-Carts-Interactive\"\n>momentum</a>
+        to ever return to \n<a href=\"https://science.nasa.gov/dwarf-planets/pluto/facts/\">Pluto</a>
+        \nand is now \n<a href=\"https://www.nasa.gov/missions/new-horizons/nasas-new-horizons-to-continue-exploring-outer-solar-system/\"\n>headed
+        out</a> of our \n<a href=\"https://science.nasa.gov/solar-system/\">Solar
+        System</a>. \n\n\n<p> <center> \n<b> Tomorrow's picture: </b><a href=\"ap250519.html\">moon
+        Charon</a> \n\n<p> <hr>\n<a href=\"ap250517.html\">&lt;</a>\n| <a href=\"archivepix.html\">Archive</a>\n|
+        <a href=\"lib/apsubmit2015.html\">Submissions</a> \n| <a href=\"lib/aptree.html\">Index</a>\n|
+        <a href=\"https://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</a>\n|
+        <a href=\"calendar/allyears.html\">Calendar</a>\n| <a href=\"https://apod.com/feed.rss\">RSS</a>\n|
+        <a href=\"lib/edlinks.html\">Education</a>\n| <a href=\"lib/about_apod.html\">About
+        APOD</a>\n| <a href=\n\"https://asterisk.apod.com/discuss_apod.php?date=250518\">Discuss</a>\n|
+        <a href=\"ap250519.html\">&gt;</a>\n\n<hr><p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://www.phy.mtu.edu/faculty/Nemiroff.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\"\n>Jerry
+        Bonnell</a> (<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA
+        Official: </b> Amber Straughn\n<a href=\"lib/about_apod.html#srapply\">Specific
+        rights apply</a>.<br>\n<a href=\"https://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA
+        Web Privacy</a>,\n<a href=\"https://www.nasa.gov/general/accessibility/\">Accessibility</a>,
+        \n<a href=\"https://www.nasa.gov/privacy/\">Notices</a>; <br>\n<b>A service
+        of:</b>\n<a href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n<a href=\"https://www.nasa.gov/\">NASA</a>
+        /\n<a href=\"https://www.nasa.gov/centers/goddard/\">GSFC</a>,\n<br> <a href=\"https://science.nasa.gov/learners\">NASA
+        Science Activation</a>\n<br><b>&</b> <a href=\"http://www.mtu.edu/\">Michigan
+        Tech. U.</a><br>\n</center>\n</body>\n</html>\n\n\n\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '5594'
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Thu, 29 May 2025 10:12:11 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1
