@@ -1,0 +1,96 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - mastodon-apod +https://github.com/codl/mastodon-apod
+    method: GET
+    uri: https://apod.nasa.gov/apod/ap250324.html
+  response:
+    body:
+      string: "<!doctype html>\n<html>\n<head>\n<title> APOD: 2025 March 24 \u2013
+        A Total Lunar Eclipse Over Uruguay \n</title> \n<!-- gsfc meta tags -->\n<meta
+        name=\"orgcode\" content=\"661\">\n<meta name=\"rno\" content=\"amber.n.straughn\">\n<meta
+        name=\"content-owner\" content=\"Jerry.T.Bonnell.1\">\n<meta name=\"webmaster\"
+        content=\"Stephen.F.Fantasia.1\">\n<meta name=\"description\" content=\"A
+        different astronomy and space science\nrelated image is featured each day,
+        along with a brief explanation.\">\n<!-- -->\n<meta name=viewport content=\"width=device-width,
+        initial-scale=1\">\n<meta name=\"keywords\" content=\"Moon, lunar eclipse,
+        Milky Way\">\n<!-- -->\n<script id=\"_fed_an_ua_tag\"\nsrc=\"//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA\">\n</script>\n\n</head>\n\n<body
+        BGCOLOR=\"#F4F4FF\" text=\"#000000\" link=\"#0000FF\" vlink=\"#7F0F9F\"\nalink=\"#FF0000\">\n\n<center>\n<h1>
+        Astronomy Picture of the Day </h1>\n<p>\n\n<a href=\"archivepix.html\">Discover
+        the cosmos!</a>\nEach day a different image or photograph of our fascinating
+        universe is featured, along with a brief explanation written by a professional
+        astronomer.\n<p>\n\n2025 March 24 \n<br> \n<video width=\"960\" height=\"540\"
+        controls autoplay muted>\n<source src=\"image/2503/LunarEclipseUruguay_Salazar.mp4\"\n\ttype=\"video/mp4\">\nYour
+        browser does not support the video tag.\n</video>\n</center>\n\n<center>\n<b>
+        A Total Lunar Eclipse Over Uruguay </b> <br>\n<b> Video Credit & Copyright:
+        </b> \n<a href=\"https://www.instagram.com/astropolo_/\"\n>Mauricio Salazar</a>\n</center>
+        <p> \n\n<b> Explanation: </b> \nIf the full Moon suddenly faded, what would
+        you see?\n\nThe answer was recorded in a dramatic time lapse video \ntaken
+        during the total lunar\n<a href=\"ap250315.html\">eclipse last week</a> from\n<a
+        href=\"https://en.wikipedia.org/wiki/Uruguay\">Uruguay</a>.\n\nDuring a\n<a
+        href=\"https://en.wikipedia.org/wiki/Lunar_eclipse#Total_lunar_eclipse\"\n>total
+        lunar eclipse</a>, the Earth moves between the \n<a href=\"https://science.nasa.gov/moon/\">Moon</a>
+        and the \n<a href=\"https://science.nasa.gov/sun/\">Sun</a>, \ncausing the
+        Moon to fade dramatically.\n\nThe <a href=\"ap211201.html\">Moon never gets
+        completely dark</a>, \nthough, since the Earth's atmosphere\n<a href=\"http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/refr.html\"\n>refracts</a>
+        some light.\n\nAs the featured video begins, the scene may appear to be daytime
+        and sunlit, but actually it is nighttime and lit by the glow of the full Moon.\n\nAs
+        the \n<a href=\"https://science.nasa.gov/moon/\">Moon</a> \nbecomes eclipsed
+        and fades, background stars become \nvisible.\n\nMost spectacularly, the\n<a
+        href=\"ap110617.html\">sky surrounding</a> the eclipsed moon\nsuddenly appears
+        to be\n<a href=\"https://youtu.be/1DNbkKBW0K8\">full of stars</a> \nand highlighted
+        by the busy plane of our\n<a href=\"http://www.atlasoftheuniverse.com/galaxy.html\">Milky
+        Way Galaxy</a>.\n\nNearly two hours after the eclipse started, \nthe Moon
+        emerged from the Earth's shadow and its bright full \n<a href=\"https://image.shutterstock.com/z/stock-photo-cat-glare-745763242.jpg\"\n>glare</a>
+        again dominated the sky.\n\n\n<p> <center> \n<b> Tomorrow's picture: </b><a
+        href=\"ap250325.html\">moon glows blue</a> \n\n<p> <hr>\n<a href=\"ap250323.html\">&lt;</a>\n|
+        <a href=\"archivepix.html\">Archive</a>\n| <a href=\"lib/apsubmit2015.html\">Submissions</a>
+        \n| <a href=\"lib/aptree.html\">Index</a>\n| <a href=\"https://antwrp.gsfc.nasa.gov/cgi-bin/apod/apod_search\">Search</a>\n|
+        <a href=\"calendar/allyears.html\">Calendar</a>\n| <a href=\"https://apod.com/feed.rss\">RSS</a>\n|
+        <a href=\"lib/edlinks.html\">Education</a>\n| <a href=\"lib/about_apod.html\">About
+        APOD</a>\n| <a href=\n\"https://asterisk.apod.com/discuss_apod.php?date=250324\">Discuss</a>\n|
+        <a href=\"ap250325.html\">&gt;</a>\n\n<hr><p>\n<b> Authors & editors: </b>\n<a
+        href=\"http://www.phy.mtu.edu/faculty/Nemiroff.html\">Robert Nemiroff</a>\n(<a
+        href=\"http://www.phy.mtu.edu/\">MTU</a>) &\n<a href=\"https://antwrp.gsfc.nasa.gov/htmltest/jbonnell/www/bonnell.html\"\n>Jerry
+        Bonnell</a> (<a href=\"http://www.astro.umd.edu/\">UMCP</a>)<br>\n<b>NASA
+        Official: </b> Amber Straughn\n<a href=\"lib/about_apod.html#srapply\">Specific
+        rights apply</a>.<br>\n<a href=\"https://www.nasa.gov/about/highlights/HP_Privacy.html\">NASA
+        Web Privacy</a>,\n<a href=\"https://www.nasa.gov/general/accessibility/\">Accessibility</a>,
+        \n<a href=\"https://www.nasa.gov/privacy/\">Notices</a>; <br>\n<b>A service
+        of:</b>\n<a href=\"https://astrophysics.gsfc.nasa.gov/\">ASD</a> at\n<a href=\"https://www.nasa.gov/\">NASA</a>
+        /\n<a href=\"https://www.nasa.gov/centers/goddard/\">GSFC</a>,\n<br> <a href=\"https://science.nasa.gov/learners\">NASA
+        Science Activation</a>\n<br><b>&</b> <a href=\"http://www.mtu.edu/\">Michigan
+        Tech. U.</a><br>\n</center>\n</body>\n</html>\n\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Thu, 29 May 2025 09:48:34 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - WebServer/1.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1

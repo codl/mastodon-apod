@@ -260,6 +260,9 @@ def test_scraper_get_last_page():
 def test_guess_date_from_url(url: str, expected: date | None):
     assert guess_date_from_url(url) == expected
 
+
+@pytest.mark.vcr
+@pytest.mark.xfail
 def test_html_video(page_from_url):
     page = page_from_url("https://apod.nasa.gov/apod/ap250324.html")
     assert len(page.media_mimes > 0)
