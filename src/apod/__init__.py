@@ -93,6 +93,7 @@ class ApodPage:
         soup = BeautifulSoup(html, "html.parser")
 
         image_el = soup.img
+        video_el = soup.video
         iframe_el = soup.iframe
         media_urls = []
         media_mimes = []
@@ -135,6 +136,22 @@ class ApodPage:
                 media_urls.insert(0, ada_url.join_url(url, image_el["src"]))
                 media_mimes.insert(0, mimetypes.guess_type(media_urls[0])[0])
                 main_el = image_el
+
+        elif video_el:
+            main_el = video_el
+            if "src" in video_el.attrs:
+                media_urls.append(ada_url.join_url(url, video_el["src"]))
+                media_mimes.append(mimetypes.guess_type(media_urls[0])[0])
+            elif source_el := video_el.source:
+                media_urls.append(ada_url.join_url(url, source_el["src"]))
+                if "type" in source_el.attrs:
+                    media_mimes.append(source_el["type"])
+                else:
+                    media_mimes.append(mimetypes.guess_type(media_urls[0])[0])
+            else:
+                msg = "Found video element as main element but couldn't find video source."
+                raise ScrapeError(msg)
+
 
         elif iframe_el and "src" in iframe_el.attrs:
             main_el = iframe_el
@@ -222,7 +239,7 @@ class ApodScraper(object):
 
 @dataclass
 class OutgoingMedia:
-    io: IOBase
+    io: BinaryIO
     mime: str
 
 
@@ -297,15 +314,22 @@ class ApodBot:
 
         medias = []
         for media_url, mime, i in zip(page.media_urls, page.media_mimes, count()):
-            if mime[0] and mime.startswith("image/"):
-                m = self.fetch_and_fit_media(media_url)
-                image_content = m.io
+            if mime[0]:
                 if i == 0:
                     alt = page.alt
                 else:
                     alt = None
+                out: OutgoingMedia
+                if mime.startswith("image/"):
+                    out = self.fetch_and_fit_media(media_url)
+                elif mime.startswith("video/"):
+                    media_io = self.fetch_media(media_url)
+                    out = OutgoingMedia(io=media_io, mime=mime)
+                else:
+                    msg = f"Mimetype {mime} not supported"
+                    raise NotImplementedError(msg)
                 media = self.mastodon.media_post(
-                    image_content, mime_type=m.mime, description=alt
+                    out.io, mime_type=out.mime, description=alt
                 )
                 medias.append(media["id"])
         if page.video_url:
@@ -317,7 +341,6 @@ class ApodBot:
         self.last_post = Instant.now()
 
     def fetch_and_fit_media(self, media_url: str) -> OutgoingMedia:
-        """returns a BytesIO"""
         return self.fit_media(self.fetch_media(media_url))
 
     def fetch_media(self, media_url: str) -> BinaryIO:
