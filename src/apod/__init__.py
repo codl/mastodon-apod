@@ -6,7 +6,7 @@ import typing
 from dataclasses import dataclass, field
 from datetime import date
 from functools import cached_property
-from io import BytesIO, IOBase
+from io import BytesIO
 from itertools import chain, count
 from pathlib import Path
 from time import sleep
