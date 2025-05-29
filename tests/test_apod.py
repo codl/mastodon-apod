@@ -268,6 +268,7 @@ def test_html_video(page_from_url):
     assert len(page.media_urls) > 0
     assert page.media_mimes[0].startswith("video/")
 
+
 @pytest.mark.vcr
 def test_html_video_alt(page_from_url):
     page = page_from_url("https://apod.nasa.gov/apod/ap250518.html")

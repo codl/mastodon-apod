@@ -149,9 +149,14 @@ class ApodPage:
                 else:
                     media_mimes.append(mimetypes.guess_type(media_urls[0])[0])
             else:
-                msg = "Found video element as main element but couldn't find video source."
+                msg = (
+                    "Found video element as main element but couldn't find video source."
+                )
                 raise ScrapeError(msg)
-
+            text = " ".join(video_el.strings).replace("\n", " ")
+            match = re.search("Alt text: (.*)", text, re.M)
+            if match:
+                alt = match.group(1)
 
         elif iframe_el and "src" in iframe_el.attrs:
             main_el = iframe_el
