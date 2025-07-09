@@ -41,7 +41,7 @@ jobs:
         uv venv --python=${{ matrix.python-version }}
     - name: Install dependencies and package
       run: |
-        uv sync --group test ${{ matrix.uv-mode }}
+        uv sync --group dev ${{ matrix.uv-mode }}
 
     - name: Test with pytest
       run: |
