@@ -40,7 +40,7 @@ cd /_lock
 uv sync \
     --frozen \
     --no-install-project \
-    --group test
+    --group dev
 EOT
 
 RUN --mount=type=cache,target=/root/.cache <<EOT

@@ -390,7 +390,7 @@ dependencies = [
 ]
 
 [package.dev-dependencies]
-test = [
+dev = [
     { name = "coverage", extra = ["toml"] },
     { name = "pytest" },
     { name = "pytest-recording" },
@@ -415,7 +415,7 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-test = [
+dev = [
     { name = "coverage", extras = ["toml"], specifier = ">=7.6.1,<8" },
     { name = "pytest", specifier = ">=8.3.2,<9" },
     { name = "pytest-recording", specifier = ">=0.13.2,<0.14" },
