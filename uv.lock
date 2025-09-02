@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.10"
 resolution-markers = [
     "platform_python_implementation != 'PyPy'",
@@ -435,7 +435,7 @@ dev = [
 
 [[package]]
 name = "mastodon-py"
-version = "2.0.1"
+version = "2.1.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "blurhash" },
@@ -445,9 +445,9 @@ dependencies = [
     { name = "python-magic-bin", marker = "sys_platform == 'win32'" },
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/d4/40/8f962b2d1782fd097ea45a344094df7d56f980f1d64c62de0bfa1ef5b0fc/mastodon_py-2.0.1.tar.gz", hash = "sha256:f0a9cf59071347c7ff2ee49487d2520ca661f349f369b68845bdf3e43db1fff3", size = 10988936, upload-time = "2025-03-02T09:46:27.279Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c8/ee/bb06d026a2cb49b0a2d750213dac563944010b3a8d971db5aa578d549059/mastodon_py-2.1.3.tar.gz", hash = "sha256:7beb61597b7a2083ed02a980836232496fb2fcc724cae305d4f128e4cd6c9d81", size = 11636727, upload-time = "2025-09-01T19:53:55.722Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cf/d7/632b8b14a13eb33a9fcc5c3354f878fa39dfb5f51ef6283b24fce84c5796/mastodon_py-2.0.1-py3-none-any.whl", hash = "sha256:5bb543ecbd7526bd50675d5d617ec04caa6b10d4002454cbf5641ad612723455", size = 108485, upload-time = "2025-03-02T09:46:22.308Z" },
+    { url = "https://files.pythonhosted.org/packages/d1/ca/3b0514662d84705319be2beca95498d8ad56d6a10b0ffaf9858fba7ecc39/mastodon_py-2.1.3-py3-none-any.whl", hash = "sha256:e67571f1f2d8db12f08dfcf9b3c93aa70325092d5f3d4d6711f67aa540f60452", size = 123306, upload-time = "2025-09-01T19:53:53.199Z" },
 ]
 
 [[package]]
