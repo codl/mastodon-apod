@@ -48,7 +48,7 @@ jobs:
         uv run --frozen python -m coverage run --parallel -m pytest
 
     - name: Upload coverage data
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: coverage-data-${{ matrix.python-version }}${{ matrix.uv-mode }}
         path: .coverage.*
@@ -73,7 +73,7 @@ jobs:
         coverage combine
         coverage html --skip-covered --skip-empty
         coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         name: html-report
         path: htmlcov
