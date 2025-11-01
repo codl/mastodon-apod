@@ -64,7 +64,7 @@ jobs:
       with:
         enable-cache: true
         cache-suffix: coverage
-    - uses: actions/download-artifact@v4
+    - uses: actions/download-artifact@v6
       with:
         pattern: coverage-data-*
         merge-multiple: true
